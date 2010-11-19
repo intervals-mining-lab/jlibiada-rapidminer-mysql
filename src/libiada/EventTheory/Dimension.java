@@ -1,5 +1,7 @@
 package libiada.EventTheory;
 
+import libiada.Root.IBaseObject;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Алексе
@@ -20,10 +22,10 @@ public class Dimension {
             }
             else
             {
-//                Debug.WriteLine ("-------------------------------------------------------------------------");
-//                Debug.WriteLine("Warning: " + (GetType()) + " creating min > max");
-//                Debug.WriteLine("Предупреждение: " + (GetType()) + " при создании min > max");
-//                Debug.WriteLine("-------------------------------------------------------------------------");
+                System.out.print("-------------------------------------------------------------------------");
+                System.out.print("Warning: " + this.getClass() + " creating min > max");
+                System.out.print("Предупреждение: " + this.getClass() + " при создании min > max");
+                System.out.print("-------------------------------------------------------------------------");
                 pmin = max;
                 pmax = min;
             }
@@ -49,20 +51,25 @@ public class Dimension {
 
     public long getMax()
     {
-        return 0;
+        return pmax;
     }
 
     public long getMin()
     {
-        return 0;
+        return pmin;
     }
 
     public long getLength()
     {
-        return 0;
+        int dt = 0;
+        if (pmin <= 0 && pmax >= 0)
+        {
+            dt = 1;
+        }
+        return (int) (pmax - pmin) + dt;
     }
 
-    public Dimension Clone() {
-        throw new UnsupportedOperationException("Not yet implemented");
+    public IBaseObject Clone() {
+        return new Dimension(pmin, pmax);
     }
 }
