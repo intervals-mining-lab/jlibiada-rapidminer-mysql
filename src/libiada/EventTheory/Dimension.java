@@ -1,6 +1,7 @@
 package libiada.EventTheory;
 
 import libiada.Root.IBaseObject;
+import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,7 +11,7 @@ import libiada.Root.IBaseObject;
  * To change this template use File | Settings | File Templates.
  */
 
-public class Dimension {
+public class Dimension implements IBaseObject {
     private long pmin;
     private long pmax;
     
@@ -32,8 +33,8 @@ public class Dimension {
     }
 
     public Dimension(DimensionBin bin) {
-        pmin = bin.min();
-        pmax = bin.max();
+        pmin = bin.getMin();
+        pmax = bin.getMax();
     }
 
     public boolean EqualsAsDimension(Dimension obj) {
@@ -71,5 +72,20 @@ public class Dimension {
 
     public IBaseObject Clone() {
         return new Dimension(pmin, pmax);
+    }
+
+    public boolean Equals(Object obj) {
+            if (this == obj)
+            {
+                return true;
+            }
+            return false;
+    }
+
+    public IBin GetBin() {
+            DimensionBin Temp = new DimensionBin();
+            Temp.setMin(pmin);
+            Temp.setMax(pmax);
+            return Temp;
     }
 }

@@ -2,6 +2,7 @@ package test;
 
 import junit.framework.TestCase;
 import libiada.EventTheory.Dimension;
+import libiada.Root.IBaseObject;
 import org.junit.Test;
 
 /**
@@ -29,7 +30,7 @@ public class testDimensionTest extends TestCase {
     public void testConstructor()
     {
         Dimension d1 = new Dimension(-120, 50);
-        Dimension d2 = new Dimension(null);
+        Dimension d2 = null;
         Dimension d3 = new Dimension(0, 10);
         Dimension d4 = new Dimension(10, 0);
         assertTrue(d3.EqualsAsDimension(d4));
@@ -68,7 +69,7 @@ public class testDimensionTest extends TestCase {
     public void testClone()
     {
         Dimension d = new Dimension(0, 10);
-        Dimension d_clone = d.Clone();
+        Dimension d_clone = (Dimension)d.Clone();
         assertNotSame(d_clone, d);
         assertTrue(d.EqualsAsDimension(d_clone));
     }
