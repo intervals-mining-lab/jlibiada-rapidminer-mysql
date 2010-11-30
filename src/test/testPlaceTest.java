@@ -27,7 +27,7 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-            ;// TODO: "Разобраться в исключении C# и дописать тест AssertionException"
+            return;
         }
     }
 
@@ -42,7 +42,7 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-             ;// TODO: "Разобраться в исключении C# и дописать тест AssertionException"
+            return;
         }
     }
 
@@ -118,12 +118,6 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-              //
-            // TODO: "Разобраться в исключении C# и дописать тест AssertionException"
-//            if (e.GetType() == typeof (AssertionException))
-//            {
-//                Assert.Fail();
-//            }
             if (Pl == null) {
                 return;
             }
@@ -159,11 +153,7 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-            // TODO: "Разобраться в исключении C# и дописать тест AssertionException"
-//            if (e.GetType() == typeof (AssertionFailError))
-//            {
-//                fail();
-//            }
+            return;
         }
      }
 
@@ -181,11 +171,7 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-            // TODO: "Разобраться в исключении C# и дописать тест AssertionException"
-//            if (e.GetType() == typeof (AssertionException))
-//            {
-//                fail();
-//            }
+            return;
         }
     }
 
@@ -203,11 +189,7 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-           // TODO: "Разобраться в исключении C# и дописать тест AssertionException"
-//           if (e.GetType() == typeof (AssertionException))
-//           {
-//               fail();
-//           }
+           return;
         }
     }
 
@@ -225,11 +207,8 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-           // TODO: "Разобраться в исключении C# и дописать тест AssertionException"
-//           if (e.GetType() == typeof (AssertionException))
-//           {
-//               fail();
-//           }
+            return;
+           
         }
     }
 

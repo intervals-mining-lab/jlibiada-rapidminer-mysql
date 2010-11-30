@@ -12,7 +12,9 @@ import libiada.Root.ValueInt;
  * To change this template use File | Settings | File Templates.
  */
 public class Event extends Space implements IBaseObject {
-    public void addDimension(Dimension dimension) {
+    public void addDimension(Dimension dimension)
+    {
+        super.addDimension(dimension);
     }
 
     public IBaseObject Clone() {
@@ -53,8 +55,7 @@ public class Event extends Space implements IBaseObject {
     public ReadRule getFromReadRule(Place key) throws Exception {
         if (key == null)
         {
-            //TODO: "Заменить на NullReferenceException"
-            throw new Exception("Параметр ключ передан как пустой объект");
+            throw new NullPointerException("Параметр ключ передан как пустой объект");
         }
         return null;
     }

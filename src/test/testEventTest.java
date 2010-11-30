@@ -5,10 +5,12 @@ import libiada.EventTheory.Event;
 import libiada.EventTheory.Place;
 import libiada.EventTheory.ReadRule;
 import libiada.Root.ValueInt;
+import org.junit.Before;
 import org.testng.annotations.Test;
 import junit.framework.TestCase;
 
 import java.lang.reflect.Array;
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -26,8 +28,8 @@ public class testEventTest extends TestCase {
         ///<summary>
         /// Метод производящий инициализацию тестов.
         ///</summary>
-        
-        public void init()
+    @Before
+        public void setUp()
         {
             baseEvent = new Event();
             baseEvent.addDimension(new Dimension(0, 10));
@@ -187,14 +189,12 @@ public class testEventTest extends TestCase {
         /// Тестирует попытку получить правило чтения с использованием парамтра null
         ///</summary>
         @Test
-        public void TestGetFromRuleNUll()
-        {
+        public void TestGetFromRuleNUll() throws Exception {
             try
             {
                 baseEvent.getFromReadRule(null);
             }
-            //TODO: "Заменить на NullReferenceException"
-            catch (Exception e)
+            catch (NullPointerException e)
             {
                 return;
             }
