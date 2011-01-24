@@ -1,7 +1,14 @@
 package libiada.IntervalAnalysis;
 
+import libiada.EventTheory.Event;
+import libiada.EventTheory.Place;
+import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.IDataForCalculator;
+import libiada.IntervalAnalysis.Characteristics.Characteristic;
 import libiada.Root.IBaseObject;
+import libiada.Statistics.FrequencyList;
+
+import java.util.Hashtable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -10,5 +17,74 @@ import libiada.Root.IBaseObject;
  * Time: 1:37:02
  * To change this template use File | Settings | File Templates.
  */
-public class ChainWithCharacteristic extends BaseChain implements IDataForCalculator, IBaseObject {
+public abstract class ChainWithCharacteristic extends BaseChain implements IDataForCalculator, IBaseObject {
+    protected Hashtable CharacteristicSnapshot;
+    protected boolean IntervalsChanged;
+    protected FrequencyList pIntervals;
+    protected FrequencyList startinterval;
+    protected FrequencyList endinterval;
+
+    public ChainWithCharacteristic(int length) throws Exception {
+        super(length);
+        pIntervals = new FrequencyList();
+        startinterval = new FrequencyList();
+        endinterval = new FrequencyList();
+    }
+
+    public FrequencyList getCommonIntervals() {
+        buildIntervals();
+        return (FrequencyList) pIntervals.Clone();
+    }
+
+    public FrequencyList getStartInterval() {
+        buildIntervals();
+        return (FrequencyList) startinterval.Clone();
+    }
+
+    public FrequencyList getEndInterval() {
+        buildIntervals();
+        return (FrequencyList) endinterval.Clone();
+    }
+
+    protected abstract void buildIntervals();
+
+    public double getCharacteristic(LinkUp Link, ICharacteristicCalculator CharacteristicType) throws Exception {
+        if (!CharacteristicSnapshot.containsKey(CharacteristicType.getClass()))
+        {
+            Characteristic temp = new Characteristic(CharacteristicType);
+            CharacteristicSnapshot.put(CharacteristicType.getClass(), temp);
+        }
+        return injectIntoCharacteristic(CharacteristicType.getClass(), Link);
+    }
+
+    public abstract double injectIntoCharacteristic(Class<? extends ICharacteristicCalculator> calculatorClass, LinkUp link) throws Exception;
+
+    public void addItem(IBaseObject what, Place where) throws Exception
+    {
+        super.addItem(what, where);
+        markChanged();
+    }
+
+    public void removeAt(Place place) throws Exception
+    {
+        super.removeAt(place);
+        markChanged();
+    }
+
+    private void markChanged() {
+        IntervalsChanged = true;
+        pIntervals = new FrequencyList();
+        startinterval = new FrequencyList();
+        endinterval = new FrequencyList();
+        CharacteristicSnapshot = new Hashtable();
+    }
+
+    public void ClearAndSetNewLength(int length) throws Exception {
+        super.ClearAndSetNewLength(length);
+        CharacteristicSnapshot = new Hashtable();
+        endinterval = new FrequencyList();
+        IntervalsChanged = true;
+        pIntervals = new FrequencyList();
+        startinterval = new FrequencyList();
+    }
 }

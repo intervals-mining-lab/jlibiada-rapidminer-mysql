@@ -4,6 +4,8 @@ import libiada.Root.IBaseObject;
 import libiada.Root.IBin;
 import libiada.TheoryOfSet.Alphabet;
 
+import java.util.ArrayList;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Алексе
@@ -12,6 +14,8 @@ import libiada.TheoryOfSet.Alphabet;
  * To change this template use File | Settings | File Templates.
  */
 public class FrequencyList extends Alphabet implements IBaseObject {
+    private ArrayList pFrequency = new ArrayList();
+
     public IBaseObject Clone() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
@@ -22,5 +26,13 @@ public class FrequencyList extends Alphabet implements IBaseObject {
 
     public IBin GetBin() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public int getCount() {
+        return pFrequency.size();
+    }
+
+    public void sum(FrequencyList intervals) {
+        //TODO: "Срочно"
     }
 }

@@ -37,7 +37,7 @@ public class Dimension implements IBaseObject {
         pmax = bin.getMax();
     }
 
-    public boolean EqualsAsDimension(Dimension obj) {
+    public boolean equalsAsDimension(Dimension obj) {
         if (null == obj)
         {
             return false;

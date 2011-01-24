@@ -12,6 +12,9 @@ import libiada.Root.ValueInt;
  * To change this template use File | Settings | File Templates.
  */
 public class Event extends Space implements IBaseObject {
+    public Event() throws Exception {
+        super();
+    }
     public void addDimension(Dimension dimension)
     {
         super.addDimension(dimension);
