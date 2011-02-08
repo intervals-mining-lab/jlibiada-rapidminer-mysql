@@ -25,10 +25,11 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
 
     public Chain(int length) throws Exception {
         super(length);
+        pAlphabet.remove(0);
     }
 
-    public UniformChain IUniformChain(int i) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+    public UniformChain getIUniformChain(int i) {
+        return pUniformChains.get(i);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void ClearAndSetNewLength(int length) throws Exception {
@@ -50,8 +51,7 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     }
 
     @Override
-    protected void buildIntervals()
-    {
+    protected void buildIntervals() throws Exception {
         if (!IntervalsChanged) return;
         IntervalsChanged = false;
 
@@ -70,6 +70,6 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     }
 
     public ChainWithCharacteristic getUniformChain(IBaseObject baseObject) {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return null;  //TODO:"Заполнить метод"
     }
 }

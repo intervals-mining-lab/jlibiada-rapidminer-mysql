@@ -10,5 +10,5 @@ import libiada.IntervalAnalysis.UniformChain;
  * To change this template use File | Settings | File Templates.
  */
 public interface IChainDataForCalculator {
-    UniformChain IUniformChain(int i);
+    UniformChain getIUniformChain(int i);
 }

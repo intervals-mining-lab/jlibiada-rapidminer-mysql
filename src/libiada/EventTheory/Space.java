@@ -16,7 +16,7 @@ public class Space {
     private ArrayList<Dimension> pDimensions = new ArrayList<Dimension>();
     private boolean WasChange = false;
     private int ElementsCount = 0;
-    private ArrayList<Long> vault = new ArrayList<Long>();
+    protected ArrayList<Long> vault = new ArrayList<Long>();
 
     public Space() throws Exception {
         pAlphabet.add(PsevdoValue.Instance());

@@ -2,8 +2,10 @@ package libiada.IntervalAnalysis;
 
 import libiada.EventTheory.Place;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
+import libiada.IntervalAnalysis.Characteristics.Characteristic;
 import libiada.Root.IBaseObject;
 import libiada.Root.SimpleTypes.ValueChar;
+import libiada.Root.ValueInt;
 import libiada.Statistics.FrequencyList;
 
 /**
@@ -19,18 +21,6 @@ public class UniformChain extends ChainWithCharacteristic implements IBaseObject
         pAlphabet.add(message);
     }
 
-    public FrequencyList getCommonIntervals() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public FrequencyList getStartInterval() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
-    public FrequencyList getEndInterval() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
-    }
-
     public void addItem(IBaseObject what, Place where) throws Exception
     {
         if (getMessage().Equals(what))
@@ -40,13 +30,58 @@ public class UniformChain extends ChainWithCharacteristic implements IBaseObject
     }
 
     @Override
-    protected void buildIntervals() {
-        //TODO: "Срочно"
+    protected void buildIntervals() throws Exception {
+        if (!IntervalsChanged) return;
+
+        IntervalsChanged = false;
+
+        pIntervals = new FrequencyList();
+        int next = -1;
+        FrequencyList IntervalList;
+        do
+        {
+            int current = next;
+            next = getRight(current);
+            if (next == getLength())
+            {
+                IntervalList = getFrequancyIntervalList(getLength());
+            }
+            else
+            {
+                IntervalList = getFrequancyIntervalList(current);
+            }
+
+            IntervalList.add(new ValueInt(next - current));
+        }
+        while (next != getLength());
+    }
+
+    private int getRight(int current) {
+        for (int i = current + 1; i < getLength(); i++)
+        {
+            if (vault.get(i) == 1)
+            {
+                return i;
+            }
+        }
+        return getLength();
+    }
+
+    private FrequencyList getFrequancyIntervalList(int number) {
+        if (number == -1)
+        {
+            return startinterval;
+        }
+        if (number == getLength())
+        {
+            return endinterval;
+        }
+        return pIntervals;
     }
 
     @Override
     public double injectIntoCharacteristic(Class<? extends ICharacteristicCalculator> calculatorClass, LinkUp link) throws Exception {
-        return 0;  //To change body of implemented methods use File | Settings | File Templates.
+        return ((Characteristic) CharacteristicSnapshot.get(calculatorClass)).value(this, link);
     }
 
     public IBaseObject getMessage() {

@@ -5,6 +5,7 @@ import libiada.IntervalAnalysis.ChainWithCharacteristic;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
 import libiada.IntervalAnalysis.Characteristics.Calculators.AverageRemoteness;
 import libiada.IntervalAnalysis.LinkUp;
+import libiada.IntervalAnalysis.UniformChain;
 
 /**
  * Created by IntelliJ IDEA.
@@ -23,6 +24,18 @@ public class Characteristic {
 
     public Characteristic(ICharacteristicCalculator calculator) {
         Calculator = calculator;
+    }
+
+    public double value(UniformChain Chain, LinkUp link) throws Exception {
+        if (!Calculated || !Chain.Equals(pChain))
+        {
+            pChain = Chain;
+            pStartValue = Calculator.calculate(Chain, LinkUp.Start);
+            pEndValue = Calculator.calculate(Chain, LinkUp.End);
+            pBothValue = Calculator.calculate(Chain, LinkUp.Both);
+            Calculated = true;
+        }
+        return getCurrentValue(link);
     }
 
     public double value(Chain Chain, LinkUp link) throws Exception {

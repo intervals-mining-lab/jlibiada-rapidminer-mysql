@@ -31,22 +31,22 @@ public abstract class ChainWithCharacteristic extends BaseChain implements IData
         endinterval = new FrequencyList();
     }
 
-    public FrequencyList getCommonIntervals() {
+    public FrequencyList getCommonIntervals() throws Exception {
         buildIntervals();
         return (FrequencyList) pIntervals.Clone();
     }
 
-    public FrequencyList getStartInterval() {
+    public FrequencyList getStartInterval() throws Exception {
         buildIntervals();
         return (FrequencyList) startinterval.Clone();
     }
 
-    public FrequencyList getEndInterval() {
+    public FrequencyList getEndInterval() throws Exception {
         buildIntervals();
         return (FrequencyList) endinterval.Clone();
     }
 
-    protected abstract void buildIntervals();
+    protected abstract void buildIntervals() throws Exception;
 
     public double getCharacteristic(LinkUp Link, ICharacteristicCalculator CharacteristicType) throws Exception {
         if (!CharacteristicSnapshot.containsKey(CharacteristicType.getClass()))

@@ -20,5 +20,5 @@ public interface IBaseObject {
         ///<returns>True если объекты эквивалентны, иначе false</returns>
         boolean Equals(Object obj);
 
-        IBin GetBin();    
+        IBin GetBin();
 }

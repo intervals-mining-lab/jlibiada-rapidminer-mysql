@@ -34,6 +34,9 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="luaJava" level="project" />
+    <orderEntry type="library" name="jython" level="project" />
+    <orderEntry type="library" name="apach-math" level="project" />
   </component>
 </module>
 

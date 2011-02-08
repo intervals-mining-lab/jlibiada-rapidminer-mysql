@@ -2,6 +2,7 @@ package libiada.Statistics;
 
 import libiada.Root.IBaseObject;
 import libiada.Root.IBin;
+import libiada.Root.ValueInt;
 import libiada.TheoryOfSet.Alphabet;
 
 import java.util.ArrayList;
@@ -14,10 +15,19 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class FrequencyList extends Alphabet implements IBaseObject {
-    private ArrayList pFrequency = new ArrayList();
+    private ArrayList<Long> pFrequency = new ArrayList<Long>();
+
+    @Override
+    public IBaseObject get(int index)
+    {
+        return (IBaseObject) new DictionaryEntryBase(((IBaseObject) vault.get(index)).Clone(), new ValueInt(pFrequency.get(index)));
+    }
 
     public IBaseObject Clone() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        FrequencyList FLNew = new FrequencyList();
+        FLNew.vault = (ArrayList) vault.clone();
+        FLNew.pFrequency = (ArrayList) pFrequency.clone();
+        return FLNew;
     }
 
     public boolean Equals(Object obj) {
@@ -29,10 +39,37 @@ public class FrequencyList extends Alphabet implements IBaseObject {
     }
 
     public int getCount() {
-        return pFrequency.size();
+        int temp = 0;
+        for (Long value : pFrequency)
+        {
+            temp += value;
+        }
+        return temp;
     }
 
-    public void sum(FrequencyList intervals) {
-        //TODO: "Срочно"
+    public int add(IBaseObject o) throws Exception {
+        int result = indexOf(o);
+
+        if (result == -1)
+        {
+            result = super.add(o);
+            pFrequency.add(1l);
+        }
+        else pFrequency.set(result, pFrequency.get(result) + 1);
+        return result;
+    }
+
+    public void sum(FrequencyList intervals) throws Exception {
+        for (int i = 0; i < intervals.getPower(); i++)
+        {
+            IBaseObject value = ((DictionaryEntryBase)intervals.get(i)).getKey();
+            long valueCount = ((ValueInt) ((DictionaryEntryBase)intervals.get(i)).getValue()).getValue();
+            if (!isContains(value))
+            {
+                add(value);
+                valueCount = valueCount - 1;
+            }
+            pFrequency.set(indexOf(value), pFrequency.get(indexOf(value)) + valueCount);
+        }
     }
 }

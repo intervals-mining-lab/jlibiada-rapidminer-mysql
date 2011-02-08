@@ -1,6 +1,7 @@
 package test.IntervalAnalysis.Characteristics.Calculators;
 
 import libiada.IntervalAnalysis.Chain;
+import libiada.IntervalAnalysis.UniformChain;
 import libiada.Root.SimpleTypes.ValueChar;
 
 /**
@@ -15,7 +16,7 @@ public class ObjectMother {
     private ValueChar MessageB = new ValueChar('b');
     private ValueChar MessageC = new ValueChar('c');
 
-    public Chain TestChain() throws Exception {
+    public Chain getChain() throws Exception {
         Chain TestChain = new Chain(10);
 
         TestChain.add(MessageB, 0);
@@ -34,4 +35,12 @@ public class ObjectMother {
 
         return TestChain;
     }
+
+    public UniformChain getUniformChain() throws Exception {
+            UniformChain TestUChain = new UniformChain(10, MessageA);
+            TestUChain.add(MessageA, 3);
+            TestUChain.add(MessageA, 7);
+            TestUChain.add(MessageA, 4);
+            return TestUChain;
+        }
 }

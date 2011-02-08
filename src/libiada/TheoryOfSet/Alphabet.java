@@ -33,6 +33,11 @@ public class Alphabet {
         return vault.indexOf(obj);
     }
 
+    public boolean isContains(IBaseObject obj)
+    {
+        return vault.contains(obj);
+    }
+
     public int indexOf(IBaseObject value) {
         int index = -1;
         for (int i = 0; i < vault.size(); i++)

@@ -25,8 +25,8 @@ public class AverageRemoteness implements ICharacteristicCalculator {
         double n = pChain.getCharacteristic(link, CharacteristicsFactory.getIntervalsCount());
         for (int i = 0; i < pChain.getAlpahbet().getPower(); i++)
         {
-            double Uniformdg = Data.IUniformChain(i).getCharacteristic(link, CharacteristicsFactory.getDeltaG());
-            double n_j = Data.IUniformChain(i).getCharacteristic(link, CharacteristicsFactory.getIntervalsCount());
+            double Uniformdg = Data.getIUniformChain(i).getCharacteristic(link, CharacteristicsFactory.getDeltaG());
+            double n_j = Data.getIUniformChain(i).getCharacteristic(link, CharacteristicsFactory.getIntervalsCount());
             temp += n_j/n*Math.log10(Uniformdg)/Math.log10(2);
         }
         return temp;

@@ -10,7 +10,7 @@ import libiada.Statistics.FrequencyList;
  * To change this template use File | Settings | File Templates.
  */
 public interface IDataForCalculator {
-    FrequencyList getCommonIntervals();
-    FrequencyList getStartInterval();
-    FrequencyList getEndInterval();
+    FrequencyList getCommonIntervals() throws Exception;
+    FrequencyList getStartInterval() throws Exception;
+    FrequencyList getEndInterval() throws Exception;
 }

@@ -19,14 +19,12 @@ public class testChainTest extends TestCase {
     private Chain chainBase;
 
     @Before
-    public void setUp()
-    {
+    public void setUp() throws Exception {
         chainBase = new Chain(10);
     }
 
     @Test
-    public void testSimularChainsGet()
-    {
+    public void testSimularChainsGet() throws Exception {
         ValueChar MessageA = new ValueChar('a');
         ValueChar MessageC = new ValueChar('c');
         ValueChar MessageG = new ValueChar('g');

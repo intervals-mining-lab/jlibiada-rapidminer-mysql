@@ -8,18 +8,25 @@ package libiada.Root;
  * To change this template use File | Settings | File Templates.
  */
 public class ValueInt implements IBaseObject {
+    private long value;
+
     public ValueInt(long i) {
+        value = i;
     }
 
     public IBaseObject Clone() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return new ValueInt(value);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public boolean Equals(Object obj) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        return value == ((ValueInt)obj).getValue();
     }
 
     public IBin GetBin() {
         return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public long getValue() {
+        return value;
     }
 }
