@@ -1,16 +1,12 @@
 package interval_analysis.chain;
 
-import com.rapidminer.operator.IOObject;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
 import com.rapidminer.operator.io.AbstractReader;
-import com.rapidminer.example.*;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeInt;
 import libiada.IntervalAnalysis.Buildings.Tree;
 import libiada.IntervalAnalysis.Chain;
-import libiada.IntervalAnalysis.Characteristics.CharacteristicsFactory;
-import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,12 +18,8 @@ import java.util.logging.Logger;
  * User: alex
  * Date: 2/23/11
  * Time: 5:07 AM
- * To change this template use File | Settings | File Templates.
  */
 public class BuildingsGenerator extends AbstractReader<RMChainSet> {
-    private int length = 3;
-    private int alphPower = 3;
-
     public static final String PARAMETER_CHAIN_LENGTH = "chain_length";
     public static final String PARAMETER_ALPHABET_POWER = "chain_alphabet_power";
 

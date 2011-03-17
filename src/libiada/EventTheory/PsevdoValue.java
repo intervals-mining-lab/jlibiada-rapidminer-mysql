@@ -5,10 +5,9 @@ import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 23.01.2011
  * Time: 17:13:20
- * To change this template use File | Settings | File Templates.
  */
 public class PsevdoValue implements IBaseObject {
     private static PsevdoValue singletone = new PsevdoValue();

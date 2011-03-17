@@ -5,7 +5,7 @@ import libiada.EventTheory.Dimension;
 import libiada.EventTheory.Event;
 import libiada.EventTheory.Place;
 import libiada.EventTheory.ReadRule;
-import libiada.Root.ValueInt;
+import libiada.Root.SimpleTypes.ValueInt;
 import org.junit.Before;
 import org.testng.annotations.Test;
 

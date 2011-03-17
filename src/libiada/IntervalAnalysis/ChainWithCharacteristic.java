@@ -31,6 +31,9 @@ public abstract class ChainWithCharacteristic extends BaseChain implements IData
 
     public ChainWithCharacteristic() throws Exception {
         super();
+        pIntervals = new FrequencyList();
+        startinterval = new FrequencyList();
+        endinterval = new FrequencyList();
     }
 
     public FrequencyList getCommonIntervals() throws Exception {

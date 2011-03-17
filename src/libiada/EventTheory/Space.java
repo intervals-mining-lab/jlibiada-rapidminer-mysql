@@ -7,10 +7,9 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: РђР»РµРєСЃРµР№
  * Date: 30.11.2010
  * Time: 9:13:07
- * To change this template use File | Settings | File Templates.
  */
 public class Space {
     private ArrayList<Dimension> pDimensions = new ArrayList<Dimension>();
@@ -22,16 +21,10 @@ public class Space {
         pAlphabet.add(PsevdoValue.Instance());
     }
 
-    ///<summary>
-    /// Помещает величину в место place
-    ///</summary>
-    ///<param name="value">Объект типа I который требуется поместить в меcто Place</param>
-    ///<param name="place">Объект типа меcто Place в котрый требуется поместить величину value</param>
-    ///<exception cref="Exception">В случае если место выходит за пределы пространства вызывается исключение</exception>
     public void addItem(IBaseObject value, Place place) throws Exception {
         if (value == null)
         {
-            throw new Exception("Попытка добавить неинициализированный объект");
+            throw new Exception("РџРѕРїС‹С‚РєР° РґРѕР±Р°РІРёС‚СЊ РЅСѓР»РµРІРѕР№ РѕР±СЉРµРєС‚ Рє РїСЂРѕСЃС‚СЂР°РЅСЃС‚РІСѓ");
         }
 
         if (!place.compatibleTo(getPlacePattern()))
@@ -148,7 +141,7 @@ public class Space {
 
     private void refillSpace(ArrayList<Long> temp)
     {
-        //TODO: "Сделать перезаполнения пространства"
+        //TODO: "пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ"
 //        if (temp != null)
 //            {
 //                Array.Copy(temp, vault, temp.GetLength(0));

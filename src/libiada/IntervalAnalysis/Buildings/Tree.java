@@ -25,4 +25,8 @@ public class Tree {
         }
         return buildings;
     }
+
+    public ArrayList<String> getBuildingsAsStrings() {
+        return root.getBuildings();
+    }
 }

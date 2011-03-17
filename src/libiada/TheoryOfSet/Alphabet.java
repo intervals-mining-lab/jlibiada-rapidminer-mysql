@@ -7,10 +7,9 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: РђР»РµРєСЃРµР№
  * Date: 11.12.2010
  * Time: 1:49:09
- * To change this template use File | Settings | File Templates.
  */
 public class Alphabet {
     protected ArrayList vault = new ArrayList();
@@ -22,11 +21,11 @@ public class Alphabet {
     public int add(IBaseObject value) throws Exception {
         if (vault.contains((value)))
         {
-            throw new Exception("Этот объек уже содержится в алфавите");
+            throw new Exception("РџРѕРІС‚РѕСЂРЅРѕРµ РґРѕР±Р°РІР»РµРЅРёРµ РѕР±СЉРµРєС‚Р° РІ Р°Р»С„Р°РІРёС‚");
         }
         if (value == null)
         {
-            throw new Exception("Попытка добавить null в алфавит");
+            throw new Exception("РџРѕРїС‹С‚РєР° РґРѕР±Р°РІРёС‚СЊ РЅСѓР»РµРІРѕР№ РѕР±СЉРµРєС‚ РІ Р°Р»С„Р°РІРёС‚");
         }
         IBaseObject obj = value.Clone();
         vault.add(obj);

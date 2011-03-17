@@ -2,7 +2,6 @@ package libiada.Statistics;
 
 import libiada.Root.IBaseObject;
 import libiada.Root.IBin;
-import libiada.Root.ValueInt;
 
 /**
  * Created by IntelliJ IDEA.

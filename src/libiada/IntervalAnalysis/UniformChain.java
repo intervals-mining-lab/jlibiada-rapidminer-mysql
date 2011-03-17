@@ -4,7 +4,7 @@ import libiada.EventTheory.Place;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
 import libiada.IntervalAnalysis.Characteristics.Characteristic;
 import libiada.Root.IBaseObject;
-import libiada.Root.ValueInt;
+import libiada.Root.SimpleTypes.ValueInt;
 import libiada.Statistics.FrequencyList;
 
 /**

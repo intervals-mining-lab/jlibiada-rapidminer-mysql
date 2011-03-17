@@ -1,17 +1,16 @@
 package interval_analysis;
 
-import com.rapidminer.example.*;
+import com.rapidminer.example.Attribute;
+import com.rapidminer.example.ExampleSet;
+import com.rapidminer.example.ExampleSetFactory;
 import com.rapidminer.example.table.AttributeFactory;
-import com.rapidminer.gui.tools.dialogs.MessageDialog;
 import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
 import com.rapidminer.operator.ports.InputPort;
 import com.rapidminer.operator.ports.OutputPort;
 import com.rapidminer.tools.Ontology;
-import interval_analysis.chain.RMChain;
 import interval_analysis.chain.RMChainSet;
-import libiada.IntervalAnalysis.Chain;
 import libiada.IntervalAnalysis.Characteristics.CharacteristicsFactory;
 import libiada.IntervalAnalysis.LinkUp;
 
@@ -23,7 +22,6 @@ import java.util.logging.Logger;
  * User: alex
  * Date: 2/12/11
  * Time: 2:28 AM
- * To change this template use File | Settings | File Templates.
  */
 public class AverageRemoteness extends Operator {
 
@@ -50,13 +48,13 @@ public class AverageRemoteness extends Operator {
         Attribute attrChain = AttributeFactory.createAttribute("Chain", Ontology.STRING);
         outSet.getAttributes().get("att1").setName("g");
         outSet.getAttributes().addRegular(attrChain);
-
+        /*
         int i = 0;
         for (Example example: outSet) {
             //example.setValue(attrChain, chains.get(i).toString());
             i++;
         }
-
+        */
         outValue.deliver(outSet);
     }
 }

@@ -6,10 +6,9 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 30.11.2010
  * Time: 10:20:58
- * To change this template use File | Settings | File Templates.
  */
 public class ReadRule {
     protected ArrayList vault = new ArrayList();

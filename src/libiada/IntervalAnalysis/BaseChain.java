@@ -22,6 +22,17 @@ public class BaseChain extends Space implements IBaseObject {
         super();
     }
 
+    @Override
+    public String toString()
+    {
+        String s = "";
+        for (long obj : vault)
+        {
+            s += pAlphabet.get((int) obj).toString();
+        }
+        return s;
+    }
+
     public void add(IBaseObject baseObject, int index) throws Exception {
          addItem(baseObject, getPlacePattern().setValues(new long[] {index}));
     }

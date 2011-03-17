@@ -3,6 +3,7 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
     <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/Event.java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/AverageRemoteness.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/libiada/TheoryOfSet/Alphabet.java" charset="UTF-8" />
   </component>
 </project>
 

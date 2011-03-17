@@ -2,7 +2,7 @@ package libiada.Statistics;
 
 import libiada.Root.IBaseObject;
 import libiada.Root.IBin;
-import libiada.Root.ValueInt;
+import libiada.Root.SimpleTypes.ValueInt;
 import libiada.TheoryOfSet.Alphabet;
 
 import java.util.ArrayList;
@@ -24,7 +24,10 @@ public class FrequencyList extends Alphabet implements IBaseObject {
 
     @Override
     public IBaseObject Clone() {
-        return null;  //TODO: "Заполнить метод"
+        FrequencyList frecList = new FrequencyList();
+        frecList.pFrequency = (ArrayList<Long>) this.pFrequency.clone();
+        frecList.vault = (ArrayList) this.vault.clone();
+        return frecList;  //TODO: "Заполнить метод"
     }
 
     public boolean Equals(Object obj) {

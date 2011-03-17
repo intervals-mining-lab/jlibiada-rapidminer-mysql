@@ -29,8 +29,8 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     }
 
     public Chain(String s) throws Exception {
-        pAlphabet.remove(0);
         ClearAndSetNewLength(s.length());
+        pAlphabet.remove(0);
         for (int i = 0; i < s.length(); i++)
         {
             add(new ValueChar(s.charAt(i)), i);
