@@ -77,10 +77,8 @@
       <file leaf-file-name="Tree.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/Tree.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="7" selection-start="52" selection-end="52" vertical-scroll-proportion="0.07439825">
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state line="14" column="29" selection-start="262" selection-end="262" vertical-scroll-proportion="0.3216885">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -138,7 +136,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="2" />
+    <option name="STATE" value="0" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
@@ -153,109 +151,29 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Favorites" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
+              <option name="myItemId" value="Libiada Java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
+              <option name="myItemId" value="Libiada Java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IntervalAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="JLibiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="libiada" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="IntervalAnalysis" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Buildings" />
+              <option name="myItemId" value="Libiada Java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="Favorites" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -274,9 +192,9 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.includeInheritedMembers" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="dynamic.classpath" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -358,6 +276,24 @@
         <option name="Maven.BeforeRunTask" enabled="false" />
       </method>
     </configuration>
+    <configuration default="true" type="Applet" factoryName="Applet">
+      <module name="" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="HTML_FILE_NAME" />
+      <option name="HTML_USED" value="false" />
+      <option name="WIDTH" value="400" />
+      <option name="HEIGHT" value="300" />
+      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <option name="VM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <method>
+        <option name="AntTarget" enabled="false" />
+        <option name="BuildArtifacts" enabled="false" />
+        <option name="Make" enabled="true" />
+        <option name="Maven.BeforeRunTask" enabled="false" />
+      </method>
+    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <module name="" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -383,24 +319,6 @@
       <envs />
       <properties />
       <listeners />
-      <method>
-        <option name="AntTarget" enabled="false" />
-        <option name="BuildArtifacts" enabled="false" />
-        <option name="Make" enabled="true" />
-        <option name="Maven.BeforeRunTask" enabled="false" />
-      </method>
-    </configuration>
-    <configuration default="true" type="Applet" factoryName="Applet">
-      <module name="" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="HTML_FILE_NAME" />
-      <option name="HTML_USED" value="false" />
-      <option name="WIDTH" value="400" />
-      <option name="HEIGHT" value="300" />
-      <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
-      <option name="VM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
       <method>
         <option name="AntTarget" enabled="false" />
         <option name="BuildArtifacts" enabled="false" />
@@ -531,25 +449,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="876" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1616" height="876" extended-state="1" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23354839" sideWeight="0.67877096" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32345015" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32122904" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20080863" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23354839" sideWeight="0.67877096" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23548387" sideWeight="0.46361187" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21548387" sideWeight="0.67877096" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21548387" sideWeight="0.67877096" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32345015" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3211876" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32122904" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -601,119 +519,83 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/libiada/EventTheory/Event.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="169" selection-end="169" vertical-scroll-proportion="0.22319475">
-          <folding />
-        </state>
+        <state line="8" column="16" selection-start="169" selection-end="169" vertical-scroll-proportion="0.22319475" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/BaseChain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="21" column="12" selection-start="578" selection-end="578" vertical-scroll-proportion="0.53829324">
-          <folding />
-        </state>
+        <state line="21" column="12" selection-start="578" selection-end="578" vertical-scroll-proportion="0.53829324" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/AuxiliaryInterfaces/IChainDataForCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.1487965">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="118" selection-end="118" vertical-scroll-proportion="0.1487965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/AuxiliaryInterfaces/IDataForCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="0" selection-start="113" selection-end="113" vertical-scroll-proportion="0.1487965">
-          <folding />
-        </state>
+        <state line="4" column="0" selection-start="113" selection-end="113" vertical-scroll-proportion="0.1487965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Characteristic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.297593">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="8" column="0" selection-start="329" selection-end="329" vertical-scroll-proportion="0.297593" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/IntervalsCount.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="36" selection-start="461" selection-end="461" vertical-scroll-proportion="0.18599562">
-          <folding />
-        </state>
+        <state line="10" column="36" selection-start="461" selection-end="461" vertical-scroll-proportion="0.18599562" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/AuxiliaryInterfaces/ICharacteristicCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="197" selection-end="197" vertical-scroll-proportion="0.1487965">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="197" selection-end="197" vertical-scroll-proportion="0.1487965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/CharacteristicsFactory.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="9" column="16" selection-start="418" selection-end="418" vertical-scroll-proportion="0.22319475">
-          <folding />
-        </state>
+        <state line="9" column="16" selection-start="418" selection-end="418" vertical-scroll-proportion="0.22319475" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/LinkUp.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.07439825">
-          <folding />
-        </state>
+        <state line="2" column="0" selection-start="35" selection-end="35" vertical-scroll-proportion="0.07439825" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/UniformChain.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="0" selection-start="261" selection-end="261" vertical-scroll-proportion="0.22319475">
-          <folding />
-        </state>
+        <state line="6" column="0" selection-start="261" selection-end="261" vertical-scroll-proportion="0.22319475" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/GeometricMiddling.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.1487965">
-          <folding />
-        </state>
+        <state line="8" column="0" selection-start="356" selection-end="356" vertical-scroll-proportion="0.1487965" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/Statistics/DictionaryEntryBase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="168" selection-end="168" vertical-scroll-proportion="0.14847161">
-          <folding />
-        </state>
+        <state line="8" column="16" selection-start="168" selection-end="168" vertical-scroll-proportion="0.14847161" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/AverageRemoteness.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.074235804">
-          <folding />
-        </state>
+        <state line="3" column="0" selection-start="102" selection-end="102" vertical-scroll-proportion="0.074235804" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/ChainWithCharacteristic.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="12" selection-start="1937" selection-end="1937" vertical-scroll-proportion="0.22125182">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
+        <state line="56" column="12" selection-start="1937" selection-end="1937" vertical-scroll-proportion="0.22125182" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/Statistics/FrequencyList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="17" selection-start="836" selection-end="836" vertical-scroll-proportion="1.0787746">
-          <folding />
-        </state>
+        <state line="34" column="17" selection-start="836" selection-end="836" vertical-scroll-proportion="1.0787746" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/Tree.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="7" selection-start="52" selection-end="52" vertical-scroll-proportion="0.07439825">
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state line="14" column="29" selection-start="262" selection-end="262" vertical-scroll-proportion="0.3216885">
+          <folding />
         </state>
       </provider>
     </entry>
