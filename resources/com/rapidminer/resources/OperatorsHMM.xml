@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<operators name="hmm" version="5.0" docbundle="com/rapidminer/resources/i18n/OperatorsDocHMM">
+    <group key="">
+        <group key="interval analysis">
+            <operator>
+                <key>average remoteness</key>
+                <class>interval_analysis.AverageRemoteness</class>
+            </operator>
+            <operator>
+                <key>chain reader</key>
+                <class>interval_analysis.chain.ChainReader</class>
+            </operator>
+            <operator>
+                <key>buildings generator</key>
+                <class>interval_analysis.chain.BuildingsGenerator</class>
+            </operator>
+        </group>
+        <group key="modeling">
+            <icon>chart_line.png</icon>
+            <group key="HMM">
+                <icon>symbol_percent.png</icon>
+                <operator>
+                    <key>hmm_learner</key>
+                    <class>cz.cuni.amis.rapidminer.operator.hmm.HMMLearner</class>
+                    <replaces>ForecastingPerformance</replaces>
+                </operator>
+                <operator>
+                    <key>hmm_baum_welch</key>
+                    <class>cz.cuni.amis.rapidminer.operator.hmm.BaumWelch</class>
+                </operator>
+                <operator>
+                    <key>hmm_kmeans</key>
+                    <class>cz.cuni.amis.rapidminer.operator.hmm.KMeans</class>
+                </operator>
+                <operator>
+                    <key>hmm_modifier</key>
+                    <class>cz.cuni.amis.rapidminer.operator.hmm.HMMDistributionModifier</class>
+                </operator>
+
+                <operator>
+                    <key>hmm_ensamble_learner</key>
+                    <class>cz.cuni.amis.rapidminer.operator.hmm.KullbackLeiblerDistance</class>
+                </operator>
+
+                <operator>
+                    <key>hmm_kl_distance</key>
+                    <class>cz.cuni.amis.rapidminer.operator.hmm.HMMEnsambleLearner</class>
+                </operator>
+
+
+                <group key="util">
+                    <operator>
+                        <key>markov_sequence_generator</key>
+                        <class>cz.cuni.amis.rapidminer.operator.hmm.generator.MarkovSequenceGenerator</class>
+                    </operator>
+                    <operator>
+                        <key>jahmm_reader</key>
+                        <class>cz.cuni.amis.rapidminer.operator.hmm.io.JAHMMReader</class>
+                    </operator>
+                    <operator>
+                        <key>jahmm_writer</key>
+                        <class>cz.cuni.amis.rapidminer.operator.hmm.io.JAHMMWriter</class>
+                    </operator>
+                </group>
+                
+                <group key="meta">
+                    <operator>
+                        <key>layered_meta</key>
+                        <class>cz.cuni.amis.rapidminer.operator.learner.meta.LayeredModelLearner</class>
+                    </operator>
+                    
+                </group>
+            </group>
+        </group>
+    </group>
+</operators>

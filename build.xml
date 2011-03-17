@@ -1,0 +1,49 @@
+<project name="RapidMiner_Plugin_HMM_Vega" default="install">
+        <description>Build file for the RapidMiner HMM Extension</description>
+
+        <property name="rm.dir" location="/home/alex/Downloads/rapidminer" />
+
+        <property name="build.build" location="build" />
+        <property name="build.resources" location="resources" />
+        <property name="build.lib" location="lib" />
+
+        <property name="check.sources" location = "src" />
+
+        <property name="javadoc.targetDir" location="javadoc" />
+
+        <property name="extension.name" value="HMM" />
+        <property name="extension.name.long" value="RapidMiner Hidden Markov Model" />
+        <property name="extension.namespace" value="hmm" />
+        <property name="extension.vendor" value="AMIS" />
+        <property name="extension.admin" value="Rudolf Kadlec" />
+        <property name="extension.url" value="http://artemis.ms.mff.cuni.cz" />
+
+
+        <property name="extension.needsVersion" value="5.0" />
+        <property name="extension.dependencies" value="" />
+
+        <property name="extension.initClass" value="cz.cuni.amis.rapidminer.PluginInitHMM" />
+        <property name="extension.objectDefinition" value="/com/rapidminer/resources/ioobjectsHMM.xml" />
+        <property name="extension.operatorDefinition" value="/com/rapidminer/resources/OperatorsHMM.xml" />
+        <property name="extension.parseRuleDefinition" value="/com/rapidminer/resources/parserulesHMM.xml" />
+        <property name="extension.groupProperties" value="/com/rapidminer/resources/groupsHMM.properties" />
+        <property name="extension.errorDescription" value="/com/rapidminer/resources/i18n/ErrorsHMM.properties" />
+        <property name="extension.userErrors" value="/com/rapidminer/resources/i18n/UserErrorMessagesHMM.properties" />
+        <property name="extension.guiDescription" value="/com/rapidminer/resources/i18n/GUIHMM.properties" />
+
+
+        <!-- Src files -->
+        <path id="build.sources.path">
+                <dirset dir="src">
+                        <include name="**" />
+                </dirset>
+        </path>
+        <fileset dir="src" id="build.sources">
+                <include name="**/*.java" />
+        </fileset>
+        <fileset id="build.dependentExtensions" dir="..">
+        <exclude name="**/*"/>
+        </fileset>
+
+        <import file="${rm.dir}/build_extension.xml" />
+</project>

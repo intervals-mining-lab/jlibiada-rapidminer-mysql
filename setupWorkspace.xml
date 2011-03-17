@@ -1,0 +1,24 @@
+
+<project name="HMM setup" default="install">
+    <description>Prepares workspace</description>
+
+    <target name="checkout-rm">
+        <!-- Downloads RM sources. Simplifies the creation of devel environment. !-->
+        <exec executable="svn">
+            <arg value="checkout"/>
+            <arg value="https://rapidminer.svn.sourceforge.net/svnroot/rapidminer/Vega"/>
+            <arg value="../rapidminer"/>
+        </exec>
+
+    </target>
+
+    <target name="install" depends="checkout-rm"/>
+
+    <target name="update-rm">
+        <exec executable="svn">
+            <arg value="update"/>
+            <arg value="../rapidminer"/>
+        </exec>
+        <ant dir="../rapidminer/" target="build"/>
+    </target>
+</project>

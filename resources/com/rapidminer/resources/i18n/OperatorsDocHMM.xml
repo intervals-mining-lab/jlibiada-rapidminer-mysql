@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="windows-1252" standalone="no"?>
+<operatorHelp lang="en_EN">
+    <operator>
+        <name>HMM Learner</name>
+        <synopsis>Learns the structure of HMM from list of (state, observation) pairs.</synopsis>
+        <help>Learns the structure of HMM from list of (state, observation) pairs. 
+        State is taken from attribute 'label', observation is from atribute 'cluster'.
+        Input to the learning process
+        are data that maps sequence of hidden states to sequence of observations. In case
+        that this mapping is unknown and user knows only a number of states and has
+        the sequence of observations then Baum-Welch or EM algorithms are applicable.
+        By default all states will have uniform probability of being the initial state.</help>
+        <key>hmm_learner</key>
+    </operator>
+
+    <operator>
+        <name>HMM Ensamble Learner</name>
+        <synopsis>TODO Learns the structure of HMM from list of (state, observation) pairs.</synopsis>
+        <help>TODO Learns the structure of HMM from list of (state, observation) pairs. 
+        State is taken from attribute 'label', observation is from atribute 'cluster'.
+        Input to the learning process
+        are data that maps sequence of hidden states to sequence of observations. In case
+        that this mapping is unknown and user knows only a number of states and has
+        the sequence of observations then Baum-Welch or EM algorithms are applicable.
+        By default all states will have uniform probability of being the initial state.</help>
+        <key>hmm_ensamble_learner</key>
+    </operator>
+
+
+    <operator>
+        <name>HMM Baum-Welch Learner</name>
+        <synopsis>Learns the structure of HMM from list of observations.</synopsis>
+        <help>Learns the structure of HMM from list of observations. Input to the learning process is
+        some initial aproximation of the HMM and sequence of observations. Assignemnt of states
+        isn't needed. Baum-Welch algorithm is sometimes mentioned as EM algorithm.</help>
+        <key>hmm_baum_welch</key>
+    </operator>
+
+    <operator>
+        <name>HMM KMeans Learner</name>
+        <synopsis>Learns the structure of HMM from the data.</synopsis>
+        <help>Learns the structure of HMM from the data. Input to the learning process is
+        number of states of the HMM and sequence of observations. Assignemnt of states
+        isn't needed.</help>
+        <key>hmm_kmeans</key>
+    </operator>
+
+
+    <operator>
+        <name>HMM Transition Modifier</name>
+        <synopsis>Modifies probability of state transitions.</synopsis>
+        <help>Modifies probability of state transitions. Can be used to avoid fitting
+        model only to the training data and thus limiting it's generalization.</help>
+        <key>hmm_modifier</key>
+    </operator>
+
+
+
+ <operator>
+        <name>Markov Sequence Generator</name>
+        <synopsis>Generates sequences according to given HMM.</synopsis>
+        <help>Generates sequences according to given HMM.</help>
+        <key>markov_sequence_generator</key>
+    </operator>
+
+ <operator>
+        <name>JAHMM Model Reader</name>
+        <synopsis>Loads JAHMM model specification.</synopsis>
+        <help>Loads JAHMM model specification. This operator reads native JAHMM
+        file format. HMM model can be also read from standard RapidMiner serialization
+        operator - Reader, when previously stored by standard Writer.</help>
+        <key>jahmm_reader</key>
+    </operator>
+
+     <operator>
+        <name>JAHMM Model Writer</name>
+        <synopsis>Stores HMM in native JAHMM model specification.</synopsis>
+        <help>This operator storess native JAHMM
+        file format. HMM model can be also stored by standard RapidMiner deserialization
+        operator - Writer.</help>
+        <key>jahmm_writer</key>
+    </operator>
+
+<operator>
+        <name>Kullback Leibler Distance</name>
+        <synopsis>Computes Kullback Leibler distance of two HMMs.</synopsis>
+        <help>Computes Kullback Leibler distance of two HMMs.</help>
+        <key>hmm_ensamble_learner</key>
+    </operator>
+
+
+       <operator>
+        <name>Layered</name>
+        <synopsis>TODO</synopsis>
+        <help>TODO.</help>
+        <key>layered_meta</key>
+    </operator>
+
+</operatorHelp>

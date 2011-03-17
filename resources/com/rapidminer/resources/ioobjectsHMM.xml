@@ -1,0 +1,25 @@
+
+<ioobjects>
+
+    <ioobject
+        name="Hidden Markov Model"
+        class="cz.cuni.amis.rapidminer.operator.hmm.model.HMMModel"
+        reportable="true">
+        <renderer>com.rapidminer.gui.renderer.DefaultTextRenderer</renderer>
+        <renderer>cz.cuni.amis.rapidminer.gui.renderer.hmm.HMMGraphRenderer</renderer>
+    </ioobject>
+
+    <ioobject
+        name="Hidden Markov Model Ensamble"
+        class="cz.cuni.amis.rapidminer.operator.hmm.model.HMMModel"
+        reportable="true">
+        <renderer>com.rapidminer.gui.renderer.DefaultTextRenderer</renderer>
+    </ioobject>
+
+    <ioobject
+        name="Kullback Leibler Distance Result"
+        class="cz.cuni.amis.rapidminer.operator.hmm.KLDistanceResult"
+        reportable="true">
+        <renderer>com.rapidminer.gui.renderer.DefaultTextRenderer</renderer>
+    </ioobject>
+</ioobjects>
