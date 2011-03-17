@@ -8,7 +8,7 @@ import libiada.Root.SimpleTypes.ValueChar;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: пїЅпїЅпїЅпїЅпїЅпїЅ
  * Date: 11.12.2010
  * Time: 1:22:23
  * To change this template use File | Settings | File Templates.
@@ -16,6 +16,10 @@ import libiada.Root.SimpleTypes.ValueChar;
 public class BaseChain extends Space implements IBaseObject {
     public BaseChain(int length) throws Exception {
         ClearAndSetNewLength(length);
+    }
+
+    public BaseChain() throws Exception {
+        super();
     }
 
     public void add(IBaseObject baseObject, int index) throws Exception {
@@ -43,7 +47,7 @@ public class BaseChain extends Space implements IBaseObject {
     {
         if (length <= 0)
         {
-            throw new Exception("Длинна цепи <= 0");
+            throw new Exception("пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ <= 0");
         }
         deleteDimentions();
         addDimension(new Dimension(0, length - 1));

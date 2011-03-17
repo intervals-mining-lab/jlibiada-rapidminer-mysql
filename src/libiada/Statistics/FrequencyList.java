@@ -9,10 +9,9 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ������
+ * User: Алексей
  * Date: 11.12.2010
  * Time: 1:47:53
- * To change this template use File | Settings | File Templates.
  */
 public class FrequencyList extends Alphabet implements IBaseObject {
     private ArrayList<Long> pFrequency = new ArrayList<Long>();
@@ -20,22 +19,20 @@ public class FrequencyList extends Alphabet implements IBaseObject {
     @Override
     public IBaseObject get(int index)
     {
-        return (IBaseObject) new DictionaryEntryBase(((IBaseObject) vault.get(index)).Clone(), new ValueInt(pFrequency.get(index)));
+        return new DictionaryEntryBase(((IBaseObject) vault.get(index)).Clone(), new ValueInt(pFrequency.get(index)));
     }
 
+    @Override
     public IBaseObject Clone() {
-        FrequencyList FLNew = new FrequencyList();
-        FLNew.vault = (ArrayList) vault.clone();
-        FLNew.pFrequency = (ArrayList) pFrequency.clone();
-        return FLNew;
+        return null;  //TODO: "Заполнить метод"
     }
 
     public boolean Equals(Object obj) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        return false;  //TODO: "Заполнить метод"
     }
 
     public IBin GetBin() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "Заполнить метод"
     }
 
     public int getCount() {

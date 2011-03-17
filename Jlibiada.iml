@@ -37,6 +37,17 @@
     <orderEntry type="library" name="luaJava" level="project" />
     <orderEntry type="library" name="jython" level="project" />
     <orderEntry type="library" name="apach-math" level="project" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.8.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="library" name="Rapidminer" level="project" />
+    <orderEntry type="library" name="HMM" level="project" />
   </component>
 </module>
 

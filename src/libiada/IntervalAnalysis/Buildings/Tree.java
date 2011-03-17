@@ -8,7 +8,6 @@ import java.util.*;
  * User: alex
  * Date: 2/23/11
  * Time: 3:47 AM
- * To change this template use File | Settings | File Templates.
  */
 public class Tree {
     Node root = null;

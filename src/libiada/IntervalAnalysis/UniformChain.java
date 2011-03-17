@@ -4,16 +4,14 @@ import libiada.EventTheory.Place;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
 import libiada.IntervalAnalysis.Characteristics.Characteristic;
 import libiada.Root.IBaseObject;
-import libiada.Root.SimpleTypes.ValueChar;
 import libiada.Root.ValueInt;
 import libiada.Statistics.FrequencyList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 11.12.2010
  * Time: 1:39:23
- * To change this template use File | Settings | File Templates.
  */
 public class UniformChain extends ChainWithCharacteristic implements IBaseObject {
     public UniformChain(int length, IBaseObject message) throws Exception {

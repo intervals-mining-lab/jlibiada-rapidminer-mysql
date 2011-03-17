@@ -5,10 +5,9 @@ import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 11.12.2010
  * Time: 2:04:45
- * To change this template use File | Settings | File Templates.
  */
 public class ValueChar implements IBaseObject {
     public char value = '_';

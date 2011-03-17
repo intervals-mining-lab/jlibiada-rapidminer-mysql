@@ -6,10 +6,9 @@ import libiada.Root.ValueInt;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 25.01.2011
  * Time: 20:25:02
- * To change this template use File | Settings | File Templates.
  */
 public class DictionaryEntryBase implements IBaseObject {
     private IBaseObject key;

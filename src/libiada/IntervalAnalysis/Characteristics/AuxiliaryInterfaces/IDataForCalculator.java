@@ -4,10 +4,9 @@ import libiada.Statistics.FrequencyList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»Πµ
  * Date: 11.12.2010
  * Time: 1:43:35
- * To change this template use File | Settings | File Templates.
  */
 public interface IDataForCalculator {
     FrequencyList getCommonIntervals() throws Exception;

@@ -6,7 +6,7 @@ import libiada.Root.ValueInt;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: РђР»РµРєСЃРµР№
  * Date: 30.11.2010
  * Time: 9:08:58
  * To change this template use File | Settings | File Templates.
@@ -50,15 +50,15 @@ public class Event extends Space implements IBaseObject {
     }
 
     ///<summary>
-    /// Получить правило для места Key.
-    /// Key должно принадлежать данному событию, иначе вызывается исключение.
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ Key.
+    /// Key пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ.
     ///</summary>
     ///<param name="Key"></param>
     ///<returns></returns>
     public ReadRule getFromReadRule(Place key) throws Exception {
         if (key == null)
         {
-            throw new NullPointerException("Параметр ключ передан как пустой объект");
+            throw new NullPointerException("пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         }
         return null;
     }

@@ -10,14 +10,12 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: РђР»РµРєСЃРµР№
  * Date: 18.11.2010
  * Time: 0:27:58
- * To change this template use File | Settings | File Templates.
  */
 public class testPlaceTest extends TestCase {
     @Test
-    //Тестирует конструктор если передано null пространство
     public void testConstructorNull()
     {
         try
@@ -27,12 +25,10 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-            return;
         }
     }
 
     @Test
-    //Тестирует конструктор если передано пустое пространство
     public void testConstructorFreeSpace()
     {
         try
@@ -42,12 +38,10 @@ public class testPlaceTest extends TestCase {
         }
         catch (Exception e)
         {
-            return;
         }
     }
 
     @Test
-    //Тестирует конструктор если передаем протранство содержащее одно и тоже измерение > 1 раза
     public void testConstructorBrokenSpace()
     {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
@@ -67,7 +61,6 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    //Тестирует конструктор и передачу второго измерения > первого
     public void testConstructorFirstDimensionLess() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
         Ar.add(new Dimension(-50, -48));
@@ -78,7 +71,6 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    //Тестирует конструктор и передачу второго измерения < первого
     public void testConstructorSecondDimensionLess() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
         Ar.add(new Dimension(-50, 150));
@@ -89,7 +81,6 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    //Тестирует конструктор и передачу второго измерения равного первому
     public void testConstructorDimensionsEquals() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
         Ar.add(new Dimension(0, 150));
@@ -100,7 +91,6 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    //Тестирует если передаем не пространство(один из элеметов не измерение)
     public void testConstructorNotAllAreDimension()
     {
         ArrayList Ar = new ArrayList();
@@ -123,7 +113,6 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    //Тестирует ситуацию когда список заданый при создании Place изменится
     public void testtestChangeSpaceAfterCreateSpace() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
         Ar.add(new Dimension(0, 150));
@@ -136,8 +125,7 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    //Тестирует ситуацию когда пытаемся установит знаение измерению имеющему индекс больше чем размерность
-     public void testSetValueIndexGreateThanMax() throws Exception {
+    public void testSetValueIndexGreateThanMax() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
         Ar.add(new Dimension(0, 10));
         Place Pl = new Place(Ar);
@@ -150,10 +138,9 @@ public class testPlaceTest extends TestCase {
         {
             return;
         }
-     }
+    }
 
-     @Test
-    //Тестирует ситуацию когда пытаемся установит знаение измерению имеющему индекс меньше 0
+    @Test
     public void testSetValueIndexLessThanZero() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
         Ar.add(new Dimension(0, 10));
@@ -170,7 +157,6 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    //Тестирует ситуацию когда пытаемся установит знаение меньше минимальной границы на которой определено измерение
     public void testSetValueLessThanMin() throws Exception {
         ArrayList Ar = new ArrayList();
         Ar.add(new Dimension(0, 10));
@@ -187,7 +173,6 @@ public class testPlaceTest extends TestCase {
     }
 
     @Test
-    // Тестирует ситуацию когда пытаемся установит знаение больше максимальной границы на которой определено измерение
     public void testSetValueGreateThanMax() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
         Ar.add(new Dimension(0, 10));
@@ -204,7 +189,6 @@ public class testPlaceTest extends TestCase {
         }
     }
 
-    // Тестирует ситуацию когда пытаемся установит знаение равное максимальной границе на которой определено измерение
     @Test
     public void testSetValueEqualsMax() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
@@ -220,7 +204,6 @@ public class testPlaceTest extends TestCase {
         }
     }
 
-    // Тестирует ситуацию когда пытаемся установит знаение равное минимельной границе на которой определено измерение
     @Test
     public void testSetValueEqualsMin() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();
@@ -236,7 +219,6 @@ public class testPlaceTest extends TestCase {
         }
     }
 
-    // Тестирует установку в рабочем режиме
     @Test
     public void TestSetValueInWorkMode() throws Exception {
         ArrayList<Dimension> Ar = new ArrayList<Dimension>();

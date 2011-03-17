@@ -15,7 +15,7 @@ import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: пїЅпїЅпїЅпїЅпїЅпїЅ
  * Date: 11.12.2010
  * Time: 1:18:31
  * To change this template use File | Settings | File Templates.
@@ -26,6 +26,15 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     public Chain(int length) throws Exception {
         super(length);
         pAlphabet.remove(0);
+    }
+
+    public Chain(String s) throws Exception {
+        pAlphabet.remove(0);
+        ClearAndSetNewLength(s.length());
+        for (int i = 0; i < s.length(); i++)
+        {
+            add(new ValueChar(s.charAt(i)), i);
+        }
     }
 
     public UniformChain getIUniformChain(int i) {
@@ -70,6 +79,6 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     }
 
     public ChainWithCharacteristic getUniformChain(IBaseObject baseObject) {
-        return null;  //TODO:"Заполнить метод"
+        return null;  //TODO:"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ"
     }
 }

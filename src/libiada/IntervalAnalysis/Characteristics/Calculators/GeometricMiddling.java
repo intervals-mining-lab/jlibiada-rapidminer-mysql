@@ -8,10 +8,9 @@ import libiada.IntervalAnalysis.UniformChain;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 21.01.2011
  * Time: 22:20:08
- * To change this template use File | Settings | File Templates.
  */
 public class GeometricMiddling implements ICharacteristicCalculator {
     public double calculate(UniformChain pChain, LinkUp Link) throws Exception {

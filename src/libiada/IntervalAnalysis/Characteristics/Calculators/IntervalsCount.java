@@ -9,10 +9,9 @@ import libiada.IntervalAnalysis.UniformChain;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: РђР»РµРєСЃРµР№
  * Date: 21.01.2011
  * Time: 23:00:49
- * To change this template use File | Settings | File Templates.
  */
 public class IntervalsCount implements ICharacteristicCalculator {
     public double calculate(UniformChain pChain, LinkUp link) throws Exception {
@@ -34,7 +33,7 @@ public class IntervalsCount implements ICharacteristicCalculator {
             case Both:
                 return data.getCommonIntervals().getCount() + data.getStartInterval().getCount() + data.getEndInterval().getCount();
             default:
-                throw new Exception("Супер странная ошибка :)");
+                throw new Exception("пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ :)");
         }
     }
 }

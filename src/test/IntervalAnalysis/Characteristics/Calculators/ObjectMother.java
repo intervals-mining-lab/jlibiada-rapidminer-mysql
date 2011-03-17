@@ -6,10 +6,9 @@ import libiada.Root.SimpleTypes.ValueChar;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 21.01.2011
  * Time: 21:38:38
- * To change this template use File | Settings | File Templates.
  */
 public class ObjectMother {
     private ValueChar MessageA = new ValueChar('a');

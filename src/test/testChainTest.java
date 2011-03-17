@@ -10,7 +10,7 @@ import junit.framework.TestCase;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 11.12.2010
  * Time: 1:18:55
  * To change this template use File | Settings | File Templates.

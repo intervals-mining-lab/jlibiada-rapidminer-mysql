@@ -1,6 +1,5 @@
 package libiada.IntervalAnalysis;
 
-import libiada.EventTheory.Event;
 import libiada.EventTheory.Place;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.IDataForCalculator;
@@ -12,10 +11,9 @@ import java.util.Hashtable;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: пїЅпїЅпїЅпїЅпїЅпїЅ
  * Date: 11.12.2010
  * Time: 1:37:02
- * To change this template use File | Settings | File Templates.
  */
 public abstract class ChainWithCharacteristic extends BaseChain implements IDataForCalculator, IBaseObject {
     protected Hashtable CharacteristicSnapshot;
@@ -29,6 +27,10 @@ public abstract class ChainWithCharacteristic extends BaseChain implements IData
         pIntervals = new FrequencyList();
         startinterval = new FrequencyList();
         endinterval = new FrequencyList();
+    }
+
+    public ChainWithCharacteristic() throws Exception {
+        super();
     }
 
     public FrequencyList getCommonIntervals() throws Exception {

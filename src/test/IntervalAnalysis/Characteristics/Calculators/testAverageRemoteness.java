@@ -12,7 +12,7 @@ import test.IntervalAnalysis.Characteristics.Calculators.ObjectMother;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: пїЅпїЅпїЅпїЅпїЅпїЅ
  * Date: 21.01.2011
  * Time: 21:00:35
  * To change this template use File | Settings | File Templates.

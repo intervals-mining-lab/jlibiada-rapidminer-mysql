@@ -7,13 +7,12 @@ import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: РђР»РµРєСЃРµР№
  * Date: 17.11.2010
  * Time: 23:43:24
  * To change this template use File | Settings | File Templates.
  */
 public class testDimensionTest extends TestCase {
-    //Тест проверяющий корректность отношения эквивалентности
     @Test
     public void testEquals()
     {
@@ -25,7 +24,6 @@ public class testDimensionTest extends TestCase {
         assertTrue(d1.equalsAsDimension(d1));
     }
 
-    //Тест проверяющий корректность конструктора
     @Test
     public void testConstructor()
     {
@@ -37,7 +35,6 @@ public class testDimensionTest extends TestCase {
         assertFalse(d1.equalsAsDimension(d2));
     }
 
-    //Тест проверяющий корректность отношения порядка
     @Test
     public void testCom()
     {
@@ -47,7 +44,6 @@ public class testDimensionTest extends TestCase {
         assertFalse(d.equalsAsDimension(new Dimension(-10, -3)));
     }
 
-    //Тест проверяющий корректность получения максимальной и минимальной границы области опрделения
     @Test
     public void testMaxMin()
     {
@@ -56,7 +52,6 @@ public class testDimensionTest extends TestCase {
         assertEquals(d.getMin(), -155);
     }
 
-    //Тест проверяющий корректность длинны области определения
     @Test
     public void testLength()
     {
@@ -64,7 +59,6 @@ public class testDimensionTest extends TestCase {
         assertEquals(d.getLength(), (d.getMax() - d.getMin() + 1));
     }
 
-    // Тестирует Клонирование
     @Test
     public void testClone()
     {

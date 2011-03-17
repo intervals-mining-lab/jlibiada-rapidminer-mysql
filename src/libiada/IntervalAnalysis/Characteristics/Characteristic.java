@@ -3,16 +3,14 @@ package libiada.IntervalAnalysis.Characteristics;
 import libiada.IntervalAnalysis.Chain;
 import libiada.IntervalAnalysis.ChainWithCharacteristic;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
-import libiada.IntervalAnalysis.Characteristics.Calculators.AverageRemoteness;
 import libiada.IntervalAnalysis.LinkUp;
 import libiada.IntervalAnalysis.UniformChain;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: РђР»РµРєСЃРµР№
  * Date: 21.01.2011
  * Time: 21:11:51
- * To change this template use File | Settings | File Templates.
  */
 public class Characteristic {
     private boolean Calculated = false;
@@ -59,7 +57,7 @@ public class Characteristic {
             case Both:
                 return pBothValue;
             default:
-                throw new Exception("Так быть не должно");
+                throw new Exception("пїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ");
         }
     }
 }

@@ -7,10 +7,9 @@ import libiada.IntervalAnalysis.Characteristics.Calculators.IntervalsCount;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ΐλεκρε
+ * User: ΠΠ»ΠµΠΊΡΠµΠΉ
  * Date: 21.01.2011
  * Time: 22:18:10
- * To change this template use File | Settings | File Templates.
  */
 public class CharacteristicsFactory {
     public static ICharacteristicCalculator getDeltaG() {
