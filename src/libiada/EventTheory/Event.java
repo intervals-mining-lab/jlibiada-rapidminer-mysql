@@ -2,6 +2,7 @@ package libiada.EventTheory;
 
 import libiada.Root.IBaseObject;
 import libiada.Root.IBin;
+import libiada.Root.SimpleTypes.ValueInt;
 
 /**
  * Created by IntelliJ IDEA.

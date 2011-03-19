@@ -46,5 +46,12 @@
         <exclude name="**/*"/>
         </fileset>
 
+
+        <taskdef resource="${build.lib}/net/sf/antcontrib/antlib.xml">
+		    <classpath>
+			    <pathelement location="c:/workspaceRM5/RapidMiner_Vega/lib/ant/ant-contrib-1.0b3.jar" />
+		    </classpath>
+        </taskdef>
+
         <import file="${rm.dir}/build_extension.xml" />
 </project>
