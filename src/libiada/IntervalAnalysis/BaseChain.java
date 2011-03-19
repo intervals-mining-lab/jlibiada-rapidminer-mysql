@@ -8,10 +8,9 @@ import libiada.Root.SimpleTypes.ValueChar;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ������
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:22:23
- * To change this template use File | Settings | File Templates.
  */
 public class BaseChain extends Space implements IBaseObject {
     public BaseChain(int length) throws Exception {
@@ -43,22 +42,22 @@ public class BaseChain extends Space implements IBaseObject {
     }
 
     public IBaseObject Clone() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 
     public boolean Equals(Object obj) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        return false;  //TODO: "????????? ?????"
     }
 
     public IBin GetBin() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 
     public void ClearAndSetNewLength(int length) throws Exception
     {
         if (length <= 0)
         {
-            throw new Exception("������ ���� <= 0");
+            throw new Exception("Chain length <= 0");
         }
         deleteDimentions();
         addDimension(new Dimension(0, length - 1));

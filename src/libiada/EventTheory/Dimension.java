@@ -5,7 +5,7 @@ import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексе
+ * User: Alex
  * Date: 17.11.2010
  * Time: 23:43:24
  * To change this template use File | Settings | File Templates.
@@ -25,7 +25,6 @@ public class Dimension implements IBaseObject {
             {
                 System.out.print("-------------------------------------------------------------------------");
                 System.out.print("Warning: " + this.getClass() + " creating min > max");
-                System.out.print("Предупреждение: " + this.getClass() + " при создании min > max");
                 System.out.print("-------------------------------------------------------------------------");
                 pmin = max;
                 pmax = min;

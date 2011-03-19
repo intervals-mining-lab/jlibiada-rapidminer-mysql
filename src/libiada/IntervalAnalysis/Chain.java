@@ -15,10 +15,9 @@ import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ������
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:18:31
- * To change this template use File | Settings | File Templates.
  */
 public class Chain extends ChainWithCharacteristic implements IChainDataForCalculator, IBaseObject {
     private ArrayList<UniformChain> pUniformChains = new ArrayList<UniformChain>();
@@ -79,6 +78,6 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     }
 
     public ChainWithCharacteristic getUniformChain(IBaseObject baseObject) {
-        return null;  //TODO:"��������� �����"
+        return null;  //TODO:"Fill method"
     }
 }

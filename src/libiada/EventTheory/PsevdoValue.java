@@ -5,7 +5,7 @@ import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 23.01.2011
  * Time: 17:13:20
  */

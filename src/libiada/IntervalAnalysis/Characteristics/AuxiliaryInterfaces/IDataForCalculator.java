@@ -4,7 +4,7 @@ import libiada.Statistics.FrequencyList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Але
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:43:35
  */

@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:49:09
  */
@@ -21,11 +21,11 @@ public class Alphabet {
     public int add(IBaseObject value) throws Exception {
         if (vault.contains((value)))
         {
-            throw new Exception("Повторное добавление объекта в алфавит");
+            throw new Exception("????????? ?????????? ??????? ? ???????");
         }
         if (value == null)
         {
-            throw new Exception("Попытка добавить нулевой объект в алфавит");
+            throw new Exception("??????? ???????? ??????? ?????? ? ???????");
         }
         IBaseObject obj = value.Clone();
         vault.add(obj);

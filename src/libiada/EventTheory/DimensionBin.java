@@ -8,7 +8,7 @@ import libiada.Root.IBin;/*
 
 /**
  *
- * @author Алексе
+ * @author Alex
  */
 public class DimensionBin implements IBin {
     private long max;
@@ -23,7 +23,7 @@ public class DimensionBin implements IBin {
     }
 
     public IBaseObject GetInstance() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 
     public void setMin(long min) {

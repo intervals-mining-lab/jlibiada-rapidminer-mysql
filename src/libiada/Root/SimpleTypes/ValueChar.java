@@ -5,7 +5,7 @@ import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 11.12.2010
  * Time: 2:04:45
  */
@@ -17,7 +17,7 @@ public class ValueChar implements IBaseObject {
     }
 
     public IBaseObject Clone() {
-        return new ValueChar(value);  //To change body of implemented methods use File | Settings | File Templates.
+        return new ValueChar(value);
     }
 
     public boolean Equals(Object obj) {
@@ -37,6 +37,6 @@ public class ValueChar implements IBaseObject {
     }
 
     public IBin GetBin() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 }

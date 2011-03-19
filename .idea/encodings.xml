@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+    <file url="file://$PROJECT_DIR$/src/Main.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/Dimension.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/DimensionBin.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/Event.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/AverageRemoteness.java" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/src/libiada/TheoryOfSet/Alphabet.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/Place.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/PsevdoValue.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/ReadRule.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/Space.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/BaseChain.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/Node.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/Tree.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Chain.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/ChainWithCharacteristic.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/AuxiliaryInterfaces/IChainDataForCalculator.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/AuxiliaryInterfaces/ICharacteristicCalculator.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/AuxiliaryInterfaces/IDataForCalculator.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/AverageRemoteness.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/Gamut.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/GeometricMiddling.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Calculators/IntervalsCount.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/Characteristic.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/CharacteristicsFactory.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/LinkUp.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/UniformChain.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/Root" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/Root/IBaseObject.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/Root/IBin.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/Root/SimpleTypes/ValueChar.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/Root/SimpleTypes/ValueInt.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/Statistics/DictionaryEntryBase.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/Statistics/FrequencyList.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/TheoryOfSet/Alphabet.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/EventTheory/testDimensionTest.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/EventTheory/testEventTest.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/EventTheory/testPlaceTest.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/IntervalAnalysis/Characteristics/Calculators/ObjectMother.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/IntervalAnalysis/Characteristics/Calculators/testAverageRemoteness.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/IntervalAnalysis/testChainTest.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/test/testChainTest.java" charset="windows-1252" />
   </component>
 </project>
 

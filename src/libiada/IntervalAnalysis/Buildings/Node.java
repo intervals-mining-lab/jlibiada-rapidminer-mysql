@@ -4,10 +4,9 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: alex
+ * User: Alex
  * Date: 2/23/11
  * Time: 3:48 AM
- * To change this template use File | Settings | File Templates.
  */
 public class Node {
     private ArrayList<Node> childNodes = new ArrayList<Node>();
@@ -20,7 +19,6 @@ public class Node {
     }
 
     public void addClildNodes(int len, int alphPower) {
-        //Если мы дошли до листьев дерева (глубина позволяет построить все строи заданной длинны)
         if (len <= 1)
             return;
         for (int i = 1; i <= maxInPathFromRootToChild + 1; i++) {

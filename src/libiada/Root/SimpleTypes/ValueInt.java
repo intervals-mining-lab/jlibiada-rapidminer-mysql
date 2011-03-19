@@ -5,10 +5,9 @@ import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ������
+ * User: Alex
  * Date: 30.11.2010
  * Time: 10:11:33
- * To change this template use File | Settings | File Templates.
  */
 public class ValueInt implements IBaseObject {
     private long value;
@@ -18,7 +17,7 @@ public class ValueInt implements IBaseObject {
     }
 
     public IBaseObject Clone() {
-        return new ValueInt(value);  //To change body of implemented methods use File | Settings | File Templates.
+        return new ValueInt(value);
     }
 
     public boolean Equals(Object obj) {
@@ -26,7 +25,7 @@ public class ValueInt implements IBaseObject {
     }
 
     public IBin GetBin() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 
     public long getValue() {

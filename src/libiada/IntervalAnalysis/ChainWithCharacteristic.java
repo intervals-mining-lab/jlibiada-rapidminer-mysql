@@ -11,7 +11,7 @@ import java.util.Hashtable;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ������
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:37:02
  */

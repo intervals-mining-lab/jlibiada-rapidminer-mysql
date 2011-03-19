@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 30.11.2010
  * Time: 9:13:07
  */
@@ -24,7 +24,7 @@ public class Space {
     public void addItem(IBaseObject value, Place place) throws Exception {
         if (value == null)
         {
-            throw new Exception("Попытка добавить нулевой объект к пространству");
+            throw new Exception("??????? ???????? ??????? ?????? ? ????????????");
         }
 
         if (!place.compatibleTo(getPlacePattern()))
@@ -141,7 +141,7 @@ public class Space {
 
     private void refillSpace(ArrayList<Long> temp)
     {
-        //TODO: "������� �������������� ������������"
+        //TODO: "Fill method"
 //        if (temp != null)
 //            {
 //                Array.Copy(temp, vault, temp.GetLength(0));

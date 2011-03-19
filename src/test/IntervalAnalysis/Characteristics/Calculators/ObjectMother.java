@@ -6,7 +6,7 @@ import libiada.Root.SimpleTypes.ValueChar;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 21.01.2011
  * Time: 21:38:38
  */

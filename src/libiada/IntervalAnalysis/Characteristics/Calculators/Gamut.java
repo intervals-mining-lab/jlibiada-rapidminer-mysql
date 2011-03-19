@@ -13,10 +13,9 @@ import libiada.Statistics.FrequencyList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ������
+ * User: Alex
  * Date: 25.01.2011
  * Time: 20:13:46
- * To change this template use File | Settings | File Templates.
  */
 public class Gamut implements ICharacteristicCalculator {
 
@@ -45,7 +44,7 @@ public class Gamut implements ICharacteristicCalculator {
                 return result + Math.log(((ValueInt) ((DictionaryEntryBase)StartInterval.get(0)).getKey()).getValue())/Math.log(2) +
                     Math.log(((ValueInt) ((DictionaryEntryBase)EndInterval.get(0)).getKey()).getValue())/Math.log(2);
             default:
-                throw new Exception("����� �������� ������ :)");
+                throw new Exception("Very strange error :)");
         }
     }
 

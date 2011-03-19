@@ -8,7 +8,7 @@ import libiada.IntervalAnalysis.Characteristics.Calculators.IntervalsCount;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 21.01.2011
  * Time: 22:18:10
  */

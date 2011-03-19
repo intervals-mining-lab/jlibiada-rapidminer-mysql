@@ -8,7 +8,7 @@ import libiada.IntervalAnalysis.UniformChain;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 21.01.2011
  * Time: 21:11:51
  */
@@ -57,7 +57,7 @@ public class Characteristic {
             case Both:
                 return pBothValue;
             default:
-                throw new Exception("��� ���� �� ������");
+                throw new Exception("Very strange error :)");
         }
     }
 }

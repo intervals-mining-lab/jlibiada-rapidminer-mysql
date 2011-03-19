@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:47:53
  */
@@ -27,15 +27,15 @@ public class FrequencyList extends Alphabet implements IBaseObject {
         FrequencyList frecList = new FrequencyList();
         frecList.pFrequency = (ArrayList<Long>) this.pFrequency.clone();
         frecList.vault = (ArrayList) this.vault.clone();
-        return frecList;  //TODO: "Заполнить метод"
+        return frecList;  //TODO: "????????? ?????"
     }
 
     public boolean Equals(Object obj) {
-        return false;  //TODO: "Заполнить метод"
+        return false;  //TODO: "????????? ?????"
     }
 
     public IBin GetBin() {
-        return null;  //TODO: "Заполнить метод"
+        return null;  //TODO: "????????? ?????"
     }
 
     public int getCount() {

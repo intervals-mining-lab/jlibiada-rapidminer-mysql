@@ -8,11 +8,10 @@ import libiada.IntervalAnalysis.LinkUp;
 import libiada.IntervalAnalysis.UniformChain;
 import org.junit.Before;
 import org.junit.Test;
-import test.IntervalAnalysis.Characteristics.Calculators.ObjectMother;
 
 /**
  * Created by IntelliJ IDEA.
- * User: ������
+ * User: Alex
  * Date: 21.01.2011
  * Time: 21:00:35
  * To change this template use File | Settings | File Templates.

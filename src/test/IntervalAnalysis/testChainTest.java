@@ -5,12 +5,12 @@ import libiada.IntervalAnalysis.ChainWithCharacteristic;
 import libiada.IntervalAnalysis.UniformChain;
 import libiada.Root.SimpleTypes.ValueChar;
 import org.junit.Before;
-import org.testng.annotations.Test;
+import org.junit.Test;
 import junit.framework.TestCase;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:18:55
  */

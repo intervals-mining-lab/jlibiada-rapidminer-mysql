@@ -5,7 +5,7 @@ import libiada.Root.IBin;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 25.01.2011
  * Time: 20:25:02
  */
@@ -39,14 +39,14 @@ public class DictionaryEntryBase implements IBaseObject {
     }
 
     public IBaseObject Clone() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 
     public boolean Equals(Object obj) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        return false;  //TODO: "????????? ?????"
     }
 
     public IBin GetBin() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 }

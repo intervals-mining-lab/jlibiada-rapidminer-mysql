@@ -2,15 +2,13 @@ package test.EventTheory;
 
 import junit.framework.TestCase;
 import libiada.EventTheory.Dimension;
-import libiada.Root.IBaseObject;
 import org.junit.Test;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 17.11.2010
  * Time: 23:43:24
- * To change this template use File | Settings | File Templates.
  */
 public class testDimensionTest extends TestCase {
     @Test

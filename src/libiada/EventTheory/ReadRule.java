@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 30.11.2010
  * Time: 10:20:58
  */
@@ -24,7 +24,7 @@ public class ReadRule {
     }
 
     public ReadRule addRule(ReadRule rule) {
-        return null;  //To change body of created methods use File | Settings | File Templates.
+        return null;  //TODO: "To code method"
     }
 
     public long getCount() {

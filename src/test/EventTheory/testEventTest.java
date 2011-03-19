@@ -7,13 +7,13 @@ import libiada.EventTheory.Place;
 import libiada.EventTheory.ReadRule;
 import libiada.Root.SimpleTypes.ValueInt;
 import org.junit.Before;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.lang.reflect.Array;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 30.11.2010
  * Time: 9:07:22
  */

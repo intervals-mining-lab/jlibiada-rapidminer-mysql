@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Алексе
+ * @author Alex
  */
 public class Place implements IBaseObject
 {
@@ -33,7 +33,7 @@ public class Place implements IBaseObject
                 {
                     if (pDimensions.contains(dimensions.get(i)))
                     {
-                        throw  new Exception("Ошибка данных. Битое пространство");
+                        throw  new Exception("?????? ??????. ????? ????????????");
                     }
                     pValues.add(dimensions.get(i).getMin());
                     pDimensions.add(dimensions.get(i).Clone());
@@ -57,7 +57,7 @@ public class Place implements IBaseObject
     {
         if (value < (((Dimension)pDimensions.get(index)).getMin()) || value > (((Dimension)pDimensions.get(index)).getMax()))
         {
-            throw new Exception("Попытка установить значение выходящие за область определения");
+            throw new Exception("Trying to set the value outside the domain of");
         }
         pValues.set(index, value);
     }
@@ -66,7 +66,7 @@ public class Place implements IBaseObject
     {
         if (Array.getLength(value) != pDimensions.size())
         {
-            throw new Exception("Размерности не совпадают");
+            throw new Exception("Dimensoin sizes is not equals");
         }
 
         for (int i = 0; i < pDimensions.size(); i++)
@@ -78,21 +78,21 @@ public class Place implements IBaseObject
     }
 
     public IBaseObject Clone() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 
     public boolean Equals(Object obj) {
-        return false;  //To change body of implemented methods use File | Settings | File Templates.
+        return false;  //TODO: "????????? ?????"
     }
 
     public IBin GetBin() {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;  //TODO: "????????? ?????"
     }
 
     public boolean compatibleTo(Place pattern) throws Exception {
         if (pattern == null)
         {
-            throw new Exception("Место null");
+            throw new Exception("Place is null");
         }
         if (this == pattern)
         {
@@ -118,7 +118,7 @@ public class Place implements IBaseObject
     {
         if (pDimensions.size() != pValues.size())
         {
-            throw new Exception("Ошибка целостности данных");
+            throw new Exception("Error of data integrity");
         }
         return pDimensions.size();
     }
@@ -127,7 +127,7 @@ public class Place implements IBaseObject
     {
         if (index >= pDimensions.size() || index < 0)
         {
-            throw new Exception("Попытка получить значение не существующего измерения");
+            throw new Exception("Trying to get the value is not an existing demension");
         }
         return pValues.get(index);
     }

@@ -4,7 +4,7 @@ import libiada.IntervalAnalysis.UniformChain;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 11.12.2010
  * Time: 1:38:14
  */

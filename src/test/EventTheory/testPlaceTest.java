@@ -3,14 +3,14 @@ package test.EventTheory;
 import junit.framework.TestCase;
 import libiada.EventTheory.Dimension;
 import libiada.EventTheory.Place;
-import org.testng.annotations.Test;
+import org.junit.Test;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
- * User: Алексей
+ * User: Alex
  * Date: 18.11.2010
  * Time: 0:27:58
  */
