@@ -14,6 +14,10 @@
                 <key>buildings generator</key>
                 <class>interval_analysis.chain.BuildingsGenerator</class>
             </operator>
+            <operator>
+                <key>sampling distribution</key>
+                <class>interval_analysis.chain.SamplingDistribution</class>
+            </operator>
         </group>
         <group key="modeling">
             <icon>chart_line.png</icon>

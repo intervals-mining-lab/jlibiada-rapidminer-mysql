@@ -1,11 +1,10 @@
 package interval_analysis.chain;
 
-import com.rapidminer.example.ExampleSet;
-import com.rapidminer.operator.Operator;
-import com.rapidminer.operator.OperatorDescription;
-import com.rapidminer.operator.OperatorException;
-import com.rapidminer.operator.ports.InputPort;
-import com.rapidminer.operator.ports.OutputPort;
+import com.rapidminer.example.*;
+import com.rapidminer.operator.*;
+import com.rapidminer.operator.ports.*;
+
+import java.util.Iterator;
 
 /**
  * Created by IntelliJ IDEA.
@@ -24,6 +23,14 @@ public class SamplingDistribution extends Operator {
     @Override
     public void doWork() throws OperatorException {
         ExampleSet sample = inPort.getData();
+        Attributes attributes = sample.getAttributes();
+
+        for (Example example : sample) {
+            Iterator<Attribute> attrIter = attributes.allAttributes();
+            while (attrIter.hasNext()) {
+                example.setValue(attrIter.next(), 15.0f);
+            }
+        }
 
         outPort.deliver(sample);
     }

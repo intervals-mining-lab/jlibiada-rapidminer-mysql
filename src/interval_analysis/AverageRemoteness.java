@@ -1,6 +1,7 @@
 package interval_analysis;
 
 import com.rapidminer.example.Attribute;
+import com.rapidminer.example.Example;
 import com.rapidminer.example.ExampleSet;
 import com.rapidminer.example.ExampleSetFactory;
 import com.rapidminer.example.table.AttributeFactory;
@@ -36,25 +37,22 @@ public class AverageRemoteness extends Operator {
     public void doWork() throws OperatorException {
         RMChainSet chains = inChain.getData(RMChainSet.class);
 
-        double[][] values = new double[chains.getCount()][1];
+        double[][] values = new double[chains.getCount()][3];
         for (int i = 0; i < chains.getCount(); i++) {
             try {
-                values[i][0] = chains.get(i).getCharacteristic(LinkUp.Start, CharacteristicsFactory.getDeltaG());
+                values[i][0] = (double)i;
+                values[i][1] = 1.0;//Double.parseDouble(chains.get(i).toString());
+                values[i][2] = chains.get(i).getCharacteristic(LinkUp.Start, CharacteristicsFactory.getDeltaG());
             } catch (Exception e) {
                 Logger.getLogger(AverageRemoteness.class.getName()).log(Level.SEVERE, "It is not impossible to recive average remoteness", e);
             }
         }
         ExampleSet outSet = ExampleSetFactory.createExampleSet(values);
-        Attribute attrChain = AttributeFactory.createAttribute("Chain", Ontology.STRING);
-        outSet.getAttributes().get("att1").setName("g");
-        outSet.getAttributes().addRegular(attrChain);
-        /*
-        int i = 0;
-        for (Example example: outSet) {
-            //example.setValue(attrChain, chains.get(i).toString());
-            i++;
-        }
-        */
+
+        outSet.getAttributes().get("att1").setName("Number");
+        outSet.getAttributes().get("att2").setName("Chain");
+        outSet.getAttributes().get("att3").setName("g");
+
         outValue.deliver(outSet);
     }
 }
