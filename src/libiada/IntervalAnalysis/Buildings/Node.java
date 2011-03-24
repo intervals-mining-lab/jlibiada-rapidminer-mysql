@@ -28,6 +28,20 @@ public class Node {
         }
     }
 
+    public void addClildNodes(Contents contents) throws Exception {
+        if (contents.getChainLength() < 1)
+            return;
+        for (int i = 1; i <= Math.min(maxInPathFromRootToChild + 1, contents.getPower()); i++) {
+            if (contents.getElementCount(i) < 1)
+                continue;
+            Contents newNodeContents = contents.clone();
+            newNodeContents.subElementCount(i);
+            Node node = createNode(i);
+            node.addClildNodes(newNodeContents);
+            childNodes.add(node);
+        }
+    }
+
     private Node createNode(int i) {
         int max = Math.max(i, maxInPathFromRootToChild);
         return new Node(i, max);

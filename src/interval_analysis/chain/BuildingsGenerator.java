@@ -46,7 +46,7 @@ public class BuildingsGenerator extends AbstractReader<RMChainSet> {
     @Override
     public List<ParameterType> getParameterTypes() {
         List<ParameterType> types = super.getParameterTypes();
-        types.add(new ParameterTypeInt(PARAMETER_CHAIN_LENGTH, "Chain length", 2, 100));
+        types.add(new ParameterTypeInt(PARAMETER_CHAIN_LENGTH, "Chain length", 1, 100));
         types.add(new ParameterTypeInt(PARAMETER_ALPHABET_POWER, "Alphabet power", 1, 100));
         return types;
     }

@@ -17,6 +17,15 @@ public class Tree {
         root.addClildNodes(len, alphPower);
     }
 
+    public void rebuildTreeForBuildings(Contents contents) throws Exception {
+        root = new Node(1, 1);
+        contents.subElementCount(1);
+        if (0 == contents.getChainLength()) {
+            return;
+        }
+        root.addClildNodes(contents);
+    }
+
     public ArrayList<Chain> getBuildingsAsChains() throws Exception {
         ArrayList<Chain> buildings = new ArrayList<Chain>();
         ArrayList<String> strBuildings = root.getBuildings();

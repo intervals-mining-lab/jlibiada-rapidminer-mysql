@@ -42,7 +42,7 @@ public class AverageRemoteness extends Operator {
             try {
                 values[i][0] = (double)i;
                 values[i][1] = 1.0;//Double.parseDouble(chains.get(i).toString());
-                values[i][2] = chains.get(i).getCharacteristic(LinkUp.Start, CharacteristicsFactory.getDeltaG());
+                values[i][2] = chains.get(i).getCharacteristic(LinkUp.Start, CharacteristicsFactory.getAverageRemoteness());
             } catch (Exception e) {
                 Logger.getLogger(AverageRemoteness.class.getName()).log(Level.SEVERE, "It is not impossible to recive average remoteness", e);
             }
