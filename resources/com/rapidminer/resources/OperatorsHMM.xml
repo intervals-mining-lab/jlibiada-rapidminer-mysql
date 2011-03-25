@@ -4,19 +4,27 @@
         <group key="interval analysis">
             <operator>
                 <key>average remoteness</key>
-                <class>interval_analysis.AverageRemoteness</class>
+                <class>interval_analysis.AverageRemotenessRM</class>
             </operator>
             <operator>
                 <key>chain reader</key>
-                <class>interval_analysis.chain.ChainReader</class>
+                <class>interval_analysis.chain.ChainReaderRM</class>
+            </operator>
+            <operator>
+                <key>periodic contents generator</key>
+                <class>interval_analysis.chain.PeriodicChainContentsBuilderRM</class>
             </operator>
             <operator>
                 <key>buildings generator</key>
-                <class>interval_analysis.chain.BuildingsGenerator</class>
+                <class>interval_analysis.chain.BuildingsGeneratorRM</class>
+            </operator>
+            <operator>
+                <key>buildings generator from contents</key>
+                <class>interval_analysis.chain.BuildingGeneratorFromContentsRM</class>
             </operator>
             <operator>
                 <key>sampling distribution</key>
-                <class>interval_analysis.chain.SamplingDistribution</class>
+                <class>interval_analysis.chain.SamplingDistributionRM</class>
             </operator>
         </group>
         <group key="modeling">

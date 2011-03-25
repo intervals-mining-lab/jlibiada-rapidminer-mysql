@@ -1,5 +1,6 @@
 package libiada.Root.SimpleTypes;
 
+import libiada.IntervalAnalysis.Characteristics.Characteristic;
 import libiada.Root.IBaseObject;
 import libiada.Root.IBin;
 
@@ -14,6 +15,13 @@ public class ValueChar implements IBaseObject {
 
     public ValueChar(char sym) {
         value = sym;
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        result += value;
+        return result;
     }
 
     public IBaseObject Clone() {

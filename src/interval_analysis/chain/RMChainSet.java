@@ -79,4 +79,10 @@ public class RMChainSet implements IOObject {
     public ChainWithCharacteristic get(int i) {
         return chains.get(i);
     }
+
+    public void addChainsFromStrings(ArrayList<String> chains) throws Exception {
+        for (String chain : chains) {
+            this.chains.add(new Chain(chain));
+        }
+    }
 }
