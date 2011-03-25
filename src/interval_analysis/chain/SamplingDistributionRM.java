@@ -17,13 +17,13 @@ import java.util.List;
  * Date: 2/25/11
  * Time: 9:23 PM
  */
-public class SamplingDistribution extends Operator {
+public class SamplingDistributionRM extends Operator {
     private OutputPort outPort = getOutputPorts().createPort("sample");
     private InputPort inPort = getInputPorts().createPort("distribution");
 
     public static final String PARAMETER_INTERVALS_COUNT = "intervals count";
 
-    public SamplingDistribution(OperatorDescription description) {
+    public SamplingDistributionRM(OperatorDescription description) {
         super(description);
     }
 
