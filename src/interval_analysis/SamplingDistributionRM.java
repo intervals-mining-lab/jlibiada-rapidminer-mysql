@@ -1,4 +1,4 @@
-package interval_analysis.chain;
+package interval_analysis;
 
 import com.rapidminer.example.*;
 import com.rapidminer.operator.*;
@@ -21,7 +21,7 @@ public class SamplingDistributionRM extends Operator {
     private OutputPort outPort = getOutputPorts().createPort("sample");
     private InputPort inPort = getInputPorts().createPort("distribution");
 
-    public static final String PARAMETER_INTERVALS_COUNT = "intervals count";
+    public static final String PARAMETER_INTERVALS_COUNT = "Intervals count";
 
     public SamplingDistributionRM(OperatorDescription description) {
         super(description);
