@@ -1,6 +1,7 @@
 package libiada.IntervalAnalysis;
 
 import libiada.EventTheory.Place;
+import libiada.EventTheory.PsevdoValue;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.IChainDataForCalculator;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.IDataForCalculator;
@@ -20,7 +21,7 @@ import java.util.List;
  * Time: 1:18:31
  */
 public class Chain extends ChainWithCharacteristic implements IChainDataForCalculator, IBaseObject {
-    private ArrayList<UniformChain> pUniformChains = new ArrayList<UniformChain>();
+    protected ArrayList<UniformChain> pUniformChains = new ArrayList<UniformChain>();
 
     public Chain(int length) throws Exception {
         super(length);
@@ -29,7 +30,7 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
 
     public Chain(String s) throws Exception {
         ClearAndSetNewLength(s.length());
-        pAlphabet.remove(0);
+        //pAlphabet.remove(0);
         for (int i = 0; i < s.length(); i++)
         {
             add(new ValueChar(s.charAt(i)), i);
@@ -48,7 +49,8 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     public void addItem(IBaseObject what, Place where) throws Exception
     {
         super.addItem(what, where);
-        if (pUniformChains.size() != getAlpahbet().getPower())
+//        if (pUniformChains.size() != getAlpahbet().getPower())
+        if (isNewMessage(what))
         {
             pUniformChains.add(new UniformChain(getLength(), what));
         }
@@ -56,6 +58,15 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
         {
             pUniformChains.get(i).addItem(what, where);
         }
+    }
+
+    private boolean isNewMessage(IBaseObject message) {
+        for (UniformChain chain : pUniformChains) {
+            if (chain.getMessage().Equals(message)) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override

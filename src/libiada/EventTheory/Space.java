@@ -15,7 +15,7 @@ public class Space {
     private ArrayList<Dimension> pDimensions = new ArrayList<Dimension>();
     private boolean WasChange = false;
     private int ElementsCount = 0;
-    protected ArrayList<Long> vault = new ArrayList<Long>();
+    protected ArrayList<Integer> vault = new ArrayList<Integer>();
 
     public Space() throws Exception {
         pAlphabet.add(PsevdoValue.Instance());
@@ -37,9 +37,8 @@ public class Space {
         {
             throw new Exception("Place does not belong to space");
         }
-
         removeAt(place);
-        long pos = pAlphabet.indexOf(value);
+        int pos = pAlphabet.indexOf(value);
         if (-1 == pos)
         {
             pAlphabet.add(value);
@@ -47,7 +46,18 @@ public class Space {
         }
 
         vault.set(pointToPosition(place), pos);
+        removePsevdoValue();
         WasChange = true;
+    }
+
+    private void removePsevdoValue() {
+        int psevdoValueIndex = pAlphabet.indexOf(new PsevdoValue());
+        if ((-1 != psevdoValueIndex) && !isContein(psevdoValueIndex)) {
+            pAlphabet.remove(0);
+            for (int messageIndex = 0; messageIndex < vault.size(); messageIndex++) {
+                vault.set(messageIndex, vault.get(messageIndex) - 1);
+            }
+        }
     }
 
     public int getPlaceCount() {
@@ -60,11 +70,12 @@ public class Space {
         {
             throw new Exception("Place does not belong to space");
         }
-        long temp = vault.get(pointToPosition(place));        //TODO:
-        vault.set(pointToPosition(place), (long)0);
+        int temp = vault.get(pointToPosition(place));        //TODO:
+        vault.set(pointToPosition(place), 0);
         if (-1 == vault.indexOf(temp))
         {
-            pAlphabet.remove((int) temp);
+            if (!isContein(temp))
+                pAlphabet.remove((int) temp);
             for (int i = 0; i < vault.size(); i++)
             {
                 if (vault.get(i) > temp)
@@ -74,6 +85,14 @@ public class Space {
             }
         }
         WasChange = true;
+    }
+
+    private boolean isContein(int index) {
+        for (Integer message : vault) {
+            if (index == message)
+                return true;
+        }
+        return false;
     }
 
     private int pointToPosition(Place place) throws Exception {
@@ -120,13 +139,13 @@ public class Space {
     }
 
     private void createSpace() {
-        ArrayList<Long> temp = null;
+        ArrayList<Integer> temp = null;
         temp = createTemp(temp);
         allocSpace();
         refillSpace(temp);
     }
 
-    private ArrayList<Long> createTemp(ArrayList<Long> temp)
+    private ArrayList<Integer> createTemp(ArrayList<Integer> temp)
     {
        if (vault != null)
        {
@@ -139,7 +158,7 @@ public class Space {
         return temp;
     }
 
-    private void refillSpace(ArrayList<Long> temp)
+    private void refillSpace(ArrayList<Integer> temp)
     {
         //TODO: "Fill method"
 //        if (temp != null)
@@ -155,10 +174,10 @@ public class Space {
         {
             length *= (pDimensions.get(i).getMax() - pDimensions.get(i).getMin()) + 1;
         }
-        vault = new ArrayList<Long>(length);
+        vault = new ArrayList<Integer>(length);
         for (int i = 0; i < length; i++)
         {
-            vault.add(i, (long)0);
+            vault.add(i, 0);
         }
     }
 

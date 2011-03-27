@@ -32,8 +32,19 @@ public class BaseChain extends Space implements IBaseObject {
         return s;
     }
 
+    protected void fillFromAnother(BaseChain chain) throws Exception {
+        for (int index = 0; index < chain.getLength(); index++) {
+            this.add(chain.get(index), index);
+        }
+    }
+
     public void add(IBaseObject baseObject, int index) throws Exception {
-         addItem(baseObject, getPlacePattern().setValues(new long[] {index}));
+        addItem(baseObject, getPlacePattern().setValues(new long[] {index}));
+    }
+
+    public IBaseObject get(int pos) {
+        int index = vault.get(pos);
+        return pAlphabet.get(index);
     }
 
     public int getLength()

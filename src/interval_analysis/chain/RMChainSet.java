@@ -6,8 +6,10 @@ import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.ports.OutputPort;
 import com.rapidminer.operator.ports.ProcessingStep;
 import com.rapidminer.tools.LoggingHandler;
+import libiada.IntervalAnalysis.BaseChain;
 import libiada.IntervalAnalysis.Chain;
 import libiada.IntervalAnalysis.ChainWithCharacteristic;
+import libiada.IntervalAnalysis.MixedChain;
 
 import java.io.IOException;
 import java.io.OutputStream;
@@ -84,5 +86,9 @@ public class RMChainSet implements IOObject {
         for (String chain : chains) {
             this.chains.add(new Chain(chain));
         }
+    }
+
+    public void add(Chain chain) {
+        this.chains.add(chain);
     }
 }

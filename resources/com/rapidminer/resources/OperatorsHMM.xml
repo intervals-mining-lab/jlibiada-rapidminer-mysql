@@ -23,8 +23,12 @@
                 <class>interval_analysis.chain.BuildingGeneratorFromContentsRM</class>
             </operator>
             <operator>
+                <key>mixed_converter</key>
+                <class>interval_analysis.chain.MixedConverterRM</class>
+            </operator>
+            <operator>
                 <key>sampling distribution</key>
-                <class>interval_analysis.chain.SamplingDistributionRM</class>
+                <class>interval_analysis.SamplingDistributionRM</class>
             </operator>
         </group>
         <group key="modeling">

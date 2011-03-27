@@ -16,11 +16,18 @@ public class ValueInt implements IBaseObject {
         value = i;
     }
 
+    @Override
+    public String toString() {
+        return ((Long)value).toString();
+    }
+
     public IBaseObject Clone() {
         return new ValueInt(value);
     }
 
     public boolean Equals(Object obj) {
+        if (this.getClass() != obj.getClass())
+            return false;
         return value == ((ValueInt)obj).getValue();
     }
 

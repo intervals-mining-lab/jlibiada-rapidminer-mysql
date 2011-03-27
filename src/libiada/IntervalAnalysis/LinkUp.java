@@ -9,5 +9,6 @@ package libiada.IntervalAnalysis;
 public enum LinkUp {
     Start,
     End,
-    Both
+    Both,
+    Circle
 }

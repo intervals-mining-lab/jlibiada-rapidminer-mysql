@@ -21,10 +21,17 @@ public class PsevdoValue implements IBaseObject {
     }
 
     public boolean Equals(Object obj) {
-        return false;
+        return this.getClass() == obj.getClass();
     }
 
     public IBin GetBin() {
         return null;
+    }
+
+    @Override
+    public String toString() {
+        String s = "";
+        s += '-';
+        return s;
     }
 }
