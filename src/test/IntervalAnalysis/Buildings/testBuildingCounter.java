@@ -12,48 +12,55 @@ import org.junit.Test;
  */
 public class testBuildingCounter extends TestCase {
     @Test
-    public void testCounterWithL1M1() {
+    public void testCounterWithL1M1() throws Exception {
         BuildingCounter counter = new BuildingCounter();
-        int count = counter.caclculate(1, 1);
+        int count = counter.calculate(1, 1);
         assertEquals(count, 1);
     }
 
     @Test
-    public void testCounterWithL2M2() {
+    public void testCounterWithL2M2() throws Exception {
         BuildingCounter counter = new BuildingCounter();
-        int count = counter.caclculate(2, 2);
+        int count = counter.calculate(2, 2);
         assertEquals(count, 2);
     }
 
     @Test
-    public void testCounterWithL3M3() {
+    public void testCounterWithL3M3() throws Exception {
         BuildingCounter counter = new BuildingCounter();
-        int count = counter.caclculate(3, 3);
+        int count = counter.calculate(3, 3);
         assertEquals(count, 5);
     }
 
     @Test
-    public void testCounterWithL4M4() {
+    public void testCounterWithL4M4() throws Exception {
         BuildingCounter counter = new BuildingCounter();
-        int count = counter.caclculate(4, 4);
+        int count = counter.calculate(4, 4);
         assertEquals(count, 15);
     }
 
     @Test
-    public void testCounterWithL5M5() {
+    public void testCounterWithL5M5() throws Exception {
         BuildingCounter counter = new BuildingCounter();
-        int count = counter.caclculate(5, 5);
+        int count = counter.calculate(5, 5);
         assertEquals(count, 52);
+    }
+
+    @Test
+    public void testCounterWithL4M2() throws Exception {
+        BuildingCounter counter = new BuildingCounter();
+        int count = counter.calculate(4, 2);
+        assertEquals(count, 8);
     }
 
     @Test
     public void testCounterWithZeroLength() {
         try {
             BuildingCounter counter = new BuildingCounter();
-            int count = counter.caclculate(0, 1);
+            int count = counter.calculate(0, 1);
         }
         catch (Exception e) {
-
+            return;
         }
         fail();
     }
@@ -62,10 +69,10 @@ public class testBuildingCounter extends TestCase {
     public void testCounterWithZeroAlphabetPower() {
         try {
             BuildingCounter counter = new BuildingCounter();
-            int count = counter.caclculate(2, 0);
+            int count = counter.calculate(2, 0);
         }
         catch (Exception e) {
-
+            return;
         }
         fail();
     }
@@ -74,10 +81,10 @@ public class testBuildingCounter extends TestCase {
     public void testCounterWithAboveZeroLength() {
         try {
             BuildingCounter counter = new BuildingCounter();
-            int count = counter.caclculate(-3, 1);
+            int count = counter.calculate(-3, 1);
         }
         catch (Exception e) {
-
+            return;
         }
         fail();
     }
@@ -86,10 +93,10 @@ public class testBuildingCounter extends TestCase {
     public void testCounterWithAboveZeroAlphabetPower() {
         try {
             BuildingCounter counter = new BuildingCounter();
-            int count = counter.caclculate(2, -51);
+            int count = counter.calculate(2, -51);
         }
         catch (Exception e) {
-
+            return;
         }
         fail();
     }
