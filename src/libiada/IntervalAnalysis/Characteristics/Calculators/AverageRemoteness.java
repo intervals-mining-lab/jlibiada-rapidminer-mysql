@@ -28,4 +28,9 @@ public class AverageRemoteness implements ICharacteristicCalculator {
         }
         return temp;
     }
+
+    @Override
+    public String getName() {
+        return "Average remoteness (g)";
+    }
 }

@@ -3,7 +3,6 @@ package libiada.IntervalAnalysis.Characteristics.Calculators;
 import libiada.IntervalAnalysis.Chain;
 import libiada.IntervalAnalysis.ChainWithCharacteristic;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
-import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.IDataForCalculator;
 import libiada.IntervalAnalysis.LinkUp;
 import libiada.IntervalAnalysis.UniformChain;
 
@@ -22,16 +21,22 @@ public class IntervalsCount implements ICharacteristicCalculator {
         return commonCalculate(pChain, link);
     }
 
+    @Override
+    public String getName() {
+        return "Intervals count";
+    }
+
     private double commonCalculate(ChainWithCharacteristic pChain, LinkUp link) throws Exception {
-        IDataForCalculator data = pChain;
         switch (link)
         {
             case Start:
-                return data.getCommonIntervals().getCount() + data.getStartInterval().getCount();
+                return pChain.getCommonIntervals().getCount() + pChain.getStartInterval().getCount();
             case End:
-                return data.getCommonIntervals().getCount() + data.getEndInterval().getCount();
+                return pChain.getCommonIntervals().getCount() + pChain.getEndInterval().getCount();
             case Both:
-                return data.getCommonIntervals().getCount() + data.getStartInterval().getCount() + data.getEndInterval().getCount();
+                return pChain.getCommonIntervals().getCount() + pChain.getStartInterval().getCount() + pChain.getEndInterval().getCount();
+            case Circle:
+                return pChain.getCommonIntervals().getCount() + pChain.getStartInterval().getCount();
             default:
                 throw new Exception("Very strange error :)");
         }

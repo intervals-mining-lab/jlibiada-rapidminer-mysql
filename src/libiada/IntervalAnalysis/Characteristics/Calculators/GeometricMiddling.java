@@ -24,4 +24,9 @@ public class GeometricMiddling implements ICharacteristicCalculator {
         double n_j = pChain.getCharacteristic(Link, CharacteristicsFactory.getIntervalsCount());
         return Math.pow(2, G / n_j);
     }
+
+    @Override
+    public String getName() {
+        return "Geometric middling interval (G)";
+    }
 }

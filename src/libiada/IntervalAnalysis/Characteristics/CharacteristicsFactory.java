@@ -1,10 +1,8 @@
 package libiada.IntervalAnalysis.Characteristics;
 
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
-import libiada.IntervalAnalysis.Characteristics.Calculators.AverageRemoteness;
-import libiada.IntervalAnalysis.Characteristics.Calculators.Gamut;
-import libiada.IntervalAnalysis.Characteristics.Calculators.GeometricMiddling;
-import libiada.IntervalAnalysis.Characteristics.Calculators.IntervalsCount;
+import libiada.IntervalAnalysis.Characteristics.Calculators.*;
+import sun.management.counter.Counter;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,5 +25,25 @@ public class CharacteristicsFactory {
 
     public static ICharacteristicCalculator getAverageRemoteness() {
         return new AverageRemoteness();
+    }
+
+    public static ICharacteristicCalculator getP() {
+        return new Probability();
+    }
+
+    public static ICharacteristicCalculator getN() {
+        return new Count();
+    }
+
+    public static ICharacteristicCalculator getLength() {
+        return new Length();
+    }
+
+    public static ICharacteristicCalculator getDeltaA() {
+        return new ArithmeticMean();
+    }
+
+    public static ICharacteristicCalculator getH() {
+        return new IdentificationInformation();
     }
 }

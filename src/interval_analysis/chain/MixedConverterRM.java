@@ -1,10 +1,8 @@
 package interval_analysis.chain;
 
-import com.rapidminer.operator.Operator;
-import com.rapidminer.operator.OperatorDescription;
-import com.rapidminer.operator.UserError;
-import com.rapidminer.operator.ports.InputPort;
-import com.rapidminer.operator.ports.OutputPort;
+import com.rapidminer.example.*;
+import com.rapidminer.operator.*;
+import com.rapidminer.operator.ports.*;
 import libiada.IntervalAnalysis.MixedChain;
 
 /**
@@ -14,7 +12,7 @@ import libiada.IntervalAnalysis.MixedChain;
  * Time: 22:27
  */
 public class MixedConverterRM extends Operator {
-    public InputPort inChains = getInputPorts().createPort("chain", RMChainSet.class);
+    public InputPort inChains = getInputPorts().createPort("chain", ExampleSet.class);
     public OutputPort outChain = getOutputPorts().createPort("mixed");
 
     public MixedConverterRM(OperatorDescription description) {
@@ -22,18 +20,27 @@ public class MixedConverterRM extends Operator {
     }
 
     @Override
-    public void doWork() throws UserError {
-        RMChainSet inputChainsSet = inChains.getData(RMChainSet.class);
-        RMChainSet outChainsSet = new RMChainSet();
+    public void doWork() throws OperatorException {
+        ExampleSet inputChainsSet = inChains.getData();
+        Attributes attributes = inputChainsSet.getAttributes();
 
-        for (int i = 0; i < inputChainsSet.getCount(); i++) {
+        String data[][] = new String[inputChainsSet.size()][1];
+        int i = 0;
+        for (Example example : inputChainsSet) {
+            String strChain = "Error";
             try {
-                MixedChain chain = new MixedChain(inputChainsSet.get(i).toString());
-                outChainsSet.add(chain);
+                MixedChain chain = new MixedChain(example.getValueAsString(attributes.get("Chain")));
+                strChain = chain.toString();
             } catch (Exception e) {
                 System.err.print("Error of creating mixed chain");
             }
+            data[i][0] = strChain;
+            i++;
         }
+
+        ExampleSet outChainsSet = ExampleSetFactory.createExampleSet(data);
+        outChainsSet.getAttributes().get("att1").setName("Chain");
+
         outChain.deliver(outChainsSet);
     }
 }

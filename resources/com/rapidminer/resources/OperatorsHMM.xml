@@ -1,35 +1,65 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <operators name="hmm" version="5.0" docbundle="com/rapidminer/resources/i18n/OperatorsDocHMM">
     <group key="">
+        <group key="bioinformatics">
+            <group key="FASTA">
+                <group key="reader">
+                    <operator>
+                        <key>FASTAReader</key>
+                        <class>Bio.RapidMiner.FASTAReaderRM</class>
+                    </operator>
+                </group>
+            </group>
+        </group>
         <group key="interval analysis">
-            <operator>
-                <key>average remoteness</key>
-                <class>interval_analysis.AverageRemotenessRM</class>
-            </operator>
-            <operator>
-                <key>chain reader</key>
-                <class>interval_analysis.chain.ChainReaderRM</class>
-            </operator>
-            <operator>
-                <key>periodic contents generator</key>
-                <class>interval_analysis.chain.PeriodicChainContentsBuilderRM</class>
-            </operator>
-            <operator>
-                <key>buildings generator</key>
-                <class>interval_analysis.chain.BuildingsGeneratorRM</class>
-            </operator>
-            <operator>
-                <key>buildings generator from contents</key>
-                <class>interval_analysis.chain.BuildingGeneratorFromContentsRM</class>
-            </operator>
-            <operator>
-                <key>mixed_converter</key>
-                <class>interval_analysis.chain.MixedConverterRM</class>
-            </operator>
-            <operator>
-                <key>sampling distribution</key>
-                <class>interval_analysis.SamplingDistributionRM</class>
-            </operator>
+            <group key="chain characteristics">
+                <operator>
+                    <key>Building characteristic</key>
+                    <class>interval_analysis.BuildingCharacteristicRM</class>
+                </operator>
+            </group>
+            <group key="readers">
+                <operator>
+                    <key>Chain reader</key>
+                    <class>interval_analysis.chain.ChainReaderRM</class>
+                </operator>
+            </group>
+            <group key="buildings">
+                <group key="generators">
+                    <operator>
+                        <key>Buildings generator from contents</key>
+                        <class>interval_analysis.chain.BuildingGeneratorFromContentsRM</class>
+                    </operator>
+                    <operator>
+                        <key>Buildings generator</key>
+                        <class>interval_analysis.chain.BuildingsGeneratorRM</class>
+                    </operator>
+                </group>
+                <operator>
+                    <key>Mixed_converter</key>
+                    <class>interval_analysis.chain.MixedConverterRM</class>
+                </operator>
+            </group>
+            <group key="contents">
+                <group key="generators">
+                    <operator>
+                        <key>Periodic contents generator</key>
+                        <class>interval_analysis.chain.PeriodicChainContentsBuilderRM</class>
+                    </operator>
+                </group>
+            </group>
+            <group key="other">
+                <group key="statistics">
+                    <operator>
+                        <key>Sampling distribution</key>
+                        <class>interval_analysis.SamplingDistributionRM</class>
+                    </operator>
+                </group>
+                <operator>
+                    <key>Summer</key>
+                    <class>interval_analysis.SumExamplesRM</class>
+                </operator>
+            </group>
         </group>
         <group key="modeling">
             <icon>chart_line.png</icon>

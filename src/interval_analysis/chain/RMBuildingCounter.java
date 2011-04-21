@@ -21,8 +21,10 @@ public class RMBuildingCounter extends Operator {
     public RMBuildingCounter(OperatorDescription description) {
         super(description);
     }
+
     @Override
-public void doWork() throws OperatorException {
-     RMChainSet Leight = inChainLeight.getData(RMChainSet.class);
-     RMChainSet Power = inChainPower.getData(RMChainSet.class);   
+    public void doWork() throws OperatorException {
+        RMChainSet Leight = inChainLeight.getData(RMChainSet.class);
+        RMChainSet Power = inChainPower.getData(RMChainSet.class);
+    }
 }

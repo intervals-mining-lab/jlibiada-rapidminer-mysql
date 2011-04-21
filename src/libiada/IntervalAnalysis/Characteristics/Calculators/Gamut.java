@@ -1,9 +1,7 @@
 package libiada.IntervalAnalysis.Characteristics.Calculators;
 
 import libiada.IntervalAnalysis.Chain;
-import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.IChainDataForCalculator;
 import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.ICharacteristicCalculator;
-import libiada.IntervalAnalysis.Characteristics.AuxiliaryInterfaces.IDataForCalculator;
 import libiada.IntervalAnalysis.Characteristics.CharacteristicsFactory;
 import libiada.IntervalAnalysis.LinkUp;
 import libiada.IntervalAnalysis.UniformChain;
@@ -20,11 +18,10 @@ import libiada.Statistics.FrequencyList;
 public class Gamut implements ICharacteristicCalculator {
 
     public double calculate(UniformChain pChain, LinkUp Link) throws Exception {
-        IDataForCalculator Data = pChain;
 
-        FrequencyList CommonIntervalList = Data.getCommonIntervals();
-        FrequencyList StartInterval = Data.getStartInterval();
-        FrequencyList EndInterval = Data.getEndInterval();
+        FrequencyList CommonIntervalList = pChain.getCommonIntervals();
+        FrequencyList StartInterval = pChain.getStartInterval();
+        FrequencyList EndInterval = pChain.getEndInterval();
 
         double result = 0;
         for (int i = 0; i < CommonIntervalList.getPower(); i++)
@@ -43,18 +40,25 @@ public class Gamut implements ICharacteristicCalculator {
             case Both:
                 return result + Math.log(((ValueInt) ((DictionaryEntryBase)StartInterval.get(0)).getKey()).getValue())/Math.log(2) +
                     Math.log(((ValueInt) ((DictionaryEntryBase)EndInterval.get(0)).getKey()).getValue())/Math.log(2);
+            case Circle:
+                return result + Math.log(((ValueInt) ((DictionaryEntryBase)StartInterval.get(0)).getKey()).getValue() +
+                    ((ValueInt) ((DictionaryEntryBase)EndInterval.get(0)).getKey()).getValue() - 1)/Math.log(2);
             default:
                 throw new Exception("Very strange error :)");
         }
     }
 
     public double calculate(Chain pChain, LinkUp Link) throws Exception {
-        IChainDataForCalculator Data = pChain;
         double temp = 0;
         for (int i = 0; i < pChain.getAlpahbet().getPower(); i++)
         {
-            temp += Data.getIUniformChain(i).getCharacteristic(Link, CharacteristicsFactory.getG());
+            temp += pChain.getIUniformChain(i).getCharacteristic(Link, CharacteristicsFactory.getG());
         }
         return temp;
+    }
+
+    @Override
+    public String getName() {
+        return "Gamut (delta)";
     }
 }

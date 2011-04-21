@@ -14,4 +14,6 @@ public interface ICharacteristicCalculator {
         double calculate(UniformChain pChain, LinkUp Link) throws Exception;
 
         double calculate(Chain pChain, LinkUp Link) throws Exception;
+
+        String getName();
 }

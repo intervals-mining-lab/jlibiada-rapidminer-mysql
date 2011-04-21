@@ -1,5 +1,7 @@
 package interval_analysis.chain;
 
+import com.rapidminer.example.ExampleSet;
+import com.rapidminer.example.ExampleSetFactory;
 import com.rapidminer.operator.Operator;
 import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.UserError;
@@ -36,13 +38,12 @@ public class BuildingGeneratorFromContentsRM extends Operator {
         } catch (Exception e) {
             Logger.getLogger(BuildingsGeneratorRM.class.getName()).log(Level.SEVERE, "It is not impossible to generate buildings", e);
         }
-
-        RMChainSet chSet = new RMChainSet();
-        try {
-            chSet.addChainsFromStrings(chains);
-        } catch (Exception e) {
-            System.err.print("It is couldn't add chains from strins");
+        String data [][] = new String[chains.size()][1];
+        for (int i = 0; i < chains.size(); i++) {
+            data[i][0] = chains.get(i);
         }
+        ExampleSet chSet = ExampleSetFactory.createExampleSet(data);
+        chSet.getAttributes().get("att1").setName("Chain");
 
         outBuildings.deliver(chSet);
     }

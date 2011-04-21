@@ -2,6 +2,7 @@ package libiada.IntervalAnalysis;
 
 import libiada.EventTheory.PsevdoValue;
 import libiada.Root.IBaseObject;
+import libiada.Root.SimpleTypes.ValueChar;
 import libiada.Root.SimpleTypes.ValueInt;
 
 import java.util.ArrayList;
@@ -24,7 +25,7 @@ public class ToMixedChainConverter {
                 } else {
                     continue;
                 }
-                ValueInt message = new ValueInt(currentEventNum);
+                ValueChar message = new ValueChar((char) (currentEventNum + 'A' - 1));
                 mixedChain.add(message, currentUPos);
             }
         }

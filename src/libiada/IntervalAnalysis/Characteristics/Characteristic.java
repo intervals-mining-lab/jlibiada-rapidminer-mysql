@@ -18,6 +18,7 @@ public class Characteristic {
     private double pStartValue;
     private double pEndValue;
     private double pBothValue;
+    private double pCircleValue;
     private ICharacteristicCalculator Calculator;
 
     public Characteristic(ICharacteristicCalculator calculator) {
@@ -31,6 +32,7 @@ public class Characteristic {
             pStartValue = Calculator.calculate(Chain, LinkUp.Start);
             pEndValue = Calculator.calculate(Chain, LinkUp.End);
             pBothValue = Calculator.calculate(Chain, LinkUp.Both);
+            pCircleValue = Calculator.calculate(Chain, LinkUp.Circle);
             Calculated = true;
         }
         return getCurrentValue(link);
@@ -43,6 +45,7 @@ public class Characteristic {
             pStartValue = Calculator.calculate(Chain, LinkUp.Start);
             pEndValue = Calculator.calculate(Chain, LinkUp.End);
             pBothValue = Calculator.calculate(Chain, LinkUp.Both);
+            pCircleValue = Calculator.calculate(Chain, LinkUp.Circle);
             Calculated = true;
         }
         return getCurrentValue(link);
@@ -56,6 +59,8 @@ public class Characteristic {
                 return pEndValue;
             case Both:
                 return pBothValue;
+            case Circle:
+                return pCircleValue;
             default:
                 throw new Exception("Very strange error :)");
         }
