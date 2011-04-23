@@ -51,6 +51,7 @@
     <orderEntry type="library" name="HMM" level="project" />
     <orderEntry type="library" name="Rapidminer" level="project" />
     <orderEntry type="library" name="BioJava" level="project" />
+    <orderEntry type="library" name="Bio" level="project" />
   </component>
 </module>
 

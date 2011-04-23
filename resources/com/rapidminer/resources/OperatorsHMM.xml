@@ -36,6 +36,10 @@
                     </operator>
                 </group>
                 <operator>
+                    <key>Buildings counter</key>
+                    <class>interval_analysis.chain.RMBuildingCounter</class>
+                </operator>
+                <operator>
                     <key>Mixed_converter</key>
                     <class>interval_analysis.chain.MixedConverterRM</class>
                 </operator>
