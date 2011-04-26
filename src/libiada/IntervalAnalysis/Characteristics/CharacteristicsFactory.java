@@ -46,4 +46,12 @@ public class CharacteristicsFactory {
     public static ICharacteristicCalculator getH() {
         return new IdentificationInformation();
     }
+
+    public static ICharacteristicCalculator getRegularity() {
+        return new Regularity();
+    }
+
+    public static ICharacteristicCalculator getD() {
+        return new DescriptiveInformation();
+    }
 }

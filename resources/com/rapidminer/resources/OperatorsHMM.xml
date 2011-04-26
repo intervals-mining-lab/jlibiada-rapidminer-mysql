@@ -15,24 +15,24 @@
             <group key="chain characteristics">
                 <operator>
                     <key>Building characteristic</key>
-                    <class>interval_analysis.BuildingCharacteristicRM</class>
+                    <class>rapidminer.BuildingCharacteristicRM</class>
                 </operator>
             </group>
             <group key="readers">
                 <operator>
                     <key>Chain reader</key>
-                    <class>interval_analysis.chain.ChainReaderRM</class>
+                    <class>rapidminer.chain.ChainReaderRM</class>
                 </operator>
             </group>
             <group key="buildings">
                 <group key="generators">
                     <operator>
                         <key>Buildings generator from contents</key>
-                        <class>interval_analysis.chain.BuildingGeneratorFromContentsRM</class>
+                        <class>rapidminer.chain.BuildingGeneratorFromContentsRM</class>
                     </operator>
                     <operator>
                         <key>Buildings generator</key>
-                        <class>interval_analysis.chain.BuildingsGeneratorRM</class>
+                        <class>rapidminer.chain.BuildingsGeneratorRM</class>
                     </operator>
                 </group>
                 <operator>
@@ -41,14 +41,14 @@
                 </operator>
                 <operator>
                     <key>Mixed_converter</key>
-                    <class>interval_analysis.chain.MixedConverterRM</class>
+                    <class>rapidminer.chain.MixedConverterRM</class>
                 </operator>
             </group>
             <group key="contents">
                 <group key="generators">
                     <operator>
                         <key>Periodic contents generator</key>
-                        <class>interval_analysis.chain.PeriodicChainContentsBuilderRM</class>
+                        <class>rapidminer.chain.PeriodicChainContentsBuilderRM</class>
                     </operator>
                 </group>
             </group>
@@ -56,12 +56,12 @@
                 <group key="statistics">
                     <operator>
                         <key>Sampling distribution</key>
-                        <class>interval_analysis.SamplingDistributionRM</class>
+                        <class>rapidminer.SamplingDistributionRM</class>
                     </operator>
                 </group>
                 <operator>
                     <key>Summer</key>
-                    <class>interval_analysis.SumExamplesRM</class>
+                    <class>rapidminer.SumExamplesRM</class>
                 </operator>
             </group>
         </group>
