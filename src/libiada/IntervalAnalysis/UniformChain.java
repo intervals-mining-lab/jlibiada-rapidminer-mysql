@@ -57,7 +57,7 @@ public class UniformChain extends ChainWithCharacteristic implements IBaseObject
     private int getRight(int current) {
         for (int i = current + 1; i < getLength(); i++)
         {
-            if (vault.get(i) == 1)
+            if (vault.get(i) == getAlpahbet().getPower()-1)
             {
                 return i;
             }

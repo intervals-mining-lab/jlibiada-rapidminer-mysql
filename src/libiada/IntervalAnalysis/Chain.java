@@ -91,4 +91,24 @@ public class Chain extends ChainWithCharacteristic implements IChainDataForCalcu
     public ChainWithCharacteristic getUniformChain(IBaseObject baseObject) {
         return null;  //TODO:"Fill method"
     }
+
+    public ChainWithCharacteristicSet getDecomposition(int wordLength, int step) throws Exception {
+        ChainWithCharacteristicSet chSet = new ChainWithCharacteristicSet();
+        int currentPos = 0;
+        int wordCount = Math.round((getLength() - wordLength) / step);
+        /*if (step == 1) {
+            wordCount -= (wordLength - 1);
+        }*/
+        for (int j = 0; j <= wordCount; j++) {
+            Chain ch = new Chain(wordLength);
+            int newWordPos = 0;
+            for (int i = currentPos; i < currentPos + wordLength; i++) {
+                ch.add(this.get(i), newWordPos);
+                newWordPos++;
+            }
+            currentPos += step;
+            chSet.add(ch);
+        }
+        return chSet;
+    }
 }

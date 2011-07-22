@@ -6,7 +6,13 @@
                 <group key="reader">
                     <operator>
                         <key>FASTAReader</key>
-                        <class>Bio.RapidMiner.FASTAReaderRM</class>
+                        <class>rapidminer.Bioinformatics.FASTAReaderRM</class>
+                    </operator>
+                </group>
+                <group key="ORF">
+                    <operator>
+                        <key>ORFFinder</key>
+                        <class>rapidminer.Bioinformatics.ORMFinderRM</class>
                     </operator>
                 </group>
             </group>
@@ -16,6 +22,10 @@
                 <operator>
                     <key>Building characteristic</key>
                     <class>rapidminer.BuildingCharacteristicRM</class>
+                </operator>
+                <operator>
+                    <key>UBuilding characteristic</key>
+                    <class>rapidminer.chain.UBuildingCharacteristicRM</class>
                 </operator>
             </group>
             <group key="readers">
@@ -36,12 +46,20 @@
                     </operator>
                 </group>
                 <operator>
-                    <key>Buildings counter</key>
-                    <class>interval_analysis.chain.RMBuildingCounter</class>
+                    <key>Event recombination</key>
+                    <class>rapidminer.chain.EventRecombinationRM</class>
                 </operator>
                 <operator>
-                    <key>Mixed_converter</key>
+                    <key>Mixed converter</key>
                     <class>rapidminer.chain.MixedConverterRM</class>
+                </operator>
+                <operator>
+                    <key>Chain decompositor</key>
+                    <class>rapidminer.chain.Decompositor.ChainDecompositorRM</class>
+                </operator>
+                <operator>
+                    <key>Buildings counter</key>
+                    <class>rapidminer.chain.RMBuildingCounter</class>
                 </operator>
             </group>
             <group key="contents">
