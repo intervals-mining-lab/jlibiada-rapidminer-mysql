@@ -1,5 +1,7 @@
 package libiada.FastChainAlgorithms.FastChain;
 
+import libiada.FastChainAlgorithms.FastChain.UtilClasses.FastIntervalsChain;
+
 import java.util.HashMap;
 
 /**
@@ -8,17 +10,18 @@ import java.util.HashMap;
  * Date: 31.05.11
  * Time: 21:30
  */
-public class FastUniformChain extends FastChainBase {
-    private boolean intervalsChanged = true;
+public class FastUniformChain extends FastIntervalsChain {
     private HashMap<Integer, Integer> pIntervals = null;
     private HashMap<Integer, Integer> startIntervals = null;
     private HashMap<Integer, Integer> endIntervals = null;
+    private HashMap<Integer,Integer> circleIntervals = null;
 
     public FastUniformChain() throws Exception {
         alphabet.add("-");
         pIntervals = new HashMap<Integer, Integer>();
         startIntervals = new HashMap<Integer, Integer>();
         endIntervals = new HashMap<Integer, Integer>();
+        circleIntervals = new HashMap<Integer, Integer>();
     }
 
     public HashMap<Integer, Integer> getCommonIntervals() throws Exception {
@@ -45,6 +48,15 @@ public class FastUniformChain extends FastChainBase {
         return endIntervals;
     }
 
+    @Override
+    public HashMap<Integer, Integer> getCircleIntervals() throws Exception {
+        if (intervalsChanged) {
+            buildIntervals();
+            intervalsChanged = false;
+        }
+        return circleIntervals;
+    }
+
     protected void buildIntervals() throws Exception {
         pIntervals.clear();
         startIntervals.clear();
@@ -67,6 +79,8 @@ public class FastUniformChain extends FastChainBase {
             addInterval(intervalList, next - current);
         }
         while (next != length());
+        circleIntervals.put(startIntervals.entrySet().iterator().next().getKey() +
+                endIntervals.entrySet().iterator().next().getKey() - 1, 1);
     }
 
     private void addInterval(HashMap<Integer, Integer> intervalList, int interval) {
@@ -100,5 +114,14 @@ public class FastUniformChain extends FastChainBase {
             }
         }
         return length();
+    }
+
+    @Override
+    public int alphabetPower() {
+        return 1;
+    }
+
+    public void setCount(int count) {
+        this.count = count;
     }
 }
