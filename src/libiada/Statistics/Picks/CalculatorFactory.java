@@ -34,4 +34,12 @@ public class CalculatorFactory {
     public static IValueCalculator getStandardDeviation() {
         return new StandardDeviation();
     }
+
+    public static IValueCalculator getCorelation(Picks picks1, Picks picks2) throws Exception {
+        return new Corelation(picks1, picks2);
+    }
+
+    public static IValueCalculator getCovariation(Picks picks1, Picks picks2) throws Exception {
+        return new Covariation(picks1, picks2);
+    }
 }
