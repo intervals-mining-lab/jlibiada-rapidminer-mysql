@@ -2,17 +2,39 @@
 <operators name="hmm" version="5.0" docbundle="com/rapidminer/resources/i18n/OperatorsDocHMM">
     <group key="">
         <group key="bioinformatics">
+            <group key="export_data">
+                <operator>
+                    <key>ExportGeneticsMySQL</key>
+                    <class>rapidminer.Bioinformatics.ExportGeneticsMySQLRM</class>
+                </operator>
+            </group>
             <group key="FASTA">
                 <group key="reader">
                     <operator>
-                        <key>FASTAReader</key>
-                        <class>rapidminer.Bioinformatics.FASTAReaderRM</class>
+                        <key>ProteineFASTAReader</key>
+                        <class>rapidminer.Bioinformatics.FASTA.ProteineFASTAReaderRM</class>
+                    </operator>
+                    <operator>
+                        <key>DNAFASTAReader</key>
+                        <class>rapidminer.Bioinformatics.FASTA.DNAFASTAReaderRM</class>
+                    </operator>
+                    <operator>
+                        <key>CustomFASTAReader</key>
+                        <class>rapidminer.Bioinformatics.FASTA.CustomFASTAReaderRM</class>
                     </operator>
                 </group>
                 <group key="ORF">
                     <operator>
                         <key>ORFFinder</key>
                         <class>rapidminer.Bioinformatics.ORMFinderRM</class>
+                    </operator>
+                    <operator>
+                        <key>ExoneIntroneMarker</key>
+                        <class>rapidminer.Bioinformatics.ExoneIntroneMarkerRM</class>
+                    </operator>
+                    <operator>
+                        <key>ExoneIntroneCutter</key>
+                        <class>rapidminer.Bioinformatics.ExoneIntroneCutterRM</class>
                     </operator>
                 </group>
             </group>
@@ -21,11 +43,23 @@
             <group key="chain characteristics">
                 <operator>
                     <key>Building characteristic</key>
-                    <class>rapidminer.BuildingCharacteristicRM</class>
+                    <class>rapidminer.chain.Characteristics.BuildingCharacteristicRM</class>
+                </operator>
+                <operator>
+                    <key>Fast Building Characteristic</key>
+                    <class>rapidminer.chain.Characteristics.FastBuildingCharacteristicRM</class>
+                </operator>
+                <operator>
+                    <key>Fast Binary Building Characteristic</key>
+                    <class>rapidminer.chain.Characteristics.FastBinaryBuildingCharacteristicRM</class>
+                </operator>
+                <operator>
+                    <key>Fast Positioned Characteristic</key>
+                    <class>rapidminer.chain.Characteristics.FastPositionedCharacteristicRM</class>
                 </operator>
                 <operator>
                     <key>UBuilding characteristic</key>
-                    <class>rapidminer.chain.UBuildingCharacteristicRM</class>
+                    <class>rapidminer.chain.Characteristics.UBuildingCharacteristicRM</class>
                 </operator>
             </group>
             <group key="readers">
@@ -38,20 +72,20 @@
                 <group key="generators">
                     <operator>
                         <key>Buildings generator from contents</key>
-                        <class>rapidminer.chain.BuildingGeneratorFromContentsRM</class>
+                        <class>rapidminer.chain.Generators.BuildingGeneratorFromContentsRM</class>
                     </operator>
                     <operator>
                         <key>Buildings generator</key>
-                        <class>rapidminer.chain.BuildingsGeneratorRM</class>
+                        <class>rapidminer.chain.Generators.BuildingsGeneratorRM</class>
                     </operator>
                 </group>
                 <operator>
                     <key>Event recombination</key>
-                    <class>rapidminer.chain.EventRecombinationRM</class>
+                    <class>rapidminer.chain.Decompositor.EventRecombinationRM</class>
                 </operator>
                 <operator>
                     <key>Mixed converter</key>
-                    <class>rapidminer.chain.MixedConverterRM</class>
+                    <class>rapidminer.chain.Decompositor.MixedConverterRM</class>
                 </operator>
                 <operator>
                     <key>Chain decompositor</key>
@@ -66,7 +100,7 @@
                 <group key="generators">
                     <operator>
                         <key>Periodic contents generator</key>
-                        <class>rapidminer.chain.PeriodicChainContentsBuilderRM</class>
+                        <class>rapidminer.chain.Generators.PeriodicChainContentsBuilderRM</class>
                     </operator>
                 </group>
             </group>

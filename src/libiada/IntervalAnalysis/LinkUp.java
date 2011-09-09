@@ -10,5 +10,6 @@ public enum LinkUp {
     Start,
     End,
     Both,
+    Free, 
     Circle
 }
