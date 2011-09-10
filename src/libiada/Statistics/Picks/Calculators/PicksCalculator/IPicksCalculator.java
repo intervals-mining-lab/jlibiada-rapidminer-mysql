@@ -9,5 +9,5 @@ import libiada.Statistics.Picks.Picks;
  * Time: 3:33
  */
 public interface IPicksCalculator {
-    public Picks calculate(Picks picks);
+    public Picks calculate(Picks picks) throws Exception;
 }

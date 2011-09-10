@@ -3,7 +3,7 @@ package libiada.FastChainAlgorithms.FastChain.Calculators;
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastPeriodicChainConverter;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.IFastCalculator;
+import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.HashSet;
@@ -14,8 +14,7 @@ import java.util.HashSet;
  * Date: 30.07.11
  * Time: 17:20
  */
-public class FastPositionedPropability implements IFastCalculator {
-    private String event = "";
+public class FastPositionedPropability extends FastCalculatorBase {
     private HashSet<Integer> poses = null;
     private int period = 0;
 
@@ -27,7 +26,6 @@ public class FastPositionedPropability implements IFastCalculator {
 
     @Override
     public double getValue(FastChain chain, LinkUp linkUp) throws Exception {
-        double result = 0;
         FastPeriodicChainConverter converter = new FastPeriodicChainConverter();
         FastUniformChain uchain = converter.toPeriodicChain(chain, poses, period).getFastUniformChain(event);
         return FastCalculatorFactory.getPropability().getValue(uchain, linkUp);
@@ -35,11 +33,30 @@ public class FastPositionedPropability implements IFastCalculator {
 
     @Override
     public double getValue(FastUniformChain chain, LinkUp linkUp) throws Exception {
+        super.getValue(chain, linkUp);
         return 0;  //TODO: "Заполнить метод"
     }
 
     @Override
     public String getName() {
-        return "Shepherd";
+        return "P(" + event + getPos(poses) + ")";
+    }
+
+    @Override
+    public String getType() {
+        return "double";
+    }
+
+    @Override
+    public String getGroup() {
+        return "Positioned propability";
+    }
+
+    private String getPos(HashSet<Integer> poses) {
+        String result = "";
+        for (Integer pos : poses) {
+            result += ", " + Integer.toString(pos + 1);
+        }
+        return result;
     }
 }

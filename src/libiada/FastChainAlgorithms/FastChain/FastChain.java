@@ -1,6 +1,5 @@
 package libiada.FastChainAlgorithms.FastChain;
 
-import libiada.FastChainAlgorithms.FastChain.UtilClasses.FastIntervalsChain;
 import libiada.FastChainAlgorithms.FastChain.UtilClasses.IntervalsAlgebra;
 
 import java.util.HashMap;
@@ -18,12 +17,10 @@ public class FastChain extends FastIntervalsChain {
     private HashMap<Integer,Integer> pEndIntervals = new HashMap<Integer, Integer>();
     private HashMap<Integer,Integer> pCommonIntervals = new HashMap<Integer, Integer>();
     private HashMap<Integer,Integer> pCircleIntervals = new HashMap<Integer, Integer>();
+    private HashMap<String,HashMap<Integer, Integer>> pChainToChainIntervals = new HashMap<String, HashMap<Integer, Integer>>();
 
     public FastChain(int length) throws Exception {
-        alphabet.add("-");
-        for (int i = 0; i < length; i++) {
-            events.add(0);
-        }
+        super(length);
     }
 
     public FastChain() {
@@ -107,11 +104,8 @@ public class FastChain extends FastIntervalsChain {
         return alphabet.size();
     }
 
-    public String get(int i) {
-        return alphabet.get(events.get(i));
-    }
-
     public FastUniformChain getFastUniformChain(String s) throws Exception {
         return getFastUniformChain(alphabet.indexOf(s));
     }
+
 }

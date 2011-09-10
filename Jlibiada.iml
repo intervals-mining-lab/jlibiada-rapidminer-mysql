@@ -52,6 +52,10 @@
     <orderEntry type="library" name="Rapidminer" level="project" />
     <orderEntry type="library" name="BioJava" level="project" />
     <orderEntry type="library" name="Bio" level="project" />
+    <orderEntry type="library" name="BioJava" level="project" />
+    <orderEntry type="library" name="JasperReports" level="project" />
+    <orderEntry type="library" name="MySQL" level="project" />
+    <orderEntry type="library" name="POI" level="project" />
   </component>
 </module>
 

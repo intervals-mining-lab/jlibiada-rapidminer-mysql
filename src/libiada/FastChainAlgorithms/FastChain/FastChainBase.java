@@ -13,6 +13,7 @@ public abstract class FastChainBase {
     protected FastAlphabet alphabet = new FastAlphabet();
     protected boolean intervalsChanged = true;
     protected int count = 0;
+    private boolean calculatedCount = false;
 
     public FastChainBase(String chainAsString) throws Exception {
         for (int i = 0; i < chainAsString.length(); i++) {
@@ -21,6 +22,13 @@ public abstract class FastChainBase {
     }
 
     public FastChainBase() {
+    }
+
+    public FastChainBase(int length) throws Exception {
+        alphabet.add("-");
+        for (int i = 0; i < length; i++) {
+            events.add(0);
+        }
     }
 
     @Override
@@ -52,6 +60,14 @@ public abstract class FastChainBase {
     }
 
     public int getEventCount() {
+        if (!calculatedCount) {
+            count = 0;
+            for (Integer value : events) {
+                if (value != 0)
+                    count++;
+            }
+        }
+        calculatedCount = true;
         return count;
     }
 
@@ -62,5 +78,34 @@ public abstract class FastChainBase {
             pos = alphabet.size()-1;
         }
         events.set(i, pos);
+    }
+
+    public String toDividedString(char sym) {
+        String result = "";
+        boolean isFirst = true;
+        for (Integer cur : events) {
+            if (!isFirst) {
+                result += Character.toString(sym);
+            }
+            isFirst = false;
+            result += alphabet.get(cur);
+        }
+        return result;
+    }
+
+    public String get(int i) {
+        return alphabet.get(events.get(i));
+    }
+
+    public FastAlphabet getAlphabet() {
+        return alphabet;
+    }
+
+    public String getBuilding() {
+        String result = "";
+        for (Integer value : events) {
+            result += Integer.toString(value + 1);
+        }
+        return result;
     }
 }

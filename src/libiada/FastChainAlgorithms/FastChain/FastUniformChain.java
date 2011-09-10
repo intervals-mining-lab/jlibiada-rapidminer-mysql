@@ -1,7 +1,5 @@
 package libiada.FastChainAlgorithms.FastChain;
 
-import libiada.FastChainAlgorithms.FastChain.UtilClasses.FastIntervalsChain;
-
 import java.util.HashMap;
 
 /**
@@ -17,7 +15,17 @@ public class FastUniformChain extends FastIntervalsChain {
     private HashMap<Integer,Integer> circleIntervals = null;
 
     public FastUniformChain() throws Exception {
+        super();
         alphabet.add("-");
+        commonConstructor();
+    }
+
+    public FastUniformChain(int length) throws Exception {
+        super(length);
+        commonConstructor();
+    }
+
+    private void commonConstructor() throws Exception {
         pIntervals = new HashMap<Integer, Integer>();
         startIntervals = new HashMap<Integer, Integer>();
         endIntervals = new HashMap<Integer, Integer>();
@@ -123,5 +131,9 @@ public class FastUniformChain extends FastIntervalsChain {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    public String getEvent() {
+        return alphabet.get(1);
     }
 }

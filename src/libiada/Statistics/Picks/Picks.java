@@ -62,11 +62,11 @@ public class Picks implements Iterator<Double> {
      * @param calculator Калькулятор
      * @return Возвращают параметр-выборку вычисляемой выборки
      */
-    public Picks calculatePicks(IPicksCalculator calculator) {
+    public Picks calculatePicks(IPicksCalculator calculator) throws Exception {
         return calculator.calculate(this);
     }
 
-    public double calculateCharacteristic(IValueCalculator calculator) {
+    public double calculateCharacteristic(IValueCalculator calculator) throws Exception {
         return calculator.calculate(this);
     }
 

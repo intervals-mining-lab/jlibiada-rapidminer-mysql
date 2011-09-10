@@ -2,7 +2,7 @@ package libiada.FastChainAlgorithms.FastChain.Calculators;
 
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.IFastCalculator;
+import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 /**
@@ -11,7 +11,7 @@ import libiada.IntervalAnalysis.LinkUp;
  * Date: 29.07.11
  * Time: 18:11
  */
-public class FastPropability implements IFastCalculator {
+public class FastPropability extends FastCalculatorBase {
     @Override
     public double getValue(FastChain chain, LinkUp linkUp) throws Exception {
         double result = 0;
@@ -23,13 +23,26 @@ public class FastPropability implements IFastCalculator {
 
     @Override
     public double getValue(FastUniformChain chain, LinkUp linkUp) throws Exception {
-        int length = chain.length();
-        int count = chain.getEventCount();
-        return (double)count / (double)length;
+        if (chain.getAlphabet().size() <= 1)
+            return 0;
+        super.getValue(chain, linkUp);
+        double length = chain.length();
+        double count = chain.getEventCount();
+        return (double)((double)count / (double)length);
     }
 
     @Override
     public String getName() {
-        return "p";
+        return "p" + super.getName();
+    }
+
+    @Override
+    public String getType() {
+        return "double";
+    }
+
+    @Override
+    public String getGroup() {
+        return "Propability";
     }
 }

@@ -2,7 +2,7 @@ package libiada.FastChainAlgorithms.FastChain.Calculators;
 
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.IFastCalculator;
+import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.HashSet;
@@ -13,7 +13,7 @@ import java.util.HashSet;
  * Date: 30.07.11
  * Time: 16:50
  */
-public class FastShepherd implements IFastCalculator {
+public class FastShepherd extends FastCalculatorBase {
     @Override
     public double getValue(FastChain chain, LinkUp linkUp) throws Exception {
         double T1 = getPosCount(chain, "T", 0);
@@ -61,5 +61,15 @@ public class FastShepherd implements IFastCalculator {
     @Override
     public String getName() {
         return "Shepherd";  //TODO: "Заполнить метод"
+    }
+
+    @Override
+    public String getType() {
+        return "double";
+    }
+
+    @Override
+    public String getGroup() {
+        return "Bioinformatics";
     }
 }

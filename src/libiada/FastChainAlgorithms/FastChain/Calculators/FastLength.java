@@ -2,7 +2,7 @@ package libiada.FastChainAlgorithms.FastChain.Calculators;
 
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.IFastCalculator;
+import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 /**
@@ -11,7 +11,7 @@ import libiada.IntervalAnalysis.LinkUp;
  * Date: 29.07.11
  * Time: 22:21
  */
-public class FastLength implements IFastCalculator {
+public class FastLength extends FastCalculatorBase {
     @Override
     public double getValue(FastChain chain, LinkUp linkUp) throws Exception {
         return chain.length();
@@ -19,11 +19,22 @@ public class FastLength implements IFastCalculator {
 
     @Override
     public double getValue(FastUniformChain chain, LinkUp linkUp) throws Exception {
+        super.getValue(chain, linkUp);
         return chain.length();
     }
 
     @Override
     public String getName() {
-        return "m";
+        return "n" + super.getName();
+    }
+
+    @Override
+    public String getType() {
+        return "int";
+    }
+
+    @Override
+    public String getGroup() {
+        return "Common";
     }
 }

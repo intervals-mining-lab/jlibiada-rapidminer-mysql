@@ -2,7 +2,7 @@ package libiada.FastChainAlgorithms.FastChain.Calculators;
 
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.IFastCalculator;
+import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.Map;
@@ -13,7 +13,7 @@ import java.util.Map;
  * Date: 29.07.11
  * Time: 19:51
  */
-public class FastGamaut implements IFastCalculator {
+public class FastGamaut extends FastCalculatorBase {
     @Override
     public double getValue(FastChain chain, LinkUp linkUp) throws Exception {
         double value = 0;
@@ -25,6 +25,7 @@ public class FastGamaut implements IFastCalculator {
 
     @Override
     public double getValue(FastUniformChain chain, LinkUp linkUp) throws Exception {
+        super.getValue(chain, linkUp);
         double result = 0;
         for (Map.Entry<Integer, Integer> entry : chain.getCommonIntervals().entrySet()) {
             result += entry.getValue() * Math.log10(entry.getKey()) / Math.log10(2);
@@ -59,6 +60,16 @@ public class FastGamaut implements IFastCalculator {
 
     @Override
     public String getName() {
-        return "G";
+        return "G" + super.getName();
+    }
+
+    @Override
+    public String getType() {
+        return "double";
+    }
+
+    @Override
+    public String getGroup() {
+        return "Building characteristic";
     }
 }

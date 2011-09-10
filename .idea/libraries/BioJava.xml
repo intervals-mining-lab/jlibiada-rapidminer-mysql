@@ -1,0 +1,16 @@
+<component name="libraryTable">
+  <library name="BioJava">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-core-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-structure-gui-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-ws-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-alignment-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-genome-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-phylo-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-protmod-3.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/biojava3-structure-3.0.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

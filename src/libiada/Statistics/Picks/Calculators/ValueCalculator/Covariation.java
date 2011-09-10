@@ -25,11 +25,13 @@ public class Covariation implements IValueCalculator {
         double result = 0;
         double mx = CalculatorFactory.getExpectation().calculate(picks1);
         double my = CalculatorFactory.getExpectation().calculate(picks2);
+        picks1.resetIterator();
+        picks2.resetIterator();
         while (picks1.hasNext() && picks2.hasNext()) {
             double x = picks1.next();
             double y = picks2.next();
             result += (x - mx)*(y - my);
         }
-        return result;
+        return result / picks1.size();
     }
 }

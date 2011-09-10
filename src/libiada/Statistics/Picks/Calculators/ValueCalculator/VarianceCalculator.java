@@ -11,7 +11,7 @@ import libiada.Statistics.Picks.Picks;
  */
 public class VarianceCalculator implements IValueCalculator {
     @Override
-    public double calculate(Picks picks) {
+    public double calculate(Picks picks) throws Exception {
         double dValue = 0;
         double mValue = CalculatorFactory.getExpectation().calculate(picks);
         picks.resetIterator();

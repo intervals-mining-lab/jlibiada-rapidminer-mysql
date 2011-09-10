@@ -17,7 +17,7 @@ public class SamplingCalculator implements IPicksCalculator {
     }
 
     @Override
-    public Picks calculate(Picks picks) {
+    public Picks calculate(Picks picks) throws Exception {
         Picks sampling = new Picks();
         picks.sort();
         double max = picks.calculateCharacteristic(CalculatorFactory.getMax());

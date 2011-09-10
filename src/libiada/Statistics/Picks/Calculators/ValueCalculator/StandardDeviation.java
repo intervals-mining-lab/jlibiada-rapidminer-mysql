@@ -11,7 +11,7 @@ import libiada.Statistics.Picks.Picks;
  */
 public class StandardDeviation implements IValueCalculator {
     @Override
-    public double calculate(Picks picks) {
+    public double calculate(Picks picks) throws Exception {
         return Math.sqrt(CalculatorFactory.getVariance().calculate(picks));
     }
 }
