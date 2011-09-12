@@ -41,7 +41,13 @@ public class SamplingDistributionRM extends Operator {
             for (Example example : sample) {
                 picks.add(example.getValue(attribute));
             }
-            Picks sampling = picks.calculatePicks(CalculatorFactory.getSampling(getParameterAsInt(PARAMETER_INTERVALS_COUNT)));
+            Picks sampling = null;
+            try {
+                sampling = picks.calculatePicks(CalculatorFactory.getSampling(getParameterAsInt(PARAMETER_INTERVALS_COUNT)));
+            } catch (Exception e) {
+                System.err.println("Exception");
+                e.printStackTrace();
+            }
             sampling.resetIterator();
             while (sampling.hasNext()) {
                 outValues[sampling.getIndex()][attrNum] = sampling.next();
