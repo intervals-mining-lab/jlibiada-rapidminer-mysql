@@ -1,5 +1,11 @@
 package libiada.IntervalAnalysis.Buildings;
 
+import com.rapidminer.example.ExampleSet;
+import com.rapidminer.example.table.AttributeFactory;
+import com.rapidminer.operator.learner.tree.GreaterSplitCondition;
+import com.rapidminer.operator.learner.tree.Tree;
+import com.rapidminer.tools.Ontology;
+
 import java.util.ArrayList;
 
 /**
@@ -8,23 +14,34 @@ import java.util.ArrayList;
  * Date: 2/23/11
  * Time: 3:48 AM
  */
-public class Node {
+public class Node extends Tree {
     private ArrayList<Node> childNodes = new ArrayList<Node>();
     private int value = 1;
     private int maxInPathFromRootToChild = 1;
 
-    public Node(int value, int max) {
+    public Node() {
+        super(null);
+    }
+
+    public Node(ExampleSet trainingSet) {
+        super(trainingSet);
+    }
+
+    public void initialize(int value, int max) {
         this.value = value;
         this.maxInPathFromRootToChild = max;
     }
 
     public void addClildNodes(int len, int alphPower) {
-        if (len <= 1)
+        if (len <= 1) {
+            this.setLeaf(Integer.toString(value));
             return;
-        for (int i = 1; i <= maxInPathFromRootToChild + 1; i++) {
+        }
+        for (int i = 1; i <= Math.min(maxInPathFromRootToChild + 1, alphPower); i++) {
             Node node = createNode(i);
             node.addClildNodes(len - 1, alphPower);
-            childNodes.add(node);
+            //childNodes.add(node);
+            this.addChild(node, new GreaterSplitCondition(AttributeFactory.createAttribute("att_1", Ontology.REAL), 0.5));
         }
     }
 
@@ -44,7 +61,9 @@ public class Node {
 
     private Node createNode(int i) {
         int max = Math.max(i, maxInPathFromRootToChild);
-        return new Node(i, max);
+        Node node = new Node(this.getTrainingSet());
+        node.initialize(i, max);
+        return node;
     }
 
     public ArrayList<String> getBuildings() {

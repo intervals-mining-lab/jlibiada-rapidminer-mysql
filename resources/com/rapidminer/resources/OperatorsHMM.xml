@@ -71,6 +71,10 @@
             <group key="buildings">
                 <group key="generators">
                     <operator>
+                        <key>Building Tree</key>
+                        <class>rapidminer.chain.Generators.BuildingTree.BuildingTreeRM</class>
+                    </operator>
+                    <operator>
                         <key>Buildings generator from contents</key>
                         <class>rapidminer.chain.Generators.BuildingGeneratorFromContentsRM</class>
                     </operator>
@@ -111,11 +115,11 @@
                         <class>rapidminer.SamplingDistributionRM</class>
                     </operator>
                 </group>
-                <operator>
-                    <key>Summer</key>
-                    <class>rapidminer.SumExamplesRM</class>
-                </operator>
             </group>
+            <operator>
+                <key>Summer</key>
+                <class>rapidminer.chain.summer</class>
+            </operator>
         </group>
         <group key="modeling">
             <icon>chart_line.png</icon>

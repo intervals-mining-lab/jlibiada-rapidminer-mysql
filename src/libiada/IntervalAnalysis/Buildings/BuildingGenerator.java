@@ -10,14 +10,14 @@ import java.util.ArrayList;
  */
 public class BuildingGenerator {
     public ArrayList<String> getBuildings(int chainLength, int alphabetPower) {
-        Tree tree = new Tree();
-        tree.rebuildTreeForBuildings(chainLength, alphabetPower);
-        return tree.getBuildingsAsStrings();
+        BuildingsTree buildingsTree = new BuildingsTree();
+        buildingsTree.rebuildTreeForBuildings(chainLength, alphabetPower);
+        return buildingsTree.getBuildingsAsStrings();
     }
 
     public ArrayList<String> getBuildings(Contents contents) throws Exception {
-        Tree tree = new Tree();
-        tree.rebuildTreeForBuildings(contents);
-        return tree.getBuildingsAsStrings();
+        BuildingsTree buildingsTree = new BuildingsTree();
+        buildingsTree.rebuildTreeForBuildings(contents);
+        return buildingsTree.getBuildingsAsStrings();
     }
 }

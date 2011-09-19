@@ -1,6 +1,6 @@
 package libiada.Reports.Docx;
 
-import libiada.Reports.IDataExporter;
+/*import libiada.Reports.IDataExporter;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 import org.apache.poi.xwpf.usermodel.XWPFTable;
 import org.apache.poi.xwpf.usermodel.XWPFTableRow;
@@ -8,7 +8,7 @@ import org.apache.poi.xwpf.usermodel.XWPFTableRow;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.ArrayList;*/
 
 /**
  * Created by IntelliJ IDEA.
@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * Date: 08.09.11
  * Time: 16:02
  */
-public class DocxPOIReporter implements IDataExporter {
+public class DocxPOIReporter {} /*implements IDataExporter {
     private void save(XWPFDocument document, String repotFile) {
         FileOutputStream outputStream = null;
         try{
@@ -57,4 +57,4 @@ public class DocxPOIReporter implements IDataExporter {
 
         save(document, repotFile);
     }
-}
+}   */

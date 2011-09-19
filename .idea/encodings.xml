@@ -10,8 +10,8 @@
     <file url="file://$PROJECT_DIR$/src/libiada/EventTheory/Space.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/BaseChain.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/BuildingCounter.java" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/BuildingsTree.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/Node.java" charset="windows-1252" />
-    <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Buildings/Tree.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Chain.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/ChainWithCharacteristic.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/src/libiada/IntervalAnalysis/Characteristics/AuxiliaryInterfaces/IChainDataForCalculator.java" charset="windows-1252" />

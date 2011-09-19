@@ -7,7 +7,7 @@ import com.rapidminer.operator.OperatorException;
 import com.rapidminer.operator.io.AbstractReader;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeInt;
-import libiada.IntervalAnalysis.Buildings.Tree;
+import libiada.IntervalAnalysis.Buildings.BuildingsTree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,11 +30,11 @@ public class BuildingsGeneratorRM extends AbstractReader<ExampleSet> {
 
     @Override
     public ExampleSet read() throws OperatorException {
-        Tree tree = new Tree();
-        tree.rebuildTreeForBuildings(getParameterAsInt(PARAMETER_CHAIN_LENGTH), getParameterAsInt(PARAMETER_ALPHABET_POWER));
+        BuildingsTree buildingsTree = new BuildingsTree();
+        buildingsTree.rebuildTreeForBuildings(getParameterAsInt(PARAMETER_CHAIN_LENGTH), getParameterAsInt(PARAMETER_ALPHABET_POWER));
         ArrayList<String> chains = null;
         try {
-            chains = tree.getBuildingsAsStrings();
+            chains = buildingsTree.getBuildingsAsStrings();
         } catch (Exception e) {
             Logger.getLogger(BuildingsGeneratorRM.class.getName()).log(Level.SEVERE, "It is not impossible to generate buildings", e);
         }

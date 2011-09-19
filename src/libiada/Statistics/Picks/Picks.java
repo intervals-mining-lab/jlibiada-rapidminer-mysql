@@ -73,4 +73,8 @@ public class Picks implements Iterator<Double> {
     public int size() {
         return propabilities.size();
     }
+
+    public double get(int index) {
+        return propabilities.get(index);
+    }
 }
