@@ -118,7 +118,7 @@
             </group>
             <operator>
                 <key>Summer</key>
-                <class>rapidminer.chain.summer</class>
+                <class>rapidminer.chain.Summer</class>
             </operator>
         </group>
         <group key="modeling">
