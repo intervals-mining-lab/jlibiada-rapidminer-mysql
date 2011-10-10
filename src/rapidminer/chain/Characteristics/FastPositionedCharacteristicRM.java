@@ -8,8 +8,8 @@ import com.rapidminer.operator.ports.InputPort;
 import com.rapidminer.operator.ports.OutputPort;
 import com.rapidminer.parameter.*;
 import libiada.FastChainAlgorithms.FastChain.Calculators.FastCalculatorFactory;
+import libiada.FastChainAlgorithms.FastChain.Calculators.FastCalculatorBase;
 import libiada.FastChainAlgorithms.FastChain.FastChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.HashSet;

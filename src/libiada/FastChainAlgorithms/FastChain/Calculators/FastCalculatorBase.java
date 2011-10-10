@@ -1,4 +1,4 @@
-package libiada.FastChainAlgorithms.FastChain.Interfaces;
+package libiada.FastChainAlgorithms.FastChain.Calculators;
 
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;

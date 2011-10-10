@@ -1,7 +1,5 @@
 package libiada.FastChainAlgorithms.FastChain.Calculators;
 
-import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
-
 import java.util.HashSet;
 
 /**
@@ -73,5 +71,9 @@ public class FastCalculatorFactory {
 
     public static FastCalculatorBase getPositionedAverageRemoteness(String event, HashSet<Integer> poses, int period) {
         return new FastPositionedAverageRemoteness(event, poses, period);
+    }
+
+    public static FastCalculatorBase getAverageWordLength() {
+        return new FastAverageWordLength();
     }
 }

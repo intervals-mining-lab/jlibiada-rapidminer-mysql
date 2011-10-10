@@ -3,7 +3,6 @@ package libiada.FastChainAlgorithms.FastChain.Calculators;
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastChainBase;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.FastChainAlgorithms.FastChain.UtilClasses.ChainToTripleConverter;
 import libiada.IntervalAnalysis.LinkUp;
 

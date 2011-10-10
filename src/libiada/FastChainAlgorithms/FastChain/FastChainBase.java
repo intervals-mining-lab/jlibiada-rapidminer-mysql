@@ -33,10 +33,13 @@ public abstract class FastChainBase {
 
     @Override
     public String toString() {
+        if (events.size() == 0)
+            return "";
         String result = "";
-        for (Integer cur : events) {
-            result += alphabet.get(cur);
+        for (int i = 0; i < events.size()-1; i++) {
+            result += alphabet.get(events.get(i)) + ", ";
         }
+        result += alphabet.get(events.get(events.size()-1));
         return result;
     }
 
@@ -107,5 +110,20 @@ public abstract class FastChainBase {
             result += Integer.toString(value + 1);
         }
         return result;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj.getClass() != this.getClass())
+            return false;
+        FastChainBase ch = (FastChainBase)obj;
+        if (alphabet.size() != ch.alphabetPower())
+            return false;
+        if (length() != ch.length())
+            return false;
+        for (int i = 0; i < this.length(); i++)
+            if (!get(i).equalsIgnoreCase(ch.get(i)))
+                return false;
+        return true;
     }
 }

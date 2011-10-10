@@ -12,8 +12,8 @@ import com.rapidminer.parameter.UndefinedParameterError;
 import libiada.FastChainAlgorithms.FastChain.Calculators.FastCalculatorFactory;
 import libiada.FastChainAlgorithms.FastChain.Calculators.FastShepherd;
 import libiada.FastChainAlgorithms.FastChain.Calculators.FastTramontanoMacchiato;
+import libiada.FastChainAlgorithms.FastChain.Calculators.FastCalculatorBase;
 import libiada.FastChainAlgorithms.FastChain.FastChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.Iterator;

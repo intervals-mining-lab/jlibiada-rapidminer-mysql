@@ -1,47 +1,43 @@
 package libiada.Segmentation;
 
 import libiada.FastChainAlgorithms.FastChain.FastChain;
+import libiada.Segmentation.Criteria.Criteria;
+import libiada.Segmentation.Dividers.ChainDivider;
+import libiada.Statistics.Generators.IGenerator;
+import org.apache.commons.collections15.iterators.ArrayListIterator;
+
+import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
  * User: Alex
- * Date: 05.10.11
- * Time: 0:37
+ * Date: 09.10.11
+ * Time: 17:08
  */
 public class Segmentator {
-    private SegmentationModel model = null;
+    private int maxWordLength = 0;
+    private IGenerator generator = null;
+    private Criteria criteria = null;
 
-    public Segmentator(SegmentationModel model) {
-        this.model = model;
+    public Segmentator(int maxWordLength, Criteria criteria, IGenerator generator) {
+        this.maxWordLength = maxWordLength;
+        this.generator = generator;
+        this.criteria = criteria;
     }
 
-    public Segmentator() {
-    }
-
-    public FastChain segment(FastChain chain) throws Exception {
-        FastChain result = new FastChain();
-        boolean currentSym = true;
-        String sym = "";
-        int index = 0;
-        for (Boolean cur : model) {
-            if (cur == currentSym) {
-                sym += chain.get(index);
-            }
-
-            if (cur != currentSym) {
-                result.add(sym);
-                currentSym = !currentSym;
-                sym = "";
-                sym += chain.get(index);
-            }
-            index++;
+    public FastChain segmetate(FastChain chain) throws Exception {
+        ChainDivider divider = new ChainDivider(maxWordLength, generator);
+        ArrayList<FastChain> chains = divider.divide(chain);
+        SimpleSegmentator simpleSegmentator = new SimpleSegmentator();
+        ArrayList<SegmentationModel> bestModels = new ArrayList<SegmentationModel>();
+        for (int i = 0; i < chains.size(); i++) {
+            FastChain current = chains.get(i);
+            SegmetationModelGenerator modelGenerator = new SegmetationModelGenerator(current.length());
+            ArrayList<SegmentationModel> models = modelGenerator.generate();
+            bestModels.add(criteria.getBest(current, models));
         }
-        result.add(sym);
-        return result;
-    }
-
-    public FastChain segment(FastChain chain, SegmentationModel model) throws Exception {
-        this.model = model;
-        return segment(chain);
+        ModelsReorganiser reorganiser = new ModelsReorganiser();
+        SegmentationModel resultmodel = reorganiser.reorganise(bestModels);
+        return simpleSegmentator.segment(chain, resultmodel);
     }
 }

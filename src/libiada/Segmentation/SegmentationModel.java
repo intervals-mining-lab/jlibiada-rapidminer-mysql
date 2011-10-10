@@ -22,6 +22,9 @@ public class SegmentationModel implements Iterable<Boolean>, Cloneable {
         this.segmentationModel = segmentationModel;
     }
 
+    public SegmentationModel() {
+    }
+
     @Override
     public Iterator<Boolean> iterator() {
         return segmentationModel.iterator();
@@ -47,5 +50,29 @@ public class SegmentationModel implements Iterable<Boolean>, Cloneable {
             result += (cur) ? "1" : "0";
         }
         return result;
+    }
+
+    public void concat(SegmentationModel model) {
+        if (segmentationModel.size() !=0 && segmentationModel.get(length() - 1))
+            model.inverse();
+        for (int i = 0; i < model.length(); i++) {
+            segmentationModel.add(model.get(i));
+        }
+    }
+
+    public void inverse() {
+        ArrayList<Boolean> newModel = new ArrayList<Boolean>();
+        for (int i = 0; i < segmentationModel.size(); i++) {
+            newModel.add(!segmentationModel.get(i));
+        }
+        segmentationModel = newModel;
+    }
+
+    public boolean get(int index) {
+        return segmentationModel.get(index);
+    }
+
+    public int length() {
+        return segmentationModel.size();
     }
 }

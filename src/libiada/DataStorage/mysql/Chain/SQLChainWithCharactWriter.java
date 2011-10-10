@@ -4,7 +4,7 @@ import libiada.DataStorage.mysql.SQLQuery;
 import libiada.FastChainAlgorithms.FastChain.Calculators.FastCalculatorFactory;
 import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.FastChainAlgorithms.FastChain.FastUniformChain;
-import libiada.FastChainAlgorithms.FastChain.Interfaces.FastCalculatorBase;
+import libiada.FastChainAlgorithms.FastChain.Calculators.FastCalculatorBase;
 import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.HashSet;
