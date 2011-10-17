@@ -27,6 +27,7 @@ public class ExoneIntroneCutterRM extends Operator {
     public InputPort inGenome = getInputPorts().createPort("Genes", ExampleSet.class);
     public OutputPort outORFs = getOutputPorts().createPort("ORFs");
 
+
     private static final String START_POS_ATT_NAME = "Start position attribute name";
     private static final String STOP_POS_ATT_NAME = "Stop position attribute name";
 
@@ -37,7 +38,7 @@ public class ExoneIntroneCutterRM extends Operator {
     @Override
     public void doWork() throws OperatorException {
         ExampleSet inORFset = inORFs.getData();
-        ExampleSet inGenesSet = inGenome.getData();
+        ExampleSet inGenomeData = inGenome.getData();
 
         Attribute startPosAtt = inORFset.getAttributes().get(getParameterAsString(START_POS_ATT_NAME));
         Attribute endPosAtt = inORFset.getAttributes().get(getParameterAsString(STOP_POS_ATT_NAME));
@@ -53,7 +54,7 @@ public class ExoneIntroneCutterRM extends Operator {
             i++;
         }
         String values[][] = null;
-        for (Example example : inGenesSet) {
+        for (Example example : inGenomeData) {
             String genomeAsStr = example.getValueAsString(example.getAttributes().get("Chain"));
             values = getData(genomeAsStr, starts, ends, annotation);
         }
@@ -70,6 +71,7 @@ public class ExoneIntroneCutterRM extends Operator {
 
     private String[][] getData(String genomeAsStr, HashMap<String, String> starts, HashMap<String, String> ends, HashMap<String, String> annotation) {
         String priveousStop = "1";
+        String priveousStart = "0";
         ArrayList<String> chains = new ArrayList<String>();
         ArrayList<String> isGene = new ArrayList<String>();
         ArrayList<String> anno = new ArrayList<String>();
@@ -78,9 +80,16 @@ public class ExoneIntroneCutterRM extends Operator {
         for (int i = 0; i < starts.size(); i++) {
             int start = (int)Double.parseDouble(starts.get(Integer.toString(i)));
             int stop = (int)Double.parseDouble(ends.get(Integer.toString(i)));
-            int priveous = (int)Double.parseDouble(priveousStop);
-            if ((priveous < start) && (start-priveous) > 10) {
-                chains.add(genomeAsStr.substring(priveous, start));
+            int priveousStopValue = (int)Double.parseDouble(priveousStop);
+            int priveousStartValue = (int)Double.parseDouble(priveousStart);
+            if ((priveousStartValue < priveousStopValue) && (start-priveousStopValue) > 10) {
+                chains.add(genomeAsStr.substring(priveousStopValue, start));
+                anno.add("Introne");
+                isGene.add("0");
+                startposes.add(priveousStop);
+                endposes.add(Integer.toString(start));
+            } else if ((priveousStartValue > priveousStopValue) && (start-priveousStartValue) > 10) {
+                chains.add(genomeAsStr.substring(priveousStartValue, start));
                 anno.add("Introne");
                 isGene.add("0");
                 startposes.add(priveousStop);
@@ -92,8 +101,15 @@ public class ExoneIntroneCutterRM extends Operator {
                 isGene.add("1");
                 startposes.add(Integer.toString(start));
                 endposes.add(Integer.toString(stop));
+            } else if (start > stop) {
+                chains.add(genomeAsStr.substring(stop-1, start-1));
+                anno.add(annotation.get(Integer.toString(i)));
+                isGene.add("1c");
+                startposes.add(Integer.toString(start));
+                endposes.add(Integer.toString(stop));
             }
             priveousStop = Integer.toString(stop);
+            priveousStart = Integer.toString(start);
         }
         String[][] result = new String[chains.size()][6];
         for (int i = 0; i < chains.size() && i < isGene.size() /*&& i < anno.size() && i < startposes.size() && i < endposes.size()*/; i++) {
@@ -104,10 +120,12 @@ public class ExoneIntroneCutterRM extends Operator {
                 result[i][3] = startposes.get(i);
             if (i < endposes.size())
                 result[i][4] = endposes.get(i);
-            if (isGene.get(i) == "0")
+            if (isGene.get(i).equals("0"))
                 result[i][5] = "DNA_introne";
-            else if (isGene.get(i) == "1")
+            else if (isGene.get(i).equals("1"))
                 result[i][5] = "DNA_exone";
+            else if (isGene.get(i).equals("1c"))
+                result[i][5] = "DNA_complement_exopne";
         }
         return result;
     }

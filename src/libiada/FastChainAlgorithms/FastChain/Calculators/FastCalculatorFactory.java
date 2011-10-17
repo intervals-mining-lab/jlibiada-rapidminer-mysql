@@ -76,4 +76,8 @@ public class FastCalculatorFactory {
     public static FastCalculatorBase getAverageWordLength() {
         return new FastAverageWordLength();
     }
+
+    public static FastCalculatorBase getOrlovPartlyCriteria() {
+        return new FastOrlovPartlyCriteria();
+    }
 }

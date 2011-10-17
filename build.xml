@@ -1,7 +1,7 @@
 ﻿<project name="RapidMiner_Plugin_HMM_Vega" default="install">
         <description>Build file for the RapidMiner HMM Extension</description>
 
-        <property name="rm.dir" location="C:\Program Files\Rapid-I\RapidMiner5\" />
+        <property name="rm.dir" location="/home/alex/Programs/rapidminer/" />
 
         <property name="build.build" location="build" />
         <property name="build.resources" location="resources" />

@@ -25,6 +25,16 @@ public class FastUniformChain extends FastIntervalsChain {
         commonConstructor();
     }
 
+    @Override
+    public int getEventCount() {
+        int count = 0;
+        for (Integer event : events) {
+            if (event == 1)
+                count++;
+        }
+        return count;
+    }
+
     private void commonConstructor() throws Exception {
         pIntervals = new HashMap<Integer, Integer>();
         startIntervals = new HashMap<Integer, Integer>();

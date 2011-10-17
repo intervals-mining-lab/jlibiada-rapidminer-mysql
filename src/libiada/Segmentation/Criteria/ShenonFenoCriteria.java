@@ -31,7 +31,7 @@ public class ShenonFenoCriteria extends Criteria {
         double g_m = FastCalculatorFactory.getAverageRemoteness().getValue(rootChain, linkUp);
         double L_av = FastCalculatorFactory.getAverageWordLength().getValue(segmentedChain, linkUp);
         double value = Math.abs((segmentedChain.length() * g_M) / (rootChain.length() * g_m) - L_av) - epsilon;
-        if (value < minValue) {
+        if (Math.abs(value) < minValue) {
             minValue = value;
             return true;
         }

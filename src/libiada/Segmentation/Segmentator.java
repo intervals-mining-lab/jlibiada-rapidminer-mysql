@@ -4,7 +4,7 @@ import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.Segmentation.Criteria.Criteria;
 import libiada.Segmentation.Dividers.ChainDivider;
 import libiada.Statistics.Generators.IGenerator;
-import org.apache.commons.collections15.iterators.ArrayListIterator;
+import libiada.TheoryOfSet.ExtendedAlphabet;
 
 import java.util.ArrayList;
 
@@ -30,8 +30,8 @@ public class Segmentator {
         ArrayList<FastChain> chains = divider.divide(chain);
         SimpleSegmentator simpleSegmentator = new SimpleSegmentator();
         ArrayList<SegmentationModel> bestModels = new ArrayList<SegmentationModel>();
-        for (int i = 0; i < chains.size(); i++) {
-            FastChain current = chains.get(i);
+        ExtendedAlphabet alphabet = new ExtendedAlphabet();
+        for (FastChain current : chains) {
             SegmetationModelGenerator modelGenerator = new SegmetationModelGenerator(current.length());
             ArrayList<SegmentationModel> models = modelGenerator.generate();
             bestModels.add(criteria.getBest(current, models));

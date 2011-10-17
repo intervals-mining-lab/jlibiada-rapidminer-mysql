@@ -31,9 +31,11 @@ public class Summer extends Operator {
         int i = 0;
         for (Example example : examples) {
             double g = example.getValue(examples.getAttributes().get("g"));
-            values[i][0] = 1.0;
+            values[i][0] = g + 1.0;
+            i++;
         }
         ExampleSet outSet = ExampleSetFactory.createExampleSet(values);
+        outSet.getAttributes().get("att1").setName("g+1");
         outValue.deliver(outSet);
     }
 }
