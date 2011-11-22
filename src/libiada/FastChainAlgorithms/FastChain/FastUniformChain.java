@@ -1,5 +1,8 @@
 package libiada.FastChainAlgorithms.FastChain;
 
+import libiada.IntervalAnalysis.LinkUp;
+
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -9,10 +12,8 @@ import java.util.HashMap;
  * Time: 21:30
  */
 public class FastUniformChain extends FastIntervalsChain {
-    private HashMap<Integer, Integer> pIntervals = null;
-    private HashMap<Integer, Integer> startIntervals = null;
-    private HashMap<Integer, Integer> endIntervals = null;
-    private HashMap<Integer,Integer> circleIntervals = null;
+
+    private ArrayList<Integer> poses = new ArrayList<Integer>();
 
     public FastUniformChain() throws Exception {
         super();
@@ -36,10 +37,10 @@ public class FastUniformChain extends FastIntervalsChain {
     }
 
     private void commonConstructor() throws Exception {
-        pIntervals = new HashMap<Integer, Integer>();
-        startIntervals = new HashMap<Integer, Integer>();
-        endIntervals = new HashMap<Integer, Integer>();
-        circleIntervals = new HashMap<Integer, Integer>();
+        pCommonIntervals = new HashMap<Integer, Integer>();
+        pStartIntervals = new HashMap<Integer, Integer>();
+        pEndIntervals = new HashMap<Integer, Integer>();
+        pCircleIntervals = new HashMap<Integer, Integer>();
     }
 
     public HashMap<Integer, Integer> getCommonIntervals() throws Exception {
@@ -47,7 +48,7 @@ public class FastUniformChain extends FastIntervalsChain {
             buildIntervals();
             intervalsChanged = false;
         }
-        return pIntervals;
+        return pCommonIntervals;
     }
 
     public HashMap<Integer, Integer> getStartIntervals() throws Exception {
@@ -55,7 +56,7 @@ public class FastUniformChain extends FastIntervalsChain {
             buildIntervals();
             intervalsChanged = false;
         }
-        return startIntervals;
+        return pStartIntervals;
     }
 
     public HashMap<Integer, Integer> getEndIntervals() throws Exception {
@@ -63,7 +64,7 @@ public class FastUniformChain extends FastIntervalsChain {
             buildIntervals();
             intervalsChanged = false;
         }
-        return endIntervals;
+        return pEndIntervals;
     }
 
     @Override
@@ -72,15 +73,17 @@ public class FastUniformChain extends FastIntervalsChain {
             buildIntervals();
             intervalsChanged = false;
         }
-        return circleIntervals;
+        return pCircleIntervals;
     }
 
+    @Override
     protected void buildIntervals() throws Exception {
-        pIntervals.clear();
-        startIntervals.clear();
-        endIntervals.clear();
+        pCommonIntervals.clear();
+        pStartIntervals.clear();
+        pEndIntervals.clear();
         int next = -1;
         HashMap<Integer, Integer> intervalList;
+        HashMap<Integer, Integer> intervalPosedlList;
         do
         {
             int current = next;
@@ -88,17 +91,32 @@ public class FastUniformChain extends FastIntervalsChain {
             if (next == length())
             {
                 intervalList = getFrequancyIntervalList(length());
+                intervalPosedlList = getIntervalPosedList(length());
             }
             else
             {
                 intervalList = getFrequancyIntervalList(current);
+                intervalPosedlList = getIntervalPosedList(current);
             }
 
+            intervalPosedlList.put(new Integer(next), new Integer(next-current));
             addInterval(intervalList, next - current);
         }
         while (next != length());
-        circleIntervals.put(startIntervals.entrySet().iterator().next().getKey() +
-                endIntervals.entrySet().iterator().next().getKey() - 1, 1);
+        pCircleIntervals.put(pStartIntervals.entrySet().iterator().next().getKey() +
+                pEndIntervals.entrySet().iterator().next().getKey() - 1, 1);
+    }
+
+    private HashMap<Integer, Integer> getIntervalPosedList(int number) {
+        if (number == -1)
+        {
+            return pStartIntervalsPosed;
+        }
+        if (number == length())
+        {
+            return pEndIntervalsPosed;
+        }
+        return pCommonIntervalsPosed;
     }
 
     private void addInterval(HashMap<Integer, Integer> intervalList, int interval) {
@@ -114,13 +132,13 @@ public class FastUniformChain extends FastIntervalsChain {
     private HashMap<Integer, Integer> getFrequancyIntervalList(int number) {
         if (number == -1)
         {
-            return startIntervals;
+            return pStartIntervals;
         }
         if (number == length())
         {
-            return endIntervals;
+            return pEndIntervals;
         }
-        return pIntervals;
+        return pCommonIntervals;
     }
 
     private int getRight(int current) {
@@ -145,5 +163,18 @@ public class FastUniformChain extends FastIntervalsChain {
 
     public String getEvent() {
         return alphabet.get(1);
+    }
+
+    public ArrayList<Integer> getPositions() {
+        if (intervalsChanged)
+            buildPoses();
+        return poses;
+    }
+
+    private void buildPoses() {
+        for (int i = 0; i < length(); i++) {
+            if (events.get(i) != 0)
+                poses.add(i+1);
+        }
     }
 }

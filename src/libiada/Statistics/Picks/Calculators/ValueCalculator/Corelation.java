@@ -15,7 +15,7 @@ public class Corelation implements IValueCalculator {
 
     public Corelation(Picks picks1, Picks picks2) throws Exception {
         if (picks1.size() != picks2.size())
-            throw new Exception("Размерность выборок не совпадают");
+            throw new Exception("Pics size error");
         this.picks1 = picks1;
         this.picks2 = picks2;
     }

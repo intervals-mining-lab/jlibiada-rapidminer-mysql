@@ -17,8 +17,6 @@ public class DescriptiveInformation implements ICharacteristicCalculator {
     public double calculate(UniformChain pChain, LinkUp Link) throws Exception {
         double P = pChain.getCharacteristic(Link, CharacteristicsFactory.getP());
         double Result = Math.pow(pChain.getCharacteristic(Link, CharacteristicsFactory.getDeltaA()), P);
-        //Если вся цепь заполнена одинаковыми сообщениями
-        //то вероятность равна 1 и считать описательные информации не имеет смысла.
         if (1!=P)
         {
             double P_1 = 1 - P;

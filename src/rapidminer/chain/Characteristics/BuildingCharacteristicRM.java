@@ -58,13 +58,13 @@ public class BuildingCharacteristicRM extends Operator {
                     chain.add(new libiada.Root.SimpleTypes.ValueString("" + valueAsString.charAt(k)), k);
                 }
             } catch (Exception e) {
-                System.err.print("Невозможно создать цепь");
+                System.err.print("Chain creating error");
             }
             try {
                 Double v = new Double(getValue(chain));
                 characteristicValue = v.toString();//v;
             } catch (Exception e) {
-                System.err.print("Ошибка вычисления характеристики");
+                System.err.print("Characteristic calculating error");
             }
             values[i][j] = characteristicValue;
         }
@@ -107,7 +107,7 @@ public class BuildingCharacteristicRM extends Operator {
         } else if (item.contentEquals("Length")) {
             return CharacteristicsFactory.getLength();
         } else {
-            throw new Exception("Неизвестная характеристика строя.");
+            throw new Exception("Not identified building characteristic");
         }
     }
 

@@ -62,6 +62,16 @@
                     <class>rapidminer.chain.Characteristics.UBuildingCharacteristicRM</class>
                 </operator>
             </group>
+            <group key="intervals">
+                <operator>
+                    <key>Chain Model</key>
+                    <class>rapidminer.chain.Intervals.ChainModelOp</class>
+                </operator>
+                <operator>
+                    <key>Intervals series</key>
+                    <class>rapidminer.chain.Intervals.IntervalsSeries</class>
+                </operator>
+            </group>
             <group key="readers">
                 <operator>
                     <key>Chain reader</key>

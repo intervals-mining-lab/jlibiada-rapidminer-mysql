@@ -35,7 +35,7 @@ public class ChainReaderRM extends AbstractReader<ExampleSet> {
         try {
             data[0][0] = readFile();
         } catch (IOException e) {
-            System.err.print("Ошибка чтения файла");
+            System.err.print("File reading error");
         }
         ExampleSet outSet = ExampleSetFactory.createExampleSet(data);
         outSet.getAttributes().get("att1").setName("Chain");

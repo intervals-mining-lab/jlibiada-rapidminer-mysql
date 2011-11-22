@@ -32,7 +32,7 @@ public class PeriodicChainContentsBuilderRM extends AbstractReader<RMContents> {
             try {
                 contents.add(new ValueInt(power), count);
             } catch (Exception e) {
-                System.err.print("Ошибка добавления компонента в состав");
+                System.err.print("Error of adding component to contents");
             }
         }
         return contents;

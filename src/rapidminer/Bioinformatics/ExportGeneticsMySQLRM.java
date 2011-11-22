@@ -58,8 +58,9 @@ public class ExportGeneticsMySQLRM extends Operator {
                 Double start_pos = Double.parseDouble(example.getValueAsString(attributes.get(getParameter(START_POSITION))));
                 Double end_pos = Double.parseDouble(example.getValueAsString(attributes.get(getParameter(END_POSITION))));
                 String otherAttr = example.getValueAsString(attributes.get(getParameter(OTHER_CHAR)));
+                String organism = example.getValueAsString(attributes.get(getParameter(ORGANISM)));
 
-                ChainToDB(query, chain, type, proteine, start_pos, end_pos, otherAttr);
+                ChainToDB(query, chain, type, proteine, start_pos, end_pos, otherAttr, organism);
             }
         } catch (UserError userError) {
             System.err.println("getDataError()");
@@ -69,11 +70,11 @@ public class ExportGeneticsMySQLRM extends Operator {
         }
     }
 
-    private void ChainToDB(SQLQuery query, FastChain chain, String type, String organism, double startPos, double endPos, String otherAttr) throws Exception {
+    private void ChainToDB(SQLQuery query, FastChain chain, String type, String proteine, double startPos, double endPos, String otherAttr, String organism) throws Exception {
         SQLChainWithCharactWriter writer =  new SQLChainWithCharactWriter(query);
         int chIndex = writer.write(chain, type);
 
-        otherCharactToDB(chIndex, query, organism, startPos, endPos);
+        otherCharactToDB(chIndex, query, proteine, startPos, endPos, organism);
         customCharactToDB(chIndex, query, getParameter(OTHER_CHAR), otherAttr);
     }
 
@@ -84,11 +85,11 @@ public class ExportGeneticsMySQLRM extends Operator {
 
 
 
-    private void otherCharactToDB(int chIndex, SQLQuery query, String proteine, double start_pos, double end_pos) throws UndefinedParameterError {
+    private void otherCharactToDB(int chIndex, SQLQuery query, String proteine, double start_pos, double end_pos, String organism) throws UndefinedParameterError {
         SQLCharacteristicWriter characteristicWriter = new SQLCharacteristicWriter(query);
 
         characteristicWriter.write(chIndex, proteine, "Proteine", "Bioinformatics", "string");
-        characteristicWriter.write(chIndex, getParameter(ORGANISM), "Organism", "Bioinformatics", "string");
+        characteristicWriter.write(chIndex, organism, "Organism", "Bioinformatics", "string");
         characteristicWriter.write(chIndex, start_pos, "Start pos", "Bioinformatics", "int");
         characteristicWriter.write(chIndex, end_pos, "End pos", "Bioinformatics", "int");
     }
@@ -97,7 +98,7 @@ public class ExportGeneticsMySQLRM extends Operator {
     public List<ParameterType> getParameterTypes() {
         List<ParameterType> types = super.getParameterTypes();
         types.add(new ParameterTypeAttribute(PROTEINE_NAME, "Proteine attribute: ", inPort));
-        types.add(new ParameterTypeString(ORGANISM, "Organism: "));
+        types.add(new ParameterTypeAttribute(ORGANISM, "Organism: ", inPort));
         types.add(new ParameterTypeAttribute(CHAIN_TYPE, "Chain type attribute: ", inPort));
         types.add(new ParameterTypeAttribute(START_POSITION, "Start position attribute: ", inPort));
         types.add(new ParameterTypeAttribute(END_POSITION, "End position attribute: ", inPort));

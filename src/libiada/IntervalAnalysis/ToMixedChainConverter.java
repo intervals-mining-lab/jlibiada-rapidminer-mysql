@@ -16,10 +16,10 @@ import java.util.ArrayList;
 public class ToMixedChainConverter {
     public MixedChain convert(Chain chain) throws Exception {
         MixedChain mixedChain = new MixedChain(chain.getLength());
-        for (int uChainIndex = 0; uChainIndex < chain.getAlpahbet().getPower(); uChainIndex++) { //По всем однородным цепям
+        for (int uChainIndex = 0; uChainIndex < chain.getAlpahbet().getPower(); uChainIndex++) {
             UniformChain uChain = chain.getIUniformChain(uChainIndex);
             int currentEventNum = 0;
-            for (int currentUPos = 0; currentUPos < uChain.getLength(); currentUPos++) { //По всем событиям однородной цепи
+            for (int currentUPos = 0; currentUPos < uChain.getLength(); currentUPos++) {
                 if (uChain.get(currentUPos).getClass() != PsevdoValue.class) {
                     currentEventNum++;
                 } else {

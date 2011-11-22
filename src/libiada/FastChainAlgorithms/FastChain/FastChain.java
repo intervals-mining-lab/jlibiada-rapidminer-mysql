@@ -1,6 +1,7 @@
 package libiada.FastChainAlgorithms.FastChain;
 
 import libiada.FastChainAlgorithms.FastChain.UtilClasses.IntervalsAlgebra;
+import libiada.IntervalAnalysis.LinkUp;
 
 import java.util.HashMap;
 
@@ -13,10 +14,6 @@ import java.util.HashMap;
 public class FastChain extends FastIntervalsChain {
     private HashMap<Integer, FastUniformChain> uChains = new HashMap<Integer, FastUniformChain>();
 
-    private HashMap<Integer,Integer> pStartIntervals = new HashMap<Integer, Integer>();
-    private HashMap<Integer,Integer> pEndIntervals = new HashMap<Integer, Integer>();
-    private HashMap<Integer,Integer> pCommonIntervals = new HashMap<Integer, Integer>();
-    private HashMap<Integer,Integer> pCircleIntervals = new HashMap<Integer, Integer>();
     private HashMap<String,HashMap<Integer, Integer>> pChainToChainIntervals = new HashMap<String, HashMap<Integer, Integer>>();
 
     public FastChain(int length) throws Exception {
@@ -55,47 +52,27 @@ public class FastChain extends FastIntervalsChain {
     }
 
     @Override
-    public HashMap<Integer, Integer> getCommonIntervals() throws Exception {
-        if (intervalsChanged)
-            buildIntervals();
-        intervalsChanged = false;
-        return pCommonIntervals;
-    }
-
-    @Override
-    public HashMap<Integer, Integer> getStartIntervals() throws Exception {
-        if (intervalsChanged)
-            buildIntervals();
-        intervalsChanged = false;
-        return pStartIntervals;
-    }
-
-    @Override
-    public HashMap<Integer, Integer> getEndIntervals() throws Exception {
-        if (intervalsChanged)
-            buildIntervals();
-        intervalsChanged = false;
-        return pEndIntervals;
-    }
-
-    @Override
-    public HashMap<Integer, Integer> getCircleIntervals() throws Exception {
-        if (intervalsChanged)
-            buildIntervals();
-        intervalsChanged = false;
-        return pCircleIntervals;
-    }
-
-    private void buildIntervals() throws Exception {
+    protected void buildIntervals() throws Exception {
         IntervalsAlgebra iaS = new IntervalsAlgebra();
         IntervalsAlgebra iaE = new IntervalsAlgebra();
         IntervalsAlgebra iaCom = new IntervalsAlgebra();
         IntervalsAlgebra iaCir = new IntervalsAlgebra();
+
+        IntervalsAlgebra iaComPoses = new IntervalsAlgebra();
+        IntervalsAlgebra iaSPoses = new IntervalsAlgebra();
+        IntervalsAlgebra iaEPoses = new IntervalsAlgebra();
+        IntervalsAlgebra iaCirPoses = new IntervalsAlgebra();
+
         for (int i = 0; i < alphabet.size(); i++) {
             pStartIntervals = iaS.add(pStartIntervals, getFastUniformChain(i).getStartIntervals());
             pEndIntervals = iaE.add(pEndIntervals, getFastUniformChain(i).getEndIntervals());
             pCommonIntervals = iaCom.add(pCommonIntervals, getFastUniformChain(i).getCommonIntervals());
             pCircleIntervals = iaCir.add(pCircleIntervals, getFastUniformChain(i).getCircleIntervals());
+
+            pCommonIntervalsPosed = iaComPoses.add(pCommonIntervalsPosed, getFastUniformChain(i).getIntervalPosed(LinkUp.Free));
+            pStartIntervalsPosed = iaSPoses.add(pStartIntervalsPosed, getFastUniformChain(i).getIntervalPosed(LinkUp.Start));
+            pEndIntervalsPosed = iaEPoses.add(pEndIntervalsPosed, getFastUniformChain(i).getIntervalPosed(LinkUp.End));
+            pCircleIntervalsPosed = iaCirPoses.add(pCircleIntervalsPosed, getFastUniformChain(i).getIntervalPosed(LinkUp.Circle));
         }
     }
 

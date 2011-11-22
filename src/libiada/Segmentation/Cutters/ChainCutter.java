@@ -13,7 +13,7 @@ import java.util.ArrayList;
 public class ChainCutter {
     public ArrayList<FastChain> cut(FastChain chain, int leftChainLength) throws Exception {
         if (leftChainLength > chain.length())
-            throw new IndexOutOfBoundsException("Граница обрезания за пределами длинны строки");
+            throw new IndexOutOfBoundsException("Cut place out of chain length");
         ArrayList<FastChain> result = new ArrayList<FastChain>();
         FastChain left = new FastChain();
         for (int i = 0; i < leftChainLength; i++) {

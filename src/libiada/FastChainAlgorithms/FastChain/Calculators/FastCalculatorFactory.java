@@ -80,4 +80,12 @@ public class FastCalculatorFactory {
     public static FastCalculatorBase getOrlovPartlyCriteria() {
         return new FastOrlovPartlyCriteria();
     }
+
+    public static FastCalculatorBase getRo() {
+        return new RoCalculator();
+    }
+
+    public static FastCalculatorBase getMu() {
+        return new MuCalculator();
+    }
 }

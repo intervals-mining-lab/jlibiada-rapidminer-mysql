@@ -33,7 +33,7 @@ public class FastBuildingCharacteristicRM extends Operator {
     protected static final String PARAMETER_CHARACTERISTIC = "Characteristic";
 
     protected String[] itemsLinkUp = new String[] {"Start", "End", "Both", "Circle", "Free"};
-    private String[] itemsCharacteristic = new String[] {"g", "H", "deltaG", "r", "Length", "Shepherd", "Tramontano"};
+    private String[] itemsCharacteristic = new String[] {"p", "g", "H", "deltaG", "r", "Length", "Shepherd", "Tramontano", "Ro", "Mu"};
 
     public FastBuildingCharacteristicRM(OperatorDescription description) {
         super(description);
@@ -44,7 +44,7 @@ public class FastBuildingCharacteristicRM extends Operator {
         ExampleSet chains = inChain.getData();
         Attributes attributes = chains.getAttributes();
 
-        String[][] values = new String[chains.size()][chains.getAttributes().size() + 1];
+        String[][] values = new String[chains.size()][attributes.size() + 1];
         for (int i = 0; i < chains.size(); i++) {
             Example example = chains.getExample(i);
             Iterator<Attribute> attrIter = attributes.allAttributes();
@@ -62,13 +62,13 @@ public class FastBuildingCharacteristicRM extends Operator {
                     chain.add(Character.toString(valueAsString.charAt(k)));
                 }
             } catch (Exception e) {
-                System.err.print("Невозможно создать цепь");
+                System.err.print("Chain creating error");
             }
             try {
                 Double v = getValue(chain);
                 characteristicValue = v.toString();//v;
             } catch (Exception e) {
-                System.err.print("Ошибка вычисления характеристики");
+                System.err.print("Characteristic calculating error");
             }
             values[i][j] = characteristicValue;
         }
@@ -102,6 +102,8 @@ public class FastBuildingCharacteristicRM extends Operator {
 
         if (item.contentEquals("g")) {
             return FastCalculatorFactory.getAverageRemoteness();
+        } else if (item.contentEquals("p")) {
+            return FastCalculatorFactory.getPropability();
         } else if (item.contentEquals("H")) {
             return FastCalculatorFactory.getHentropy();
         } else if (item.contentEquals("G")) {
@@ -114,8 +116,13 @@ public class FastBuildingCharacteristicRM extends Operator {
             return new FastShepherd();
         } else if (item.contentEquals("Tramontano")) {
             return new FastTramontanoMacchiato();
-        } else {
-            throw new Exception("Неизвестная характеристика строя.");
+        } else if (item.contentEquals("Ro")) {
+            return FastCalculatorFactory.getRo();
+        } else if (item.contentEquals("Mu")) {
+            return FastCalculatorFactory.getMu();
+        }
+        else {
+            throw new Exception("Not identified building characteristic");
         }
     }
 

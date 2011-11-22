@@ -61,13 +61,13 @@ public class FastPositionedCharacteristicRM extends Operator {
                     chain.add(Character.toString(valueAsString.charAt(k)));
                 }
             } catch (Exception e) {
-                System.err.print("Невозможно создать цепь");
+                System.err.print("Error of creating chain");
             }
             try {
                 Double v = getValue(chain);
                 characteristicValue = v.toString();//v;
             } catch (Exception e) {
-                System.err.print("Ошибка вычисления характеристики");
+                System.err.print("Characteristic calculating error");
             }
             values[i][j] = characteristicValue;
         }
@@ -113,7 +113,7 @@ public class FastPositionedCharacteristicRM extends Operator {
         } else if (item.contentEquals("n")) {
             return FastCalculatorFactory.getPositionedEventCount(getParameter(FIRST_UCHAIN_SYM), poses, 3);
         } else {
-            throw new Exception("Неизвестная характеристика строя.");
+            throw new Exception("Not identified characteristic");
         }
     }
 

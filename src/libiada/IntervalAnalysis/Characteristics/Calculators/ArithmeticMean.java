@@ -31,6 +31,6 @@ public class ArithmeticMean implements ICharacteristicCalculator {
 
     @Override
     public String getName() {
-        return "Среднее арифметическое";
+        return "Arithmetic mean";
     }
 }

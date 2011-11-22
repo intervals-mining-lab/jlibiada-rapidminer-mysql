@@ -4,6 +4,7 @@ import com.rapidminer.operator.OperatorDescription;
 import com.rapidminer.operator.OperatorException;
 import com.rapidminer.parameter.ParameterType;
 import com.rapidminer.parameter.ParameterTypeString;
+import libiada.FastChainAlgorithms.FastChain.FastChain;
 import libiada.IntervalAnalysis.Chain;
 import libiada.Root.SimpleTypes.ValueString;
 
@@ -15,7 +16,7 @@ import java.util.List;
  * Date: 16.05.11
  * Time: 18:50
  */
-public class UBuildingCharacteristicRM extends BuildingCharacteristicRM {
+public class UBuildingCharacteristicRM extends FastBuildingCharacteristicRM {
     private static final String PARAMETER_CHAIN_EVENT = "Event_of_uniform_chain:";
 
     public UBuildingCharacteristicRM(OperatorDescription description) {
@@ -28,10 +29,9 @@ public class UBuildingCharacteristicRM extends BuildingCharacteristicRM {
     }
 
     @Override
-    protected Double getValue(Chain chain) throws Exception {
-        ValueString event = new ValueString(getParameterAsString(PARAMETER_CHAIN_EVENT));
-        int uChainIndex = chain.getAlpahbet().indexOf(event);
-        return chain.getIUniformChain(uChainIndex).getCharacteristic(getLinkUp(), getCharacteristic());
+    protected Double getValue(FastChain chain) throws Exception {
+        String event = getParameterAsString(PARAMETER_CHAIN_EVENT);
+        return getCharacteristic().getValue(chain.getFastUniformChain(event), getLinkUp());
     }
 
     @Override

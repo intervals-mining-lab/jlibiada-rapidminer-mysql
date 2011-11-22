@@ -1,5 +1,7 @@
 package libiada.FastChainAlgorithms.FastChain;
 
+import libiada.IntervalAnalysis.LinkUp;
+
 import java.util.HashMap;
 
 /**
@@ -9,6 +11,16 @@ import java.util.HashMap;
  * Time: 2:55
  */
 public abstract class FastIntervalsChain extends FastChainBase {
+    protected HashMap<Integer,Integer> pStartIntervals = new HashMap<Integer, Integer>();
+    protected HashMap<Integer,Integer> pEndIntervals = new HashMap<Integer, Integer>();
+    protected HashMap<Integer,Integer> pCommonIntervals = new HashMap<Integer, Integer>();
+    protected HashMap<Integer,Integer> pCircleIntervals = new HashMap<Integer, Integer>();
+
+    protected HashMap<Integer,Integer> pCommonIntervalsPosed = new HashMap<Integer, Integer>();
+    protected HashMap<Integer,Integer> pStartIntervalsPosed = new HashMap<Integer, Integer>();
+    protected HashMap<Integer,Integer> pEndIntervalsPosed = new HashMap<Integer, Integer>();
+    protected HashMap<Integer,Integer> pCircleIntervalsPosed = new HashMap<Integer, Integer>();
+
     public FastIntervalsChain(String chainAsString) throws Exception {
         super(chainAsString);
     }
@@ -23,8 +35,47 @@ public abstract class FastIntervalsChain extends FastChainBase {
 
     public abstract int alphabetPower();
 
-    public abstract HashMap<Integer, Integer> getCommonIntervals() throws Exception;
-    public abstract HashMap<Integer, Integer> getStartIntervals() throws Exception;
-    public abstract HashMap<Integer, Integer> getEndIntervals() throws Exception;
-    public abstract HashMap<Integer, Integer> getCircleIntervals() throws Exception;
+    protected abstract void buildIntervals() throws Exception;
+
+    public HashMap<Integer, Integer> getCommonIntervals() throws Exception {
+        if (intervalsChanged)
+            buildIntervals();
+        intervalsChanged = false;
+        return pCommonIntervals;
+    }
+
+    public HashMap<Integer, Integer> getStartIntervals() throws Exception {
+        if (intervalsChanged)
+            buildIntervals();
+        intervalsChanged = false;
+        return pStartIntervals;
+    }
+
+    public HashMap<Integer, Integer> getEndIntervals() throws Exception {
+        if (intervalsChanged)
+            buildIntervals();
+        intervalsChanged = false;
+        return pEndIntervals;
+    }
+
+    public HashMap<Integer, Integer> getCircleIntervals() throws Exception {
+        if (intervalsChanged)
+            buildIntervals();
+        intervalsChanged = false;
+        return pCircleIntervals;
+    }
+
+    public HashMap<Integer,Integer> getIntervalPosed(LinkUp linkup) throws Exception {
+        if (intervalsChanged)
+            buildIntervals();
+        if (linkup == LinkUp.Free)
+            return pCommonIntervalsPosed;
+        else if (linkup == LinkUp.Start)
+            return pStartIntervalsPosed;
+        else if (linkup == LinkUp.End)
+            return pEndIntervalsPosed;
+        else if (linkup == LinkUp.Circle)
+            return pCircleIntervalsPosed;
+        else return null;
+    }
 }

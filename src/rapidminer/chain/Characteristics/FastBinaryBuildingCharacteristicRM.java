@@ -57,13 +57,13 @@ public class FastBinaryBuildingCharacteristicRM extends Operator {
                     chain.add(Character.toString(valueAsString.charAt(k)));
                 }
             } catch (Exception e) {
-                System.err.print("Невозможно создать цепь");
+                System.err.print("Chain creating error");
             }
             try {
                 Double v = getValue(chain);
                 characteristicValue = v.toString();//v;
             } catch (Exception e) {
-                System.err.print("Ошибка вычисления характеристики");
+                System.err.print("Characteristic calculating error");
             }
             values[i][j] = characteristicValue;
         }
@@ -92,7 +92,7 @@ public class FastBinaryBuildingCharacteristicRM extends Operator {
         } else if (item.contentEquals("g")) {
             return FastCalculatorFactory.getBinaryAverageRemoteness(getParameter(FIRST_UCHAIN_SYM), getParameter(SECOND_UCHAIN_SYM));
         } else {
-            throw new Exception("Неизвестная характеристика строя.");
+            throw new Exception("Not identified building characteristic");
         }
     }
 

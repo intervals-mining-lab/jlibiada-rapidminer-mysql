@@ -27,48 +27,54 @@ public class SQLCharacteristicWriter {
     }
 
     private int addCharacteristic(String name, String group, String type) {
-        Vector<Vector<Object>> vec = query.query("SELECT id FROM `CharacteristicNames` WHERE CharacteristicName='" + name + "';");
+        Vector<Vector<Object>> vec = query.query("SELECT id FROM `characteristic_names` WHERE name='" + name + "';");
         Integer charactId = -1;
         if (vec.size() > 0) {
             if (vec.get(0).size() > 0) {
                 charactId = Integer.parseInt(String.valueOf(vec.get(0).get(0)));
             }
         } else {
-            vec = query.query("SELECT MAX(id) FROM `CharacteristicNames`;");
-            charactId = Integer.parseInt(String.valueOf(vec.get(0).get(0)))+1;
+            vec = query.query("SELECT MAX(id) FROM `characteristic_names`;");
+            if ((vec.size() == 0) || (vec.get(0).get(0) == null))
+                charactId = 1;
+            else
+                charactId = Integer.parseInt(String.valueOf(vec.get(0).get(0)))+1;
             String groupId = getGroupId(group);
             String typeId = getTypeId(type);
-            query.execute("INSERT INTO CharacteristicNames VALUES (" + charactId + ", '" + name + "', " + groupId + ", " + typeId + ");");
+            query.execute("INSERT INTO characteristic_names VALUES (" + charactId + ", '" + name + ");");
         }
         return charactId;
     }
 
     private String getTypeId(String name) {
-        Vector<Vector<Object>> vec = query.query("SELECT id FROM `CharacteristicType` WHERE TypeName='" + name + "';");
+        Vector<Vector<Object>> vec = query.query("SELECT id FROM `characteristic_types` WHERE name='" + name + "';");
         Integer typeId = -1;
         if (vec.size() > 0) {
             if (vec.get(0).size() > 0) {
                 typeId = Integer.parseInt(String.valueOf(vec.get(0).get(0)));
             }
         } else {
-            vec = query.query("SELECT MAX(id) FROM `CharacteristicType`;");
-            typeId = Integer.parseInt(String.valueOf(vec.get(0).get(0)))+1;
-            query.execute("INSERT INTO CharacteristicType VALUES (" + typeId + ", '" + name + "');");
+            vec = query.query("SELECT MAX(id) FROM `characteristic_types`;");
+            if ((vec.size() == 0) || (vec.get(0).get(0) == null))
+                typeId = 1;
+            else
+                typeId = Integer.parseInt(String.valueOf(vec.get(0).get(0)))+1;
+            query.execute("INSERT INTO characteristic_types VALUES (" + typeId + ", '" + name + "', 'description');");
         }
         return typeId.toString();
     }
 
     private String getGroupId(String name) {
-        Vector<Vector<Object>> vec = query.query("SELECT id FROM `CharacteristicGroups` WHERE GroupName='" + name + "';");
+        Vector<Vector<Object>> vec = query.query("SELECT id FROM `characteristic_groups` WHERE name='" + name + "';");
         Integer groupId = -1;
         if (vec.size() > 0) {
             if (vec.get(0).size() > 0) {
                 groupId = Integer.parseInt(String.valueOf(vec.get(0).get(0)));
             }
         } else {
-            vec = query.query("SELECT MAX(id) FROM `CharacteristicGroups`;");
-            groupId = Integer.parseInt(String.valueOf(vec.get(0).get(0)))+1;
-            query.execute("INSERT INTO CharacteristicGroups VALUES (" + groupId + ", '" + name + "');");
+            vec = query.query("SELECT MAX(id) FROM `characteristic_groups`;");
+            groupId = (vec.get(0).get(0)==null) ? 1 : Integer.parseInt(String.valueOf(vec.get(0).get(0)))+1;
+            query.execute("INSERT INTO characteristic_groups VALUES (" + groupId + ", '" + name + "', 'description');");
         }
         return groupId.toString();
     }
@@ -76,11 +82,11 @@ public class SQLCharacteristicWriter {
     public void write(int chainIndex, String value, String name, String group, String type) {
         int charactIndex = addCharacteristic(name, group, type);
 
-        Vector<Vector<Object>> vec = query.query("SELECT MAX(id) FROM `Characteristics`;");
+        Vector<Vector<Object>> vec = query.query("SELECT MAX(id) FROM `characteristics`;");
         Integer id = Integer.parseInt(String.valueOf(vec.get(0).get(0)))+1;
 
         value = value.replaceAll("'", "\"");
 
-        query.execute("INSERT INTO Characteristics VALUES (" + id + ", " + charactIndex + ", " + chainIndex + ", -1, '" + value + "');");
+        query.execute("INSERT INTO characteristics VALUES (" + id + ", " + charactIndex + ", " + chainIndex + ", -1, '" + value + "');");
     }
 }

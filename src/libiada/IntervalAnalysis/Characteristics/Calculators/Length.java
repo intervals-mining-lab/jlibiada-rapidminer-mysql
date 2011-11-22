@@ -28,7 +28,7 @@ public class Length implements ICharacteristicCalculator{
             case Circle:
                 return pChain.getLength();
             default:
-                throw new Exception("Привязка не определена");
+                throw new Exception("Link up does not identified");
         }
     }
 

@@ -57,11 +57,6 @@ public class Picks implements Iterator<Double> {
         return currentIndex;
     }
 
-    /**
-     * Вычисляет хврактеристику выборки в виде другой выборки (например распределение)
-     * @param calculator Калькулятор
-     * @return Возвращают параметр-выборку вычисляемой выборки
-     */
     public Picks calculatePicks(IPicksCalculator calculator) throws Exception {
         return calculator.calculate(this);
     }

@@ -28,14 +28,14 @@ public class Contents {
 
     public void subElementCount(int index) throws Exception {
         if (counts.size() < index) {
-            throw new Exception("Элемент с таким индексом отсутствует в составе");
+            throw new Exception("Element does not find in contents");
         }
         counts.set(index - 1, counts.get(index - 1) - 1);
     }
 
     public int getElementCount(int index) throws Exception {
         if (counts.size() < index) {
-            throw new Exception("Элемент с таким индексом отсутствует в составе");
+            throw new Exception("Element does not find in contents");
         }
         return counts.get(index - 1);
     }
@@ -55,7 +55,7 @@ public class Contents {
             try {
                 contents.add(alphabet.get(index), counts.get(index));
             } catch (Exception e) {
-                System.err.print("Ошибка клонирпования состава");
+                System.err.print("Contents clone error");
             }
         }
         return contents;
