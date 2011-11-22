@@ -40,6 +40,16 @@
             </group>
         </group>
         <group key="interval analysis">
+		<group key="chain operations">
+			<operator>
+			<key>
+			Cutter
+			</key>
+			<class>
+			rapidminer.chain.DifCutterRM
+			</class>
+			</operator>
+			</group>
             <group key="chain characteristics">
                 <operator>
                     <key>Building characteristic</key>
